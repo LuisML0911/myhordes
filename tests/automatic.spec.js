@@ -516,7 +516,9 @@ const items = {
 test('myhordes', async () => {
 	test.setTimeout(180000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
-	const uniqueProfile = path.join(process.env.LOCALAPPDATA, 'playwright-profiles', `${randomUUID()}`);
+	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
+	const uniqueProfile = path.join(baseDir, 'playwright-profiles', randomUUID());
+	//const uniqueProfile = path.join(process.env.LOCALAPPDATA, 'playwright-profiles', `${randomUUID()}`);
 	let browserPlay;
 	let browserLogin;
 	try {
