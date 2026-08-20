@@ -1,0 +1,27 @@
+name: Update Weapons Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'   # cada domingo a medianoche UTC
+  workflow_dispatch:       # también lo puedes lanzar manualmente
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch data from API
+        run: |
+          curl -s https://gesthordes.fr/rest/v1/prototype/all \
+            -H "accept: application/json" \
+            -o data/weapons.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/weapons.json
+          git commit -m "Update weapons data"
+          git push
