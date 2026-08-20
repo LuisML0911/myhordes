@@ -1518,8 +1518,12 @@ async function getGestHordes(){
 async function getWeaponsGestHordes() {
   const apiContext = await request.newContext({
     extraHTTPHeaders: {
-      "accept": "application/json",
-      "user-agent": "Mozilla/5.0" // simula navegador
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "es-419,es;q=0.9,es-ES;q=0.8,en;q=0.7,en-GB;q=0.6,en-US;q=0.5",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0",
+      "dnt": "1",
+      "upgrade-insecure-requests": "1"
     }
   });
 
@@ -1530,7 +1534,7 @@ async function getWeaponsGestHordes() {
   }
 
   const data = await response.json();
-  await apiContext.dispose(); // buena práctica: liberar recursos
+  await apiContext.dispose();
   return data;
 }
 
