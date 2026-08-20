@@ -42,6 +42,7 @@ let nameFile_dataSaved = baseFiles;
 let gestHorderData = {};
 let externalTools = false;
 let countMainInvocation = 0;
+let uniqueProfile;
 
 const items = {
 	foods : [
@@ -517,7 +518,7 @@ test('myhordes', async () => {
 	test.setTimeout(240000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
 	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
-	const uniqueProfile = path.join(baseDir, 'playwright-profiles', randomUUID());
+	uniqueProfile = path.join(baseDir, 'playwright-profiles', randomUUID());
 	//const uniqueProfile = path.join(process.env.LOCALAPPDATA, 'playwright-profiles', `${randomUUID()}`);
 	let browserPlay;
 	let browserLogin;
@@ -1516,7 +1517,13 @@ async function getGestHordes(){
 	return await response.json();
 }
 async function getWeaponsGestHordes() {
-	const response = await pag.request.get(`https://gesthordes.fr/rest/v1/prototype/all`, {
+	let browserTemp = await chromium.launchPersistentContext(uniqueProfile, {
+		channel: 'msedge',
+		headless: true
+	});
+	let pagTemp = await browserLogin.newPage();
+	
+	const response = await pagTemp.request.get(`https://gesthordes.fr/rest/v1/prototype/all`, {
 		headers: {
 			"accept": "application/json",
 			"accept-encoding": "gzip, deflate, br, zstd",
@@ -1529,7 +1536,9 @@ async function getWeaponsGestHordes() {
 	if (!response.ok()) {
 		throw new Error("Error en la petición: " + response.status());
 	}
-	return await response.json();
+	const result = await response.json();
+	await browserTemp.close();
+	return result;
 }
 
 // actualiza GestHordes
