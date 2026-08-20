@@ -516,6 +516,7 @@ const items = {
 	]
 };
 test('UpdateWeapons', async ()=> {
+    console.log('inicia');
   const apiContext = await request.newContext({
     extraHTTPHeaders: {
       "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -526,6 +527,7 @@ test('UpdateWeapons', async ()=> {
 
   const response = await apiContext.get('https://gesthordes.fr/rest/v1/prototype/all');
   expect(response.ok()).toBeTruthy();
+    console.log('No se pudo hacer commit/push:', response);
 
   const text = await response.text();
 
