@@ -537,27 +537,8 @@ test('UpdateWeaponData', async ({ page }) => {
 		console.log('❌ No se pudo obtener JSON válido:', err.message);
 		return; // salir sin hacer commit
 	}
-	
-	// Guardar JSON si es válido
-	fs.mkdirSync('data', { recursive: true });
-	fs.writeFileSync('data/weapons.json', JSON.stringify(data, null, 2));
-	console.log('✅ JSON obtenido y guardado correctamente');
-	
-	// Commit y push (solo si está corriendo en Actions con GITHUB_TOKEN)
-	try {
-		execSync('git config user.name "github-actions[bot]"');
-		execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
-		execSync('git pull --rebase https://x-access-token:' + process.env.GITHUB_TOKEN +
-		'@github.com/' + process.env.GITHUB_REPOSITORY + '.git main');
-		execSync('git add data/weapons.json');
-		execSync('git commit -m "Update weapons data" || echo "No changes to commit"');
-		execSync('git push https://x-access-token:' + process.env.GITHUB_TOKEN +
-		'@github.com/' + process.env.GITHUB_REPOSITORY + '.git HEAD:main');
-		console.log('📤 Commit y push realizados');
-	} catch (err) {
-		console.log('⚠️ No se pudo hacer commit/push:', err.message);
-	}
 
+	writeJSON('data/weapons.json', data);
 });
 
 test('myhordes', async () => { 
@@ -1345,6 +1326,11 @@ function readJSON(filePath) {
 function writeJSON(filePath, data) {
 	fs.mkdirSync(path.dirname(filePath), { recursive: true });
 	fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+	
+	// Agregar y commitear cambios
+	execSync(`git add ${filePath}`);
+	execSync(`git commit -m "${commitMessage}"`);
+	execSync(`git push`);
 }
 
 // obtiene el tamaño maximo del inventario
