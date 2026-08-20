@@ -14,6 +14,7 @@ jobs:
 
       - name: Fetch data from API
         run: |
+          mkdir -p data
           curl -s https://gesthordes.fr/rest/v1/prototype/all \
             -H "accept: application/json" \
             -o data/weapons.json
