@@ -14,18 +14,29 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
+  
       - name: Fetch data from API
         run: |
           mkdir -p data
           curl -s https://gesthordes.fr/rest/v1/prototype/all \
             -H "accept: application/json" \
             -o data/weapons.json
-
+      
+      - name: Validate JSON
+        run: |
+          if jq empty data/weapons.json; then
+            echo "Valid JSON, ready to commit"
+          else
+            echo "Invalid JSON, skipping commit"
+            rm data/weapons.json
+          fi
+      
       - name: Commit and push changes
+        if: success() && !contains(github.event.head_commit.message, 'Invalid JSON')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/weapons.json
           git commit -m "Update weapons data" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+
