@@ -1137,6 +1137,7 @@ async function login(){
 	// Se recupera URL base final que si haya logrado responder
 	basePath = new URL(pag.url()).origin;
 	
+	console.error("Haciendo Login");
 	// Se realiza autenticación
 	await goto('/jx/public/login');
 	try{
