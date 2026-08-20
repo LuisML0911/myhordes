@@ -1558,7 +1558,7 @@ async function getGestHordes(){
 		}
 	});
 	if (!response.ok()) {
-		throw new Error("Error en la petición: " + response.status());
+		throw new Error(`Error ${response.status()} en la petición: https://gesthordes.fr/rest/v1/carte/${lastDataSaved.idTown}`);
 	}
 	return await response.json();
 }
@@ -1588,6 +1588,7 @@ async function updateGestHordes(){
 			externalTools = true;
 		}
 	}catch(exception){
+		throw new Error("Error updateGestHordes: " + exception);
 		console.log(exception);
 	}
 	if(externalTools){
