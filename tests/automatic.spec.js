@@ -31,11 +31,11 @@ const actionsPlayTown = {
 	5: betweenSafeDays,
 }
 let idPlayerInv = undefined;
-const constFile = ".\\tests\\constants"
-const lastWordsFile = constFile + "\\lastWords.json";
+const constFile = path.join(".", "tests", "constants");
+const lastWordsFile = path.join(constFile, "lastWords.json");
 let lastWords = {};
-const baseFiles = ".\\tests\\bitacora";
-const nameFile_lastDataSaved = baseFiles + "\\.last.json";
+const baseFiles = path.join(".", "tests", "bitacora");
+const nameFile_lastDataSaved = path.join(baseFiles, ".last.json");
 let lastDataSaved = {};
 let dataSaved = {};
 let nameFile_dataSaved = baseFiles;
@@ -522,17 +522,17 @@ test('myhordes', async () => {
 	let browserPlay;
 	let browserLogin;
 	try {
-		const basepath = process.env.LOCALAPPDATA + '\\Microsoft\\Edge\\User Data\\Default\\Extensions\\jolghobcgphmgaiachbipnpiimmgknno';
 		let pathToExtension;
-		fs.readdir(basepath, { withFileTypes: true }, (err, files) => {
-			if (err) {
+		if(process.env.LOCALAPPDATA){
+			const basepath = path.join(process.env.LOCALAPPDATA, 'Microsoft', 'Edge', 'User Data', 'Default', 'Extensions', 'jolghobcgphmgaiachbipnpiimmgknno');
+			try {
+				pathToExtension = fs.readdirSync(basepath, { withFileTypes: true })
+					.filter(dirent => dirent.isDirectory())
+					.map(dirent => path.join(basepath, dirent.name))[0];
+			} catch (err) {
 				console.error('Error al leer la carpeta:', err);
-				return;
 			}
-			pathToExtension = (files
-			.filter(dirent => dirent.isDirectory())
-			.map(dirent => dirent.name).map(folder => path.join(basepath, folder)))[0];
-		});
+		}
 		
 		browserLogin = await chromium.launchPersistentContext(uniqueProfile, {
 			channel: 'msedge',
@@ -546,13 +546,13 @@ test('myhordes', async () => {
 		browserPlay = await chromium.launchPersistentContext(uniqueProfile, {
 			channel: 'msedge',
 			headless: true,
-			args: [
+			args: pathToExtension ? [
 				`--disable-extensions-except=${pathToExtension}`,
 				`--load-extension=${pathToExtension}`
-			]
+			] : []
 		});
 		pag = await browserPlay.newPage();
-		goto('/jx/town/dashboard');
+		await goto('/jx/town/dashboard');
 		
 		// inicia ejecución
 		await main();
@@ -578,7 +578,7 @@ async function main(){
 	// se recuperan constantes del juego e historico del pueblo
 	try{
 		lastDataSaved = readJSON(nameFile_lastDataSaved);
-		nameFile_dataSaved = baseFiles + "\\" + lastDataSaved.idTown + ".json";
+		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		dataSaved = readJSON(nameFile_dataSaved);
 	}catch(exception){
 		//console.log(exception);
@@ -1257,6 +1257,7 @@ function readJSON(filePath) {
 }
 // escribir JSON en archivo
 function writeJSON(filePath, data) {
+	fs.mkdirSync(path.dirname(filePath), { recursive: true });
 	fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
