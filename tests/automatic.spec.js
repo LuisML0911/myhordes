@@ -532,7 +532,7 @@ test('myhordes', async () => {
 		pag = await browserLogin.newPage();
 		// se dirige al sitio
 		await login();
-		await new Promise(r => setTimeout(r, 1000));
+		await new Promise(r => setTimeout(r, 5000));
 		await browserLogin.close();
 		browserPlay = await chromium.launchPersistentContext(uniqueProfile, {
 			channel: 'msedge',
@@ -543,7 +543,9 @@ test('myhordes', async () => {
 			] : []
 		});
 		pag = await browserPlay.newPage();
+		console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
 		await goto('/jx/town/dashboard');
+		console.error("Sitio redirigido: " + pag.url());
 		
 		// inicia ejecución
 		await main();
@@ -1137,9 +1139,10 @@ async function login(){
 	// Se recupera URL base final que si haya logrado responder
 	basePath = new URL(pag.url()).origin;
 	
-	console.error("Haciendo Login");
+	console.error("Iniciando Login: " + pag.url());
 	// Se realiza autenticación
 	await goto('/jx/public/login');
+	console.error("Haciendo Login: " + pag.url());
 	try{
 		await pag.click('#et_login_button', {timeout: 3000});
 		await pag.waitForNavigation({ waitUntil: 'domcontentloaded' });
@@ -1147,6 +1150,7 @@ async function login(){
 		await pag.type('input[name="password"]', pass, { delay: 150 });
 		await pag.click('input[name="sign_in"]');
 		await pag.waitForSelector('hordes-header-ui', {state: 'attached',timeout: 5000});
+		console.error("Login Terminado: " + pag.url());
 	}catch(exception){
 		if (exception.name === 'TimeoutError') {
 			console.error("Se agotó el tiempo de espera al intentar hacer click");
