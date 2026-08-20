@@ -1,6 +1,6 @@
 // @ts-check
 // dependencias
-import { test, expect } from '@playwright/test';
+import { test, expect, request } from '@playwright/test';
 import { chromium } from 'playwright';
 import { randomUUID } from 'crypto';
 const { request } = require('@playwright/test');
