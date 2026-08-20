@@ -1517,17 +1517,19 @@ async function getGestHordes(){
 	return await response.json();
 }
 async function getWeaponsGestHordes() {
-  const data = await pag.evaluate(async () => {
-    const res = await fetch("https://gesthordes.fr/rest/v1/prototype/all", {
-      headers: { "accept": "application/json" }
-    });
-    if (!res.ok) {
-      throw new Error("Error en la petición: " + res.status);
-    }
-    // Aquí sí necesitas await porque res.json() devuelve una promesa
-    return await res.json();
-  });
-  return data;
+	const requestContext = await playwright.request.newContext({
+	  extraHTTPHeaders: {
+	    "accept": "application/json",
+	    "user-agent": "Mozilla/5.0"
+	  }
+	});
+	
+	const response = await requestContext.get("https://gesthordes.fr/rest/v1/prototype/all");
+	if (!response.ok()) {
+	  throw new Error("Error en la petición: " + response.status());
+	}
+	const data = await response.json();
+	return data;
 }
 
 // actualiza GestHordes
