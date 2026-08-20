@@ -514,7 +514,7 @@ const items = {
 		272   	//Aguashnikov
 	]
 };
-test('myhordes', async () => {
+test('myhordes', async () => { 
 	test.setTimeout(180000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
 	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
