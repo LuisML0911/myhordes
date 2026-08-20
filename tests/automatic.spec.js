@@ -8,6 +8,7 @@ const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
+const AdmZip = require('adm-zip');
 
 //constantes
 let pag = undefined;
@@ -522,17 +523,7 @@ test('myhordes', async () => {
 	let browserPlay;
 	let browserLogin;
 	try {
-		let pathToExtension;
-		if(process.env.LOCALAPPDATA){
-			const basepath = path.join(process.env.LOCALAPPDATA, 'Microsoft', 'Edge', 'User Data', 'Default', 'Extensions', 'jolghobcgphmgaiachbipnpiimmgknno');
-			try {
-				pathToExtension = fs.readdirSync(basepath, { withFileTypes: true })
-					.filter(dirent => dirent.isDirectory())
-					.map(dirent => path.join(basepath, dirent.name))[0];
-			} catch (err) {
-				console.error('Error al leer la carpeta:', err);
-			}
-		}
+		const pathToExtension = await resolveExtensionPath();
 		
 		browserLogin = await chromium.launchPersistentContext(uniqueProfile, {
 			channel: 'msedge',
@@ -1216,6 +1207,46 @@ async function selectJob(){
 	UTILERIAS
 	--------------------------
 */
+// localiza la extensión MHO: instalación local de Edge, caché del repo o descarga desde la Chrome Web Store
+async function resolveExtensionPath(){
+	const extensionId = 'jolghobcgphmgaiachbipnpiimmgknno';
+	// instalación local de Edge (Windows)
+	if(process.env.LOCALAPPDATA){
+		const basepath = path.join(process.env.LOCALAPPDATA, 'Microsoft', 'Edge', 'User Data', 'Default', 'Extensions', extensionId);
+		try {
+			const found = fs.readdirSync(basepath, { withFileTypes: true })
+				.filter(dirent => dirent.isDirectory())
+				.map(dirent => path.join(basepath, dirent.name))[0];
+			if(found){
+				return found;
+			}
+		} catch (err) {
+			console.error('Error al leer la carpeta:', err);
+		}
+	}
+	// caché de una descarga previa
+	const cacheDir = path.join(".", "tests", "extension", extensionId);
+	if(fs.existsSync(path.join(cacheDir, 'manifest.json'))){
+		return cacheDir;
+	}
+	// descarga desde la Chrome Web Store
+	try {
+		const url = `https://clients2.google.com/service/update2/crx?response=redirect&prodversion=126.0.0.0&acceptformat=crx2,crx3&x=id%3D${extensionId}%26uc`;
+		const response = await fetch(url);
+		if(!response.ok){
+			throw new Error(`HTTP ${response.status}`);
+		}
+		const crx = Buffer.from(await response.arrayBuffer());
+		// formato CRX3: 'Cr24' + versión + tamaño de cabecera; el zip inicia después de la cabecera
+		const headerSize = crx.readUInt32LE(8);
+		const zipBuffer = crx.subarray(12 + headerSize);
+		new AdmZip(zipBuffer).extractAllTo(cacheDir, true);
+		return cacheDir;
+	} catch (err) {
+		console.error('No fue posible descargar la extensión:', err);
+		return undefined;
+	}
+}
 // navegación en url myhordes
 async function goto(path){
 	let response = await pag.goto(basePath + path);
