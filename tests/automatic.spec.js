@@ -9,6 +9,8 @@ const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
 const AdmZip = require('adm-zip');
+const util = require('util');
+const readFile = util.promisify(fs.readFile);
 
 //constantes
 let pag = undefined;
@@ -1561,8 +1563,8 @@ async function getGestHordes(){
 	return await response.json();
 }
 async function getWeaponsGestHordes() {
-  const raw = await fs.readFile('./data/weapons.json', 'utf-8');
-  return JSON.parse(raw);
+	const raw = await readFile('./data/weapons.json', 'utf-8');
+	return JSON.parse(raw);
 }
 
 // actualiza GestHordes
