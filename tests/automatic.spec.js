@@ -546,6 +546,8 @@ test('myhordes', async () => {
 		console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
 		await goto('/jx/town/dashboard');
 		console.error("Sitio redirigido: " + pag.url());
+		await new Promise(r => setTimeout(r, 10000));
+		console.error("Sitio redirigido tras 10 seg: " + pag.url());
 		
 		// inicia ejecución
 		await main();
