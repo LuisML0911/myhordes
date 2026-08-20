@@ -3,6 +3,7 @@
 import { test, expect, request } from '@playwright/test';
 import { chromium } from 'playwright';
 import { randomUUID } from 'crypto';
+import { execSync } from 'child_process';
 const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const readline = require('readline');
@@ -514,6 +515,47 @@ const items = {
 		272   	//Aguashnikov
 	]
 };
+test('UpdateWeapons', async ()=> {
+  const apiContext = await request.newContext({
+    extraHTTPHeaders: {
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+      "accept-language": "es-419,es;q=0.9,es-ES;q=0.8,en;q=0.7,en-GB;q=0.6,en-US;q=0.5",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0"
+    }
+  });
+
+  const response = await apiContext.get('https://gesthordes.fr/rest/v1/prototype/all');
+  expect(response.ok()).toBeTruthy();
+
+  const text = await response.text();
+
+  // Validar que sea JSON
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch (e) {
+    console.log('Respuesta no es JSON válido, no se guardará.');
+    return;
+  }
+
+  // Guardar en archivo
+  fs.mkdirSync('data', { recursive: true });
+  fs.writeFileSync('data/weapons.json', JSON.stringify(data, null, 2));
+
+  // Commit y push (solo si está corriendo en Actions con GITHUB_TOKEN)
+  try {
+    execSync('git config user.name "github-actions[bot]"');
+    execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+    execSync('git add data/weapons.json');
+    execSync('git commit -m "Update weapons data" || echo "No changes to commit"');
+    execSync(`git push https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git HEAD:main`);
+  } catch (err) {
+    console.log('No se pudo hacer commit/push:', err.message);
+  }
+
+  await apiContext.dispose();
+})
+
 test('myhordes', async () => { 
 	test.setTimeout(240000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
