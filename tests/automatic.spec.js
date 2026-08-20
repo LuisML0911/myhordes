@@ -515,7 +515,7 @@ const items = {
 	]
 };
 test('myhordes', async () => { 
-	test.setTimeout(180000);
+	test.setTimeout(240000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
 	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
 	const uniqueProfile = path.join(baseDir, 'playwright-profiles', randomUUID());
@@ -546,8 +546,8 @@ test('myhordes', async () => {
 		console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
 		await goto('/jx/town/dashboard');
 		console.error("Sitio redirigido: " + pag.url());
-		await new Promise(r => setTimeout(r, 10000));
-		console.error("Sitio redirigido tras 10 seg: " + pag.url());
+		await new Promise(r => setTimeout(r, 3000));
+		console.error("Sitio redirigido tras 3 seg: " + pag.url());
 		
 		// inicia ejecución
 		await main();
@@ -1205,7 +1205,9 @@ async function selectJob(){
 	await doAction("/rest/v1/game/welcome/" + lastDataSaved.idTown, "PATCH", {"identity": null, "profession": {"id": 3}, 
 	// TODO: FUNCTION TO UPDATE LAST ID UPGRADES AVAILABLES
 	"skills": {"ids": [28, 32, 36, 40, 44]}});
+	await new Promise(r => setTimeout(r, 2000));
 	await goto('/jx/town/dashboard');
+	await new Promise(r => setTimeout(r, 2000));
 	return await main();
 }
 
