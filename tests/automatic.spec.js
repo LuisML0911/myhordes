@@ -515,7 +515,7 @@ const items = {
 		272   	//Aguashnikov
 	]
 };
-test('fetch weapons data via browser', async ({ page }) => {
+test('UpdateWeaponData', async ({ page }) => {
   await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
   const data = await page.evaluate(async () => {
     const res = await fetch('https://gesthordes.fr/rest/v1/prototype/all');
