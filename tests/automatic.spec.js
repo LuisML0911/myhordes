@@ -3,7 +3,6 @@
 import { test, expect, request } from '@playwright/test';
 import { chromium } from 'playwright';
 import { randomUUID } from 'crypto';
-const { request } = require('@playwright/test');
 const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const readline = require('readline');
@@ -1517,19 +1516,22 @@ async function getGestHordes(){
 	return await response.json();
 }
 async function getWeaponsGestHordes() {
-	const requestContext = await playwright.request.newContext({
-	  extraHTTPHeaders: {
-	    "accept": "application/json",
-	    "user-agent": "Mozilla/5.0"
-	  }
-	});
-	
-	const response = await requestContext.get("https://gesthordes.fr/rest/v1/prototype/all");
-	if (!response.ok()) {
-	  throw new Error("Error en la petición: " + response.status());
-	}
-	const data = await response.json();
-	return data;
+  const apiContext = await request.newContext({
+    extraHTTPHeaders: {
+      "accept": "application/json",
+      "user-agent": "Mozilla/5.0" // simula navegador
+    }
+  });
+
+  const response = await apiContext.get("https://gesthordes.fr/rest/v1/prototype/all");
+
+  if (!response.ok()) {
+    throw new Error("Error en la petición: " + response.status());
+  }
+
+  const data = await response.json();
+  await apiContext.dispose(); // buena práctica: liberar recursos
+  return data;
 }
 
 // actualiza GestHordes
