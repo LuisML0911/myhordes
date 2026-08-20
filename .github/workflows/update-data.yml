@@ -20,19 +20,20 @@ jobs:
           mkdir -p data
           curl -s https://gesthordes.fr/rest/v1/prototype/all \
             -H "accept: application/json" \
-            -o data/weapons.json
-      
+            -o data/weapons.json || true
+
       - name: Validate JSON
+        id: validate
         run: |
-          if jq empty data/weapons.json; then
-            echo "Valid JSON, ready to commit"
+          if jq empty data/weapons.json 2>/dev/null; then
+            echo "valid=true" >> $GITHUB_OUTPUT
           else
-            echo "Invalid JSON, skipping commit"
-            rm data/weapons.json
+            echo "valid=false" >> $GITHUB_OUTPUT
+            rm -f data/weapons.json
           fi
-      
+
       - name: Commit and push changes
-        if: success() && !contains(github.event.head_commit.message, 'Invalid JSON')
+        if: steps.validate.outputs.valid == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
