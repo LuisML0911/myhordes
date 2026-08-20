@@ -516,15 +516,42 @@ const items = {
 	]
 };
 test('UpdateWeaponData', async ({ page }) => {
-  await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
-  const data = await page.evaluate(async () => {
-    const res = await fetch('https://gesthordes.fr/rest/v1/prototype/all');
-    return res.json();
-  });
-
-  // Guardar JSON si es válido
-  fs.mkdirSync('data', { recursive: true });
-  fs.writeFileSync('data/weapons.json', JSON.stringify(data, null, 2));
+	// Navegar para que el navegador obtenga la cookie de Cloudflare
+	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
+	
+	// Intentar obtener el JSON desde dentro del navegador
+	let data;
+	try {
+		data = await page.evaluate(async () => {
+			const res = await fetch('https://gesthordes.fr/rest/v1/prototype/all', {
+			headers: { "accept": "application/json" }
+		});
+		if (!res.ok) {
+			throw new Error(`Respuesta no OK: ${res.status}`);
+		}
+		return res.json();
+		});
+	} catch (err) {
+		console.log('❌ No se pudo obtener JSON válido:', err.message);
+		return; // salir sin hacer commit
+	}
+	
+	// Guardar JSON si es válido
+	fs.mkdirSync('data', { recursive: true });
+	fs.writeFileSync('data/weapons.json', JSON.stringify(data, null, 2));
+	console.log('✅ JSON obtenido y guardado correctamente');
+	
+	// Commit y push (solo si está corriendo en Actions con GITHUB_TOKEN)
+	try {
+		execSync('git config user.name "github-actions[bot]"');
+		execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+		execSync('git add data/weapons.json');
+		execSync('git commit -m "Update weapons data" || echo "No changes to commit"');
+		execSync(`git push https://x-access-token:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git HEAD:main`);
+		console.log('📤 Commit y push realizados');
+	} catch (err) {
+		console.log('⚠️ No se pudo hacer commit/push:', err.message);
+	}
 });
 
 test('myhordes', async () => { 
