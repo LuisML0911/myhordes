@@ -14,7 +14,7 @@ const AdmZip = require('adm-zip');
 let pag = undefined;
 let basePath = "";
 let currentPath = "";
-const user = "myhordes0";
+const user = "mylhordes";
 //myhordes0
 const pass = "f6e1a8350911";
 const actions = {
