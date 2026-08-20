@@ -1517,12 +1517,12 @@ async function getGestHordes(){
 	return await response.json();
 }
 async function getWeaponsGestHordes() {
-	let browserTemp = await chromium.launchPersistentContext(uniqueProfile, {
+	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
+	let browserTemp = await chromium.launchPersistentContext(path.join(baseDir, 'playwright-profiles', randomUUID()), {
 		channel: 'msedge',
 		headless: true
 	});
-	let pagTemp = await browserLogin.newPage();
-	
+	let pagTemp = await browserTemp.newPage();
 	const response = await pagTemp.request.get(`https://gesthordes.fr/rest/v1/prototype/all`, {
 		headers: {
 			"accept": "application/json",
