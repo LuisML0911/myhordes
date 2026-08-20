@@ -4,7 +4,10 @@ on:
   schedule:
     - cron: '0 0 * * 0'   # cada domingo a medianoche UTC
   workflow_dispatch:       # también lo puedes lanzar manualmente
-
+  
+permissions:
+  contents: write   # da permiso de escritura al GITHUB_TOKEN
+  
 jobs:
   update-json:
     runs-on: ubuntu-latest
@@ -24,5 +27,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/weapons.json
-          git commit -m "Update weapons data"
-          git push
+          git commit -m "Update weapons data" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
