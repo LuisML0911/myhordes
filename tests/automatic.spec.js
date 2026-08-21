@@ -543,6 +543,10 @@ test('UpdateWeaponData', async ({ page }) => {
 test('GetGestHordes', async ({page}) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	const idTown = lastDataSaved.idTown;
+	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
+	const cookies = await page.context().cookies();
+	console.log(cookies);
+	
 	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
 	const data = await (await page.waitForResponse(
 		r => r.url().includes(`/rest/v1/carte/${idTown}`) && r.status() === 200
