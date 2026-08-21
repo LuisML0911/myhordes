@@ -556,6 +556,8 @@ test('GetGestHordes', async ({ page }) => {
 		console.log("❌ No se obtuvo la cookie cf_clearance, Cloudflare no resolvió el challenge.");
 		return;
 	}
+	const cookies = await page.context().cookies();
+	const cookieHeader = cookies.map(c => `${c.name}=${c.value}`).join("; ");
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
@@ -565,8 +567,11 @@ test('GetGestHordes', async ({ page }) => {
 			const res = await fetch(`/rest/v1/carte/${idTown}`, {
 				headers: {
 					"accept": "application/json",
-					"gh-mapid": idTown
-				}
+					"gh-mapid": idTown,
+					"cookie": cookieHeader,
+					"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+					"(KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0"
+			    }
 			});
 			if (!res.ok) throw new Error(`Respuesta no OK: ${res.status}`);
 			return res.json();
