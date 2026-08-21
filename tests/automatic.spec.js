@@ -552,7 +552,7 @@ test('GetGestHordes', async ({page}) => {
 	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 		headers: {
 			"accept": "application/json",
-			"gh-mapid": parseInt(idTown, 10);
+			"gh-mapid": parseInt(idTown, 10)
 		}
 	});
 	return res.json();
