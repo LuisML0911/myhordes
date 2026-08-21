@@ -546,11 +546,15 @@ test('GetGestHordes', async ({ page }) => {
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
 	let clearanceCookie;
-	for (let i = 0; i < 10; i++) { // intenta durante ~10 segundos
+	for (let i = 0; i < 30; i++) { // intenta durante ~10 segundos
 		const cookies = await page.context().cookies();
 		clearanceCookie = cookies.find(c => c.name === "cf_clearance");
 		if (clearanceCookie) break;
 		await page.waitForTimeout(1000); // espera 1 segundo y vuelve a revisar
+	}
+	if (!clearanceCookie) {
+		console.log("❌ No se obtuvo la cookie cf_clearance, Cloudflare no resolvió el challenge.");
+		return;
 	}
 	
 	// Intentar obtener el JSON desde dentro del navegador
