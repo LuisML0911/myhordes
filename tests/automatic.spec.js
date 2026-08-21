@@ -541,25 +541,35 @@ test('UpdateWeaponData', async ({ page }) => {
 	writeJSON('data/weapons.json', data);
 });
 test('GetGestHordes', async ({ page }) => {
+	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Escuchar cada request que sale
 	page.on('request', request => {
-		console.log('➡️ Request:', request.method(), request.url());
+		if(request.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`)){
+			console.log('➡️ Request:', request.method(), request.url());
+		}else{
+			//console.log('⬅️ Response:', response.status(), response.url());
+		}
 	});
 	
 	// Escuchar cada respuesta que llega
 	page.on('response', async response => {
 		try {
-			console.log('⬅️ Response:', response.status(), response.url());
+			if(response.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`)){
+				console.log('⬅️ Response:', response.status(), response.url());
+			}else{
+				//console.log('⬅️ Response:', response.status(), response.url());
+			}
+			
 		} catch (err) {
 			console.log('❌ Error leyendo response:', err.message);
 		}
 	});
 	
-	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, { waitUntil: 'networkidle' });
-	await page.waitForTimeout(10000);
+	await page.waitForTimeout(20000);
 	// Esperar a que el navegador haga la petición al endpoint
+	// https://gesthordes.fr/rest/v1/carte/8000
 	const response = await page.waitForResponse(
 	resp => resp.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`) && resp.status() === 200
 	);
