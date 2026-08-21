@@ -540,7 +540,26 @@ test('UpdateWeaponData', async ({ page }) => {
 
 	writeJSON('data/weapons.json', data);
 });
-test('GetGestHordes', async ({ page }) => {
+test('GetGestHordes', async () => {
+	const browser = await chromium.launch();
+	const context = await browser.newContext({
+		userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' +
+		'AppleWebKit/537.36 (KHTML, like Gecko) ' +
+		'Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0',
+		locale: 'es-419',
+		extraHTTPHeaders: {
+			'accept-language': 'es-419,es;q=0.9,es-ES;q=0.8,en;q=0.7,en-GB;q=0.6,en-US;q=0.5,es-MX;q=0.4',
+			'accept': 'application/json',
+			'content-type': 'application/json',
+			'dnt': '1',
+			'sec-ch-ua': '"Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"',
+			'sec-ch-ua-mobile': '?0',
+			'sec-ch-ua-platform': '"Windows"'
+		}
+	});
+	const page = await context.newPage();
+
+	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Escuchar cada request que sale
 	page.on('request', request => {
