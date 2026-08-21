@@ -550,8 +550,11 @@ test('GetGestHordes', async ({page}) => {
 	let data;
 	try {
 		data = await page.evaluate(async (lastDataSaved) => {
-			const res = await fetch(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, {
-			headers: { "accept": "application/json" }
+			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${lastDataSaved.idTown}`, {
+			headers: {
+				"accept": "application/json",
+				"gh-mapid": lastDataSaved.idTown
+			}
 		}, lastDataSaved);
 		if (!res.ok) {
 			throw new Error(`Respuesta no OK: ${res.status}`);
