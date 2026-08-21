@@ -548,7 +548,6 @@ test('GetGestHordes', async ({page}) => {
 	console.log(cookies);
 
 	const response = await page.evaluate(async () => {
-	const res = await fetch('https://gesthordes.fr/rest/v1/carte/8000', {
 	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/8000`, {
 		headers: {
 			"accept": "application/json",
