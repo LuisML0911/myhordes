@@ -544,7 +544,8 @@ test('GetGestHordes', async ({page}) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	const idTown = lastDataSaved.idTown;
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
-	await page.goto(`https://gesthordes.fr/rest/v1/carte/${idTown}`);
+	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
+		await new Promise(r => setTimeout(r, 3000));
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
