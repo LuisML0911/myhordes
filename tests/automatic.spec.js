@@ -540,6 +540,33 @@ test('UpdateWeaponData', async ({ page }) => {
 
 	writeJSON('data/weapons.json', data);
 });
+test('GetGestHordes', async ({ page }) => {
+	lastDataSaved = readJSON(nameFile_lastDataSaved);
+	// Navegar para que el navegador obtenga la cookie de Cloudflare
+	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
+	
+	// Intentar obtener el JSON desde dentro del navegador
+	let data;
+	try {
+		data = await page.evaluate(async () => {
+			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${lastDataSaved.idTown}`, {
+			headers: { 
+				"accept": "application/json",
+				"gh-mapid": lastDataSaved.idTown
+			}
+		});
+		if (!res.ok) {
+			throw new Error(`Respuesta no OK: ${res.status}`);
+		}
+		return res.json();
+		});
+	} catch (err) {
+		console.log('❌ No se pudo obtener JSON válido:', err.message);
+		return; // salir sin hacer commit
+	}
+
+	writeJSON('data/gestHordes.json', data);
+});
 
 test('myhordes', async () => { 
 	test.setTimeout(240000);
