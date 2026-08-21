@@ -548,14 +548,15 @@ test('GetGestHordes', async ({page}) => {
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
+	const idTown = lastDataSaved.idTown;
 	try {
-		data = await page.evaluate(async (lastDataSaved) => {
-			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${lastDataSaved.idTown}`, {
+		data = await page.evaluate(async (idTown) => {
+			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 			headers: {
 				"accept": "application/json",
-				"gh-mapid": lastDataSaved.idTown
+				"gh-mapid": idTown
 			}
-		}, lastDataSaved);
+		});
 		if (!res.ok) {
 			throw new Error(`Respuesta no OK: ${res.status}`);
 		}
