@@ -540,7 +540,7 @@ test('UpdateWeaponData', async ({ page }) => {
 
 	writeJSON('data/weapons.json', data);
 });
-test('GetGestHordes', async () => {
+test('GetGestHordes', async (page) => {
 	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
@@ -563,7 +563,7 @@ test('GetGestHordes', async () => {
 		return; // salir sin hacer commit
 	}
 
-	writeJSON('data/weapons.json', data);
+	writeJSON('data/gestHordes.json', data);
 });
 
 test('myhordes', async () => { 
