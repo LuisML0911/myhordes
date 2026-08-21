@@ -550,7 +550,7 @@ test('GetGestHordes', async ({ page }) => {
 	let data;
 	const idTown = lastDataSaved.idTown;
 	try {
-		data = await page.evaluate(async () => {
+		data = await page.evaluate(async (idTown) => {
 			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 			headers: { 
 				"accept": "application/json",
