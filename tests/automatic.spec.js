@@ -551,7 +551,7 @@ test('GetGestHordes', async ({ page }) => {
 	let data;
 	try {
 		console.log(new URL(page.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown);
-		const response = await page.request.fetch(new URL(pag.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown, {
+		const response = await page.request.fetch(new URL(page.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown, {
 			method,
 			headers: {
 				"accept": "application/json",
