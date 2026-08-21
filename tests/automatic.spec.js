@@ -543,20 +543,26 @@ test('UpdateWeaponData', async ({ page }) => {
 test('GetGestHordes', async ({page}) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	const idTown = lastDataSaved.idTown;
-	await page.goto('https://gesthordes.fr/news', { waitUntil: 'networkidle' });
+	await page.goto('https://gesthordes.fr/news', { waitUntil: 'networkidle' });	
 	const cookies = await page.context().cookies();
-	await new Promise(r => setTimeout(r, 1000));
 	console.log(cookies);
-	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
-	const response = await page.evaluate(async (idTown) => {
-	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
+
+	const response = await page.evaluate(async () => {
+	const res = await fetch('https://gesthordes.fr/rest/v1/carte/8000', {
+	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/8000`, {
 		headers: {
 			"accept": "application/json",
-			"gh-mapid": parseInt(idTown, 10)
+			"gh-mapid": 8000
 		}
 	});
 	return res.json();
 	});
+	console.log(response);
+	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
+	const data = await (await page.waitForResponse(
+		r => r.url().includes(`/rest/v1/carte/${idTown}`) && r.status() === 200
+	)).json();
+	writeJSON('data/gestHordes.json', data);
 	writeJSON('data/gestHordes.json', response);
 });
 
