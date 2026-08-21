@@ -543,30 +543,10 @@ test('UpdateWeaponData', async ({ page }) => {
 test('GetGestHordes', async ({page}) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	const idTown = lastDataSaved.idTown;
-	// Navegar para que el navegador obtenga la cookie de Cloudflare
-	await page.goto(`https://gesthordes.fr/carte/${idTown}`, { waitUntil: 'networkidle' });
-		await new Promise(r => setTimeout(r, 3000));
-	
-	// Intentar obtener el JSON desde dentro del navegador
-	let data;
-	try {
-		data = await page.evaluate(async (idTown) => {
-			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
-			headers: {
-				"accept": "application/json",
-				"gh-mapid": idTown
-			}
-		});
-		if (!res.ok) {
-			throw new Error(`Respuesta no OK: ${res.status}`);
-		}
-		return res.json();
-		});
-	} catch (err) {
-		console.log('❌ No se pudo obtener JSON válido:', err.message);
-		return; // salir sin hacer commit
-	}
-
+	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
+	const data = await (await page.waitForResponse(
+		r => r.url().includes(`/rest/v1/carte/${idTown}`) && r.status() === 200
+	)).json();
 	writeJSON('data/gestHordes.json', data);
 });
 
