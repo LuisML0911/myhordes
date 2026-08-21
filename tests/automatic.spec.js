@@ -545,14 +545,14 @@ test('GetGestHordes', async ({page}) => {
 	const idTown = lastDataSaved.idTown;
 	await page.goto('https://gesthordes.fr/news', { waitUntil: 'networkidle' });
 	const cookies = await page.context().cookies();
-	await new Promise(r => setTimeout(r, 3000));
+	await new Promise(r => setTimeout(r, 1000));
 	console.log(cookies);
 	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
 	const response = await page.evaluate(async (idTown) => {
 	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 		headers: {
 			"accept": "application/json",
-			"gh-mapid": idTown
+			"gh-mapid": parseInt(idTown, 10);
 		}
 	});
 	return res.json();
