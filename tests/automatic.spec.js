@@ -542,12 +542,11 @@ test('UpdateWeaponData', async ({ page }) => {
 });
 test('GetGestHordes', async ({ page }) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
-	console.log(lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
-	const pageResponse = await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
+	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
 	// Esperar a que el navegador haga la petición al endpoint
 	const response = await page.waitForResponse(
-	resp => resp.url().includes(`/rest/v1/carte/${idTown}`) && resp.status() === 200
+	resp => resp.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`) && resp.status() === 200
 	);
 	const data = await response.json();
 	console.log("✅ Datos capturados del request de la página:", data);
