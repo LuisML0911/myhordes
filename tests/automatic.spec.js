@@ -541,61 +541,29 @@ test('UpdateWeaponData', async ({ page }) => {
 	writeJSON('data/weapons.json', data);
 });
 test('GetGestHordes', async () => {
-	const browser = await chromium.launch();
-	const context = await browser.newContext({
-		userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' +
-		'AppleWebKit/537.36 (KHTML, like Gecko) ' +
-		'Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0',
-		locale: 'es-419',
-		extraHTTPHeaders: {
-			'accept-language': 'es-419,es;q=0.9,es-ES;q=0.8,en;q=0.7,en-GB;q=0.6,en-US;q=0.5,es-MX;q=0.4',
-			'accept': 'application/json',
-			'content-type': 'application/json',
-			'dnt': '1',
-			'sec-ch-ua': '"Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"',
-			'sec-ch-ua-mobile': '?0',
-			'sec-ch-ua-platform': '"Windows"'
-		}
-	});
-	const page = await context.newPage();
-
 	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
-	// Escuchar cada request que sale
-	page.on('request', request => {
-		if(request.url().includes(`/rest/v1/carte`)){
-			console.log('➡️ Request:', request.method(), request.url());
-		}else{
-			//console.log('⬅️ Response:', response.status(), response.url());
-		}
-	});
-	
-	// Escuchar cada respuesta que llega
-	page.on('response', async response => {
-		try {
-			if(response.url().includes(`/rest/v1/carte`)){
-				console.log('⬅️ Response:', response.status(), response.url());
-			}else{
-				//console.log('⬅️ Response:', response.status(), response.url());
-			}
-			
-		} catch (err) {
-			console.log('❌ Error leyendo response:', err.message);
-		}
-	});
-	
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
-	await page.goto('https://gesthordes.fr/rest/v1/prototype/all', { waitUntil: 'networkidle' });
-	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, { waitUntil: 'networkidle' });
-	await page.waitForTimeout(20000);
-	// Esperar a que el navegador haga la petición al endpoint
-	// https://gesthordes.fr/rest/v1/carte/8000
-	const response = await page.waitForResponse(
-	resp => resp.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`) && resp.status() === 200
-	);
-	const data = await response.json();
-	console.log("✅ Datos capturados del request de la página:", data);
-	writeJSON("data/gestHordes.json", data);
+	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
+	
+	// Intentar obtener el JSON desde dentro del navegador
+	let data;
+	try {
+		data = await page.evaluate(async () => {
+			const res = await fetch(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, {
+			headers: { "accept": "application/json" }
+		});
+		if (!res.ok) {
+			throw new Error(`Respuesta no OK: ${res.status}`);
+		}
+		return res.json();
+		});
+	} catch (err) {
+		console.log('❌ No se pudo obtener JSON válido:', err.message);
+		return; // salir sin hacer commit
+	}
+
+	writeJSON('data/weapons.json', data);
 });
 
 test('myhordes', async () => { 
