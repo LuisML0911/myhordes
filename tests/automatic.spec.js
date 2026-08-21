@@ -554,7 +554,12 @@ test('GetGestHordes', async ({page}) => {
 			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 			headers: {
 				"accept": "application/json",
-				"gh-mapid": idTown
+				"gh-mapid": idTown,
+				"referer": `https://gesthordes.fr/carte/${idTown}`,
+				"accept-encoding": "gzip, deflate, br, zstd",
+				"accept-language": "es-419,es;q=0.9,es-ES;q=0.8,en;q=0.7,en-GB;q=0.6,en-US;q=0.5,es-MX;q=0.4",
+				"content-type": "application/json",
+				"cookie": "jourActuelV1={%22jour%22:2%2C%22mapId%22:7206}; mode_expe=true; expeditionModule=[]; mode_collab=true; mode_perso=false; activeTab_ency_chantiers=evos; selectionCarteV1={%22obj%22:[]%2C%22bat%22:[]%2C%22cit%22:[]%2C%22expe%22:[]}; selectedOngletCarte=param; paramCarteV8={%22danger%22:true%2C%22distance%22:false%2C%22distance_pa%22:false%2C%22zonage%22:false%2C%22scrutateur%22:false%2C%22zombie%22:true%2C%22epuise%22:true%2C%22excavated%22:true%2C%22objetSol%22:true%2C%22objetMarq%22:false%2C%22citoyen%22:true%2C%22indicVisite%22:false%2C%22carteAlter%22:false%2C%22carteScrut%22:false%2C%22estimZombie%22:true%2C%22balisage%22:false%2C%22ame%22:true%2C%22arrKm%22:[2%2C10%2C11%2C17]%2C%22arrPa%22:[3%2C6%2C9%2C12]%2C%22arrZonage%22:[7%2C19]%2C%22arrAlter%22:[112%2C113%2C114%2C116%2C117%2C118]%2C%22ctrl%22:false%2C%22inclureEncombrant%22:true}; activeTab_ency_objet=armes; gh_remember_me=97d34cc740d98ee816b3dc2fe9455880; gh_session_id=34ba69911219ffc37969065ea6a7b577; selectionCarteMapId=8000; cf_clearance=XMpQ_GCnpHppGx3gsAHZKOeVugo._tAYnd4FTVfXb4c-1787283620-1.2.1.1-YnSLBtXfkHPUeLtAas51xkkwA9by67OsIfYbfOX6MKMktnk5BjjljZ3GrKnu59r0F3LeSdKgt1pKfdYZ0a6axm7iLkpmvgh__3iIjXCLIiJKW4aR0l89cRNc_QD5f1S2k1BclBVVFHtNljdiLkhExT_USP8BeQaPUwO_Zl2OAw04Hxiprb0ZGL40RIMczRqaVDUpCjkTG2jQ_6Ob1FYjHvGLLl8onBVk.jd_2vlUz.nA1eY9YD5nRRUEBitKR6PCJ3pJO21C14fG2g0ujUoLB8Gv03kz_A0l6v._oo3UJRBm6UUATxkmr9m2xGZhb6LMFbtEn6TnvCjPo21N6zJDxtVkRTsBHSb_yhELZEZeFgo"
 			}
 		});
 		if (!res.ok) {
