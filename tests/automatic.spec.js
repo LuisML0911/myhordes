@@ -544,7 +544,7 @@ test('GetGestHordes', async ({ page }) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Escuchar cada request que sale
 	page.on('request', request => {
-		if(request.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`)){
+		if(request.url().includes(`/rest/v1/carte`)){
 			console.log('➡️ Request:', request.method(), request.url());
 		}else{
 			//console.log('⬅️ Response:', response.status(), response.url());
@@ -554,7 +554,7 @@ test('GetGestHordes', async ({ page }) => {
 	// Escuchar cada respuesta que llega
 	page.on('response', async response => {
 		try {
-			if(response.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`)){
+			if(response.url().includes(`/rest/v1/carte`)){
 				console.log('⬅️ Response:', response.status(), response.url());
 			}else{
 				//console.log('⬅️ Response:', response.status(), response.url());
