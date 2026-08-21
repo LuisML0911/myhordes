@@ -549,10 +549,10 @@ test('GetGestHordes', async ({page}) => {
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
 	try {
-		data = await page.evaluate(async () => {
+		data = await page.evaluate(async (lastDataSaved) => {
 			const res = await fetch(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, {
 			headers: { "accept": "application/json" }
-		});
+		}, lastDataSaved);
 		if (!res.ok) {
 			throw new Error(`Respuesta no OK: ${res.status}`);
 		}
