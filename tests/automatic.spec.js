@@ -541,14 +541,13 @@ test('UpdateWeaponData', async ({ page }) => {
 	writeJSON('data/weapons.json', data);
 });
 test('GetGestHordes', async ({page}) => {
-	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
+	const idTown = lastDataSaved.idTown;
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto(`https://gesthordes.fr/rest/v1/carte/${idTown}`);
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
-	const idTown = lastDataSaved.idTown;
 	try {
 		data = await page.evaluate(async (idTown) => {
 			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
