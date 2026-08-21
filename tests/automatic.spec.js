@@ -722,20 +722,22 @@ async function startPlayTown(currentDay){
 				// refrescar
 				await goto("/jx/beyond/desert/cached");
 				await main();
-				return false;
 			}else{
 				// TODO: si no logró crear una ruta, entonces ejecutar jugar en ciudad
 			}
+			return true;
 		}
 	];
 	try{
 		for (; dataSaved[`day${currentDay}`].currentStep < steps.length; dataSaved[`day${currentDay}`].currentStep++) {
+			writeJSON(nameFile_dataSaved, dataSaved);
 			if(!(await steps[dataSaved[`day${currentDay}`].currentStep]())){
 				break;
 			}
 		}
 	}catch(exception){
 		console.log(exception);
+	}finally{
 		writeJSON(nameFile_dataSaved, dataSaved);
 		//TODO: ADVERTIR POR TELEGRAM QUE NO FUE POSIBLE EJECUTAR NO°_PASO
 	}
@@ -771,19 +773,20 @@ async function betweenSafeDays(currentDay){
 			dataSaved[`day${currentDay}`].startItems = await prepareToExplore(inv, await getStorageInventory(inv));
 			return true;
 		},
+		async () => { // preparar objetos para la ruta
+			await doAction("/rest/v1/game/town/core/door", "PATCH", {action: "open"});
+			await goto("/jx/town/house/dash");
+			await pag.waitForSelector('#header-rucksack-items');
+			return true;
+		},
 		async () => { // preparar ruta
-			if((await doAction("/rest/v1/game/town/core/door", "PATCH", {action: "open"})).error){
-				const foodToExplore = items.foods.find(food => food.id === dataSaved[`day${currentDay}`].startItems.idFood);
-				const waterToExplore = items.waters.find(water => water.id === dataSaved[`day${currentDay}`].startItems.idWater);
-				const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
+			const foodToExplore = items.foods.find(food => food.id === dataSaved[`day${currentDay}`].startItems.idFood);
+			const waterToExplore = items.waters.find(water => water.id === dataSaved[`day${currentDay}`].startItems.idWater);
+			const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
+			if(foodToExplore != undefined && waterToExplore != undefined){
 				dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 1 : 2);
-				return true;
-			}else{ // se usó PA para abrir, recargar para recalcular
-				await goto("/jx/town/house/dash");
-				await pag.waitForSelector('#header-rucksack-items');
-				await main();
-				return false;
-			};
+			}
+			return true;
 		},
 		async () => { // salir al desierto -> avance en el desierto (función playInDeserted)
 			// si logró crear ruta proceder a ir al desierto, sinó ejecutar defaultPlayTown
@@ -793,18 +796,23 @@ async function betweenSafeDays(currentDay){
 				// refrescar
 				await goto("/jx/beyond/desert/cached");
 				await main();
-				return false;
+			}else{
+				// TODO: si no logró crear una ruta, entonces ejecutar jugar en ciudad
+				// validar si no en otro paso como complemento al retorno a la ciudad
 			}
+			return true;
 		}
 	];
 	try{
 		for (; dataSaved[`day${currentDay}`].currentStep < steps.length; dataSaved[`day${currentDay}`].currentStep++) {
+			writeJSON(nameFile_dataSaved, dataSaved);
 			if(!(await steps[dataSaved[`day${currentDay}`].currentStep]())){
 				break;
 			}
 		}
 	}catch(exception){
 		console.log(exception);
+	}finally{
 		writeJSON(nameFile_dataSaved, dataSaved);
 		//TODO: ADVERTIR POR TELEGRAM QUE NO FUE POSIBLE EJECUTAR NO°_PASO
 	}
@@ -861,7 +869,6 @@ async function playInDeserted(){
 				// TODO: acción si no logré moverme
 			}else{
 				currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
-				writeJSON(nameFile_dataSaved, dataSaved);
 				await goto('/jx/beyond/desert/cached');
 				return await main();
 			}
@@ -1139,7 +1146,6 @@ async function playInDeserted(){
 							// TODO: acción si no logré moverme
 						}else{
 							currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
-							writeJSON(nameFile_dataSaved, dataSaved);
 							await goto('/jx/beyond/desert/cached');
 							return await main();
 						}
@@ -1526,22 +1532,29 @@ async function prepareToExplore(inv, storageInventory){
 	let abrelatas = searchItemIdInv([20], storageInventory);
 	let idF = searchItemIdInv(abrelatas?foods:foods.slice(1), storageInventory);
 	if(idF){
-		if((await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+idF, "PATCH", {d: "up", mod: null, to: inv.IdInvPer})).error){
-		}else{
+		let actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+idF, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
+		if(actInv?.success){
 			//evalua si se recogió una lata
-			let hasLata = searchItemIdInv([3], await getPlayerInventory(inv));
+			let hasLata = searchItemIdInv([3], actInv.target);
 			if(hasLata){
 				//recoge abre latas
-				await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+abrelatas, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
-				//abre la lata
-				await doAction("/api/town/house/action", "POST", {item: hasLata, action: "12"});
-				if(abrelata = searchItemIdInv([20], await getPlayerInventory(inv))){
-					//regresa el abre latas
-					await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelata, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
+				actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+abrelatas, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
+				if(actInv?.success){
+					//abre la lata
+					await doAction("/api/town/house/action", "POST", {item: hasLata, action: "12"});
+					if(abrelata = searchItemIdInv([20], actAbrLat.target)){
+						//regresa el abre latas
+						await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelata, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
+					}
+				}else{
+					// regresa la lata
+					await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+hasLata, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
+					idF = searchItemIdInv(abrelatas?foods:foods.slice(1), storageInventory);
+					actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+idF, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
 				}
 			}
 			//evalua si se recogió un doggybag
-			let hasDoggyBag = searchItemIdInv([118], await getPlayerInventory(inv));
+			let hasDoggyBag = searchItemIdInv([118], actInv.target);
 			if(hasDoggyBag){
 				//abre doggy-back
 				await doAction("/api/town/house/action", "POST", {item: hasDoggyBag, action: "32"});
@@ -1603,7 +1616,7 @@ async function updateGestHordes(){
 			externalTools = true;
 		}
 	}catch(exception){
-		throw new Error("Error updateGestHordes: " + exception);
+		//throw new Error("Error updateGestHordes: " + exception);
 		console.log(exception);
 	}
 	if(externalTools){
