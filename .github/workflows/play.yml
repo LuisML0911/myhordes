@@ -1,4 +1,5 @@
 name: Play
+
 on:
   schedule:
     - cron: "*/30 * * * *"
