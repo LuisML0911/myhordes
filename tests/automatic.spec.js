@@ -545,43 +545,13 @@ test('GetGestHordes', async ({ page }) => {
 	console.log(lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	const pageResponse = await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
-	let clearanceCookie;
-	for (let i = 0; i < 40; i++) { // intenta durante ~10 segundos
-		const cookies = await page.context().cookies();
-		clearanceCookie = cookies.find(c => c.name === "cf_clearance");
-		if (clearanceCookie) break;
-		await page.waitForTimeout(1000); // espera 1 segundo y vuelve a revisar
-	}
-	if (!clearanceCookie) {
-		console.log("❌ No se obtuvo la cookie cf_clearance, Cloudflare no resolvió el challenge.");
-		return;
-	}
-	const cookies = await page.context().cookies();
-	const cookieHeader = cookies.map(c => `${c.name}=${c.value}`).join("; ");
-	
-	console.log("✅ Página cargada con status:", pageResponse.status());
-	// Intentar obtener el JSON desde dentro del navegador
-	let data;
-	const idTown = lastDataSaved.idTown;
-	try {
-		data = await page.evaluate(async (idTown) => {
-			const res = await fetch(`/rest/v1/carte/${idTown}`, {
-				headers: {
-					"accept": "application/json",
-					"gh-mapid": idTown,
-					"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
-					"(KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0"
-			    }
-			});
-			if (!res.ok) throw new Error(`Respuesta no OK: ${res.status}`);
-			return res.json();
-		}, idTown);
-	} catch (err) {
-		console.log('❌ No se pudo obtener JSON válido:', err.message);
-		return;
-	}
-
-	writeJSON('data/gestHordes.json', data);
+	// Esperar a que el navegador haga la petición al endpoint
+	const response = await page.waitForResponse(
+	resp => resp.url().includes(`/rest/v1/carte/${idTown}`) && resp.status() === 200
+	);
+	const data = await response.json();
+	console.log("✅ Datos capturados del request de la página:", data);
+	writeJSON("data/gestHordes.json", data);
 });
 
 test('myhordes', async () => { 
