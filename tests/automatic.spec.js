@@ -625,6 +625,9 @@ async function main(){
 	}catch(exception){
 		//console.log(exception);
 		writeJSON(nameFile_lastDataSaved, lastDataSaved);
+		if(dataSaved === undefined){
+			writeJSON(nameFile_dataSaved, {});
+		}
 	}
 	
 	// se determinan acciones a realizar según la situación actual del jugador
