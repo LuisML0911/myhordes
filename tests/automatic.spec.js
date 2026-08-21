@@ -545,7 +545,13 @@ test('GetGestHordes', async ({ page }) => {
 	console.log(lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
-	await new Promise(r => setTimeout(r, 3000));
+	let clearanceCookie;
+	for (let i = 0; i < 10; i++) { // intenta durante ~10 segundos
+		const cookies = await page.context().cookies();
+		clearanceCookie = cookies.find(c => c.name === "cf_clearance");
+		if (clearanceCookie) break;
+		await page.waitForTimeout(1000); // espera 1 segundo y vuelve a revisar
+	}
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
