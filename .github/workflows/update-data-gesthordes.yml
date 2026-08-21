@@ -1,0 +1,44 @@
+name: Update GestHordes Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'   # cada domingo a medianoche UTC
+  workflow_dispatch:       # también lo puedes lanzar manualmente
+  
+permissions:
+  contents: write   # da permiso de escritura al GITHUB_TOKEN
+  
+jobs:
+  test:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v5
+      with:
+        node-version: lts/*
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v5
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Cache Playwright browsers
+      uses: actions/cache@v5
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-playwright-
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright tests
+      run: npx playwright test --reporter=list --grep "GetGestHordes"
