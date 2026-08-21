@@ -459,7 +459,17 @@
       "items": {
         "categories_avec_items": {
           "1": {
-            "objet_sol": [],
+            "objet_sol": {
+              "50": {
+                "nbr_item": 1,
+                "nbr_item_casse": 0,
+                "id": 50,
+                "id_mh": 50,
+                "category_objet_id": 1,
+                "nbr_item_bank": 3,
+                "nbr_item_bank_casse": 0
+              }
+            },
             "category": {
               "id": 1,
               "nom": "Ressources"
@@ -494,7 +504,26 @@
             }
           },
           "6": {
-            "objet_sol": [],
+            "objet_sol": {
+              "43": {
+                "nbr_item": 1,
+                "nbr_item_casse": 0,
+                "id": 43,
+                "id_mh": 43,
+                "category_objet_id": 6,
+                "nbr_item_bank": 0,
+                "nbr_item_bank_casse": 0
+              },
+              "70": {
+                "nbr_item": 1,
+                "nbr_item_casse": 0,
+                "id": 70,
+                "id_mh": 70,
+                "category_objet_id": 6,
+                "nbr_item_bank": 0,
+                "nbr_item_bank_casse": 0
+              }
+            },
             "category": {
               "id": 6,
               "nom": "Pharmacie"
@@ -508,7 +537,17 @@
             }
           },
           "8": {
-            "objet_sol": [],
+            "objet_sol": {
+              "237": {
+                "nbr_item": 1,
+                "nbr_item_casse": 0,
+                "id": 237,
+                "id_mh": 237,
+                "category_objet_id": 8,
+                "nbr_item_bank": 0,
+                "nbr_item_bank_casse": 0
+              }
+            },
             "category": {
               "id": 8,
               "nom": "Divers"
@@ -532,13 +571,13 @@
         },
         "max_alter": {
           "112": 0,
-          "113": 0,
+          "113": 1,
           "114": 0,
           "116": 0,
           "117": 0,
           "118": 0
         },
-        "max_alter_all": 0,
+        "max_alter_all": 1,
         "max_alter_encombrant": {
           "112": 0,
           "113": 0,
@@ -614,21 +653,21 @@
       "statistiques": {
         "pct_map": {
           "epuise": {
-            "3": 0,
-            "5": 0,
-            "7": 0,
-            "9": 0,
-            "11": 0,
-            "13": 0,
-            "15": 0,
-            "17": 0,
-            "19": 0,
-            "21": 0,
-            "23": 0,
-            "25": 0,
-            "27": 0,
-            "29": 0,
-            "99": 0
+            "3": 1,
+            "5": 1,
+            "7": 1,
+            "9": 1,
+            "11": 1,
+            "13": 1,
+            "15": 1,
+            "17": 1,
+            "19": 1,
+            "21": 1,
+            "23": 1,
+            "25": 1,
+            "27": 1,
+            "29": 1,
+            "99": 1
           },
           "decouverte": {
             "3": 16,
@@ -751,7 +790,7 @@
           }
         ]
       },
-      "date_dern_maj": "Dernière mise à jour le 21/08/2026 à 14:55 par Yuuliw",
+      "date_dern_maj": "Dernière mise à jour le 21/08/2026 à 16:09 par MylHordez",
       "is_lead": false,
       "my_ville": false,
       "ville": {
@@ -34375,15 +34414,15 @@
           "x": 12,
           "y": 17,
           "ame_ids": [],
-          "zombie": null,
+          "zombie": 0,
           "zombie_min": null,
           "zombie_max": null,
           "zombie_kill": null,
           "pdc": 2,
-          "dried": null,
+          "dried": true,
           "danger": 0,
           "tag": null,
-          "day": null,
+          "day": 1,
           "vue": 1,
           "camped": false,
           "empty": false,
@@ -34392,7 +34431,7 @@
           "excavated_maj_heure": null,
           "excavated_maj_by_id": null,
           "dig": null,
-          "heure_maj": null,
+          "heure_maj": "16:09:16",
           "marqueur_maj_day": null,
           "marqueur_maj_heure": null,
           "catapulte_maj_day": null,
@@ -34413,35 +34452,60 @@
           "jour_kill": null,
           "mode_estimation": false,
           "zombie_recalcule": false,
-          "indic_visite": null,
+          "indic_visite": "vueAuj",
           "diff_jours": 0,
           "zombie_estim": 0,
           "carte_alter": {
-            "112": null,
-            "113": null,
-            "114": null,
-            "116": null,
-            "117": null,
-            "118": null
+            "112": 0,
+            "113": 1,
+            "114": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0
           },
           "carte_alter_encombrant": {
-            "112": null,
-            "113": null,
-            "114": null,
-            "116": null,
-            "117": null,
-            "118": null
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0
           },
           "carte_scrut": null,
           "marqueur_only": false,
-          "citoyen_id": null,
+          "citoyen_id": 27997,
           "marqueur_id": null,
           "catapulte_id": null,
           "bat_id": null,
           "bat_hypothese_id": null,
           "plan": null,
           "status_bat": null,
-          "items": [],
+          "items": [
+            {
+              "id": 5579255,
+              "item_id": 43,
+              "nombre": 1,
+              "broken": false
+            },
+            {
+              "id": 5579256,
+              "item_id": 50,
+              "nombre": 1,
+              "broken": false
+            },
+            {
+              "id": 5579257,
+              "item_id": 70,
+              "nombre": 1,
+              "broken": false
+            },
+            {
+              "id": 5579258,
+              "item_id": 237,
+              "nombre": 1,
+              "broken": false
+            }
+          ],
           "consignes": []
         },
         "1713": {
@@ -50882,13 +50946,13 @@
         "devast": false,
         "water": 133,
         "saison": 19,
-        "date_time": "2026-08-21T14:55:10+02:00",
+        "date_time": "2026-08-21T16:09:16+02:00",
         "chaman": null,
         "guide": null,
         "update_by": {
-          "id": 26236,
-          "id_my_hordes": 36024,
-          "pseudo": "Yuuliw"
+          "id": 27997,
+          "id_my_hordes": 37978,
+          "pseudo": "MylHordez"
         },
         "lang": "es",
         "map_id": 8000,
