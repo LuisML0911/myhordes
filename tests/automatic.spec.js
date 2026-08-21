@@ -1138,6 +1138,7 @@ async function playInDeserted(){
 							// TODO: acción si no logré moverme
 						}else{
 							currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
+							writeJSON(nameFile_dataSaved, dataSaved);
 							await goto('/jx/beyond/desert/cached');
 							return await main();
 						}
@@ -1364,7 +1365,7 @@ function writeJSON(filePath, data) {
 		'@github.com/' + process.env.GITHUB_REPOSITORY + '.git HEAD:main');
 		console.log(`Archivo ${filePath} actualizado`);
 	} catch(error){
-		console.error("Error al obtener los IDs:", error);
+		console.error(`Error al guardar cambios para archivo ${filePath} en GitHub: `, error.message);
 	}
 }
 
