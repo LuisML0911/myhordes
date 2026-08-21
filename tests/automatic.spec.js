@@ -541,9 +541,24 @@ test('UpdateWeaponData', async ({ page }) => {
 	writeJSON('data/weapons.json', data);
 });
 test('GetGestHordes', async ({ page }) => {
+	// Escuchar cada request que sale
+	page.on('request', request => {
+		console.log('➡️ Request:', request.method(), request.url());
+	});
+	
+	// Escuchar cada respuesta que llega
+	page.on('response', async response => {
+		try {
+		c	onsole.log('⬅️ Response:', response.status(), response.url());
+		} catch (err) {
+			console.log('❌ Error leyendo response:', err.message);
+		}
+	});
+	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
-	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
+	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, { waitUntil: 'networkidle' });
+	await page.waitForTimeout(10000);
 	// Esperar a que el navegador haga la petición al endpoint
 	const response = await page.waitForResponse(
 	resp => resp.url().includes(`/rest/v1/carte/${lastDataSaved.idTown}`) && resp.status() === 200
