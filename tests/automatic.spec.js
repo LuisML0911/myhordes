@@ -548,6 +548,7 @@ test('GetGestHordes', async ({page}) => {
 	console.log(cookies);
 
 	const response = await page.evaluate(async (idTown) => {
+		console.log(idTown);
 	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 		headers: {
 			"accept": "application/json",
@@ -557,7 +558,7 @@ test('GetGestHordes', async ({page}) => {
 	return res.json();
 	});
 	console.log(response);
-	//await page.goto(`https://gesthordes.fr/carte/${idTown}`);
+	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
 
 	writeJSON('data/gestHordes.json', response);
 });
