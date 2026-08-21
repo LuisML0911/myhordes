@@ -545,23 +545,27 @@ test('GetGestHordes', async ({ page }) => {
 	console.log(lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
+	await new Promise(r => setTimeout(r, 5000));
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
 	const idTown = lastDataSaved.idTown;
 	try {
-		data = await page.evaluate(async (idTown) => {
-			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
-			headers: { 
-				"accept": "application/json",
-				"gh-mapid": idTown
-			}
+		console.log(new URL(pag.url()).origin + '/rest/v1/carte/' + idTown);
+		const response = await page.request.fetch(new URL(pag.url()).origin + '/rest/v1/carte/' + idTown, {
+			method,
+			headers: {
+			"Accept": "application/json",
+			"Content-Type": "application/json",
+			"x-requested-with": "XMLHttpRequest"
+			},
+			data: (method !== "GET" && method !== "HEAD") ? bodyData : undefined
 		});
-		if (!res.ok) {
-			throw new Error(`Respuesta no OK: ${res.status}`);
+		const contentType = response.headers()["content-type"];
+		if (contentType && contentType.includes("application/json")) {
+			data = await response.json();
 		}
-		return res.json();
-		});
+		data = await response.text();
 	} catch (err) {
 		console.log('❌ No se pudo obtener JSON válido:', err.message);
 		return; // salir sin hacer commit
