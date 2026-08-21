@@ -1330,10 +1330,10 @@ function writeJSON(filePath, data) {
 	// Agregar y commitear cambios
 	execSync('git config user.name "github-actions[bot]"');
 	execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
-	execSync('git pull --rebase https://x-access-token:' + process.env.GITHUB_TOKEN +
-	'@github.com/' + process.env.GITHUB_REPOSITORY + '.git main');
 	execSync(`git add ${filePath}`);
 	execSync(`git commit -m "file changed: ${filePath}"`);
+	execSync('git pull --rebase https://x-access-token:' + process.env.GITHUB_TOKEN +
+	'@github.com/' + process.env.GITHUB_REPOSITORY + '.git main');
 	execSync('git push https://x-access-token:' + process.env.GITHUB_TOKEN +
 	'@github.com/' + process.env.GITHUB_REPOSITORY + '.git HEAD:main');
 	console.log(`Archivo ${filePath} actualizado`);
