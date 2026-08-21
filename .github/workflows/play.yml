@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: "*/30 * * * *"
   workflow_dispatch:       # también lo puedes lanzar manualmente
+
+permissions:
+  contents: write   # da permiso de escritura al GITHUB_TOKEN
+  
 jobs:
   test:
     timeout-minutes: 20
