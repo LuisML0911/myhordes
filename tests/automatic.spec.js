@@ -547,17 +547,17 @@ test('GetGestHordes', async ({page}) => {
 	const cookies = await page.context().cookies();
 	console.log(cookies);
 
-	const response = await page.evaluate(async () => {
-	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/8000`, {
+	const response = await page.evaluate(async (idTown) => {
+	const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 		headers: {
 			"accept": "application/json",
-			"gh-mapid": 8000
+			"gh-mapid": parseInt(idTown, 10)
 		}
 	});
 	return res.json();
 	});
 	console.log(response);
-	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
+	//await page.goto(`https://gesthordes.fr/carte/${idTown}`);
 
 	writeJSON('data/gestHordes.json', response);
 });
