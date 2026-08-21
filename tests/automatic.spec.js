@@ -556,7 +556,7 @@ test('GetGestHordes', async ({page}) => {
 		return res.json();
 	}, idTown);
 	console.log(response);
-	//await page.goto(`https://gesthordes.fr/carte/${idTown}`);
+	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
 
 	writeJSON('data/gestHordes.json', response);
 });
@@ -1565,16 +1565,8 @@ function searchItemId(arrItemsToSearch, arrItemsStorage) {
 }
 // consulta a gesthordes
 async function getGestHordes(){
-	const response = await pag.request.get(`https://gesthordes.fr/rest/v1/carte/${lastDataSaved.idTown}`, {
-		headers: {
-			"accept": "application/json",
-			"gh-mapid": lastDataSaved.idTown
-		}
-	});
-	if (!response.ok()) {
-		throw new Error(`Error ${response.status()} en la petición: https://gesthordes.fr/rest/v1/carte/${lastDataSaved.idTown}`);
-	}
-	return await response.json();
+	const raw = await readFile('./data/gestHordes.json', 'utf-8');
+	return JSON.parse(raw);
 }
 async function getWeaponsGestHordes() {
 	const raw = await readFile('./data/weapons.json', 'utf-8');
