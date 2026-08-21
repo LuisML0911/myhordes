@@ -552,7 +552,7 @@ test('GetGestHordes', async ({ page }) => {
 	try {
 		console.log(new URL(page.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown);
 		const response = await page.request.fetch(new URL(page.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown, {
-			"GET",
+			method: "GET",
 			headers: {
 				"accept": "application/json",
 				"gh-mapid": lastDataSaved.idTown
