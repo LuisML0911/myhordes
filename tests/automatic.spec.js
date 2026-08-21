@@ -558,10 +558,7 @@ test('GetGestHordes', async ({page}) => {
 	});
 	console.log(response);
 	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
-	const data = await (await page.waitForResponse(
-		r => r.url().includes(`/rest/v1/carte/${idTown}`) && r.status() === 200
-	)).json();
-	writeJSON('data/gestHordes.json', data);
+
 	writeJSON('data/gestHordes.json', response);
 });
 
