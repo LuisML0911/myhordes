@@ -540,7 +540,7 @@ test('UpdateWeaponData', async ({ page }) => {
 
 	writeJSON('data/weapons.json', data);
 });
-test('GetGestHordes', async (page) => {
+test('GetGestHordes', async ({page}) => {
 	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
