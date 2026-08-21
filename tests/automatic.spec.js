@@ -549,7 +549,7 @@ test('GetGestHordes', async ({ page }) => {
 	// Escuchar cada respuesta que llega
 	page.on('response', async response => {
 		try {
-		c	onsole.log('⬅️ Response:', response.status(), response.url());
+			console.log('⬅️ Response:', response.status(), response.url());
 		} catch (err) {
 			console.log('❌ Error leyendo response:', err.message);
 		}
