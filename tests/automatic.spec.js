@@ -585,6 +585,7 @@ test('GetGestHordes', async () => {
 	});
 	
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
+	await page.goto('https://gesthordes.fr/rest/v1/prototype/all', { waitUntil: 'networkidle' });
 	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`, { waitUntil: 'networkidle' });
 	await page.waitForTimeout(20000);
 	// Esperar a que el navegador haga la petición al endpoint
