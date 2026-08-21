@@ -549,17 +549,14 @@ test('GetGestHordes', async ({ page }) => {
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
-	const idTown = lastDataSaved.idTown;
 	try {
-		console.log(new URL(page.url()).origin + '/rest/v1/carte/' + idTown);
-		const response = await page.request.fetch(new URL(pag.url()).origin + '/rest/v1/carte/' + idTown, {
+		console.log(new URL(page.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown);
+		const response = await page.request.fetch(new URL(pag.url()).origin + '/rest/v1/carte/' + lastDataSaved.idTown, {
 			method,
 			headers: {
-			"Accept": "application/json",
-			"Content-Type": "application/json",
-			"x-requested-with": "XMLHttpRequest"
-			},
-			data: (method !== "GET" && method !== "HEAD") ? bodyData : undefined
+				"accept": "application/json",
+				"gh-mapid": lastDataSaved.idTown
+			}
 		});
 		const contentType = response.headers()["content-type"];
 		if (contentType && contentType.includes("application/json")) {
