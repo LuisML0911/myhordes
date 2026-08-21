@@ -544,7 +544,7 @@ test('GetGestHordes', async ({page}) => {
 	
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
-	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
+	await page.goto(`https://gesthordes.fr/rest/v1/carte/${idTown}`);
 	
 	// Intentar obtener el JSON desde dentro del navegador
 	let data;
@@ -554,18 +554,7 @@ test('GetGestHordes', async ({page}) => {
 			const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 			headers: {
 				"accept": "application/json",
-				"gh-mapid": idTown,
-				"referer": `https://gesthordes.fr/carte/${idTown}`,
-				"accept-encoding": "gzip, deflate, br, zstd",
-				"accept-language": "es-419,es;q=0.9,es-ES;q=0.8,en;q=0.7,en-GB;q=0.6,en-US;q=0.5,es-MX;q=0.4",
-				"content-type": "application/json",
-				"sec-ch-ua": `"Not=A?Brand";v="99", "Microsoft Edge";v="151", "Chromium";v="151"`,
-				"sec-ch-ua-mobile": "?0",
-				"sec-ch-ua-platform": "Windows",
-				"sec-fetch-dest": "empty",
-				"sec-fetch-mode": "cors",
-				"sec-fetch-site": "same-origin",
-				"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36 Edg/151.0.0.0"
+				"gh-mapid": idTown
 			}
 		});
 		if (!res.ok) {
