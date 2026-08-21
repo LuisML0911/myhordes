@@ -542,6 +542,7 @@ test('UpdateWeaponData', async ({ page }) => {
 });
 test('GetGestHordes', async ({ page }) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
+	console.log(lastDataSaved);
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
 	
@@ -1347,7 +1348,9 @@ async function doAction(endpoint, method, bodyData) {
 }
 // leer JSON desde archivo
 function readJSON(filePath) {
-	return JSON.parse(fs.readFileSync(filePath));
+	const data = fs.readFileSync(filePath);
+	console.log(data);
+	return JSON.parse(data);
 }
 // escribir JSON en archivo
 function writeJSON(filePath, data) {
