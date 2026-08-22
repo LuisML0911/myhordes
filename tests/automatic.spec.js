@@ -869,6 +869,7 @@ async function playInDeserted(){
 				// TODO: acción si no logré moverme
 			}else{
 				currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
+				writeJSON(nameFile_dataSaved, dataSaved);
 				await goto('/jx/beyond/desert/cached');
 				return await main();
 			}
@@ -1146,6 +1147,7 @@ async function playInDeserted(){
 							// TODO: acción si no logré moverme
 						}else{
 							currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
+							writeJSON(nameFile_dataSaved, dataSaved);
 							await goto('/jx/beyond/desert/cached');
 							return await main();
 						}
