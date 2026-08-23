@@ -2211,5 +2211,9 @@
       ]
     }
   ],
-  "invSize": 6
+  "invSize": 6,
+  "day2": {
+    "currentStep": 0,
+    "purge": false
+  }
 }
