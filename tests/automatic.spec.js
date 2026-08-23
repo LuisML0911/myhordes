@@ -1052,10 +1052,10 @@ async function playInDeserted(){
 					return await main();
 				}
 				
-				// 4. Si faltan 3 horas para el ataque deberá avanzar sin agotar la zona hasta completar la ruta.
+				// 4. Si faltan 4 horas para el ataque deberá avanzar sin agotar la zona hasta completar la ruta.
 				const mgdZoneNote = await pag.locator('#mgd-zone-note').count();
 				const attackTime = await pag.locator('div.attack-time').innerText();
-				if (await mgdZoneNote > 0 || /^~[210]:/.test(attackTime) || currentPoss.dried) {// moverse
+				if (await mgdZoneNote > 0 || /^~[3210]:/.test(attackTime) || currentPoss.dried) {// moverse
 					// 3. Al moverse si no se cuenta con PA's suficientes deberán consumirse los recursos preparados para la ruta.
 					const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
 					if(currentPAs == 0){ // consumir
@@ -1075,6 +1075,8 @@ async function playInDeserted(){
 						}
 						if(canUseItem){
 							return await main();
+						}else{
+							// TODO: Avisar que se ha quedado sin PAs y no logró consumir nada
 						}
 					}else{ // moverse
 						// recoger items
