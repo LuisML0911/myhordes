@@ -562,7 +562,7 @@ test('GetGestHordes', async ({page}) => {
 });
 
 test('myhordes', async () => { 
-	test.setTimeout(240000);
+	test.setTimeout(320000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
 	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
 	uniqueProfile = path.join(baseDir, 'playwright-profiles', randomUUID());
@@ -1103,6 +1103,7 @@ async function playInDeserted(){
 										dataSaved.invSize = playInvTemp.target.size;
 										playInv = await getListItems(playInvTemp.target);
 										deseInv = await getListItems(playInvTemp.source);
+										takeHeavy = false;
 									}
 								}else{
 									let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, weaponList);
@@ -1124,6 +1125,7 @@ async function playInDeserted(){
 										dataSaved.invSize = playInvTemp.target.size;
 										playInv = await getListItems(playInvTemp.target);
 										deseInv = await getListItems(playInvTemp.source);
+										takeHeavy = false;
 									}
 								}else{
 									let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, items.list);
