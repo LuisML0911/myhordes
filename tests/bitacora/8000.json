@@ -2213,7 +2213,7 @@
   ],
   "invSize": 6,
   "day2": {
-    "currentStep": 3,
+    "currentStep": 4,
     "purge": false,
     "startItems": {
       "idFood": 124,
