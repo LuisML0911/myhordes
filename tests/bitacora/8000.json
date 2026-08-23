@@ -1,6 +1,6 @@
 {
   "day1": {
-    "currentStep": 5,
+    "currentStep": 6,
     "purge": true,
     "startItems": {
       "idFood": 123,
