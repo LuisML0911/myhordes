@@ -2213,7 +2213,13 @@
   ],
   "invSize": 6,
   "day2": {
-    "currentStep": 2,
-    "purge": false
+    "currentStep": 3,
+    "purge": false,
+    "startItems": {
+      "idFood": 124,
+      "idWater": 1,
+      "idInvFood": "27978786",
+      "idInvWater": "27978784"
+    }
   }
 }
