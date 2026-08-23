@@ -2213,13 +2213,104 @@
   ],
   "invSize": 6,
   "day2": {
-    "currentStep": 4,
+    "currentStep": 5,
     "purge": false,
     "startItems": {
       "idFood": 124,
       "idWater": 1,
       "idInvFood": "27978786",
       "idInvWater": "27978784"
+    },
+    "route": {
+      "way": [
+        {
+          "x": 0,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "dried": true
+        },
+        {
+          "x": 1,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 1,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": -1,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": -1,
+          "y": -3,
+          "dried": false
+        },
+        {
+          "x": -1,
+          "y": -4,
+          "dried": false
+        },
+        {
+          "x": -2,
+          "y": -4,
+          "dried": false
+        },
+        {
+          "x": -3,
+          "y": -4,
+          "dried": false
+        },
+        {
+          "x": -3,
+          "y": -3,
+          "dried": false
+        },
+        {
+          "x": -2,
+          "y": -3,
+          "dried": false
+        },
+        {
+          "x": -2,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": -2,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": -1,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "dried": false
+        }
+      ],
+      "tNotDried": 14,
+      "currentPoss": 0
     }
   }
 }
