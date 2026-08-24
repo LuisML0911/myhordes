@@ -2314,7 +2314,7 @@
     }
   },
   "day3": {
-    "currentStep": 3,
+    "currentStep": 4,
     "purge": false,
     "startItems": {
       "idFood": 124,
