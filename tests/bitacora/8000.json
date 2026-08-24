@@ -2312,5 +2312,9 @@
       "tNotDried": 14,
       "currentPoss": 16
     }
+  },
+  "day3": {
+    "currentStep": 0,
+    "purge": false
   }
 }
