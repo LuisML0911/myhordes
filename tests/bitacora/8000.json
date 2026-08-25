@@ -2425,7 +2425,13 @@
     }
   },
   "day4": {
-    "currentStep": 2,
-    "purge": false
+    "currentStep": 3,
+    "purge": false,
+    "startItems": {
+      "idFood": 124,
+      "idWater": 1,
+      "idInvFood": "27922789",
+      "idInvWater": "28021034"
+    }
   }
 }
