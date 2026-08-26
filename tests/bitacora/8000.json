@@ -475,6 +475,12 @@
       "url": "/jx/town/bank",
       "method": "GET",
       "body": {}
+    },
+    {
+      "time": "2026-08-26T05:09:18.322Z",
+      "url": "/jx/beyond/desert/cached",
+      "method": "POST",
+      "body": {}
     }
   ]
 }
