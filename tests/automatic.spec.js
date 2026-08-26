@@ -1496,6 +1496,7 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 			body: result
 		}
 	};
+	console.log(dataSaved[getFormattedDate()]);
 	//writeJSON(nameFile_dataSaved, dataSaved);
 }
 
