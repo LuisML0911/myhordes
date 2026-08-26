@@ -551,6 +551,16 @@
         "mod": null,
         "to": "7370449"
       }
+    },
+    {
+      "time": "2026-08-26T05:16:58.798Z",
+      "url": "/rest/v1/game/inventory/7370449/27922789",
+      "method": "PATCH",
+      "body": {
+        "d": "up",
+        "mod": null,
+        "to": "7372658"
+      }
     }
   ]
 }
