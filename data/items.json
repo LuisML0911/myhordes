@@ -1,470 +1,606 @@
 {
-	foods : [
-		{id:   3,	pa: 6, name: "lata cerrada"},
-		{id: 118,	pa: 6, name: "doggy-bag"},
-		{id:   4,	pa: 6, name: "lata abierta"},
-		{id:  45,	pa: 6, name: "carne irreconocible"},
-		{id:  89,	pa: 6, name: "verdura"},
-		{id: 119,	pa: 6, name: "papas"},
-		{id: 120,	pa: 6, name: "bizcochos"},
-		{id: 121,	pa: 6, name: "chicles"},
-		{id: 122,	pa: 6, name: "galletas"},
-		{id: 123,	pa: 6, name: "alitas"},
-		{id: 124,	pa: 6, name: "chocolate"},
-		{id: 125,	pa: 6, name: "tarta"},
-		{id: 126,	pa: 6, name: "sandwich"},
-		{id: 127,	pa: 6, name: "tallarines"},
-		{id: 129,	pa: 6, name: "tallarines preparado"},
-		{id: 171,	pa: 6, name: "plato casero extraño"},
-		{id: 219,	pa: 6, name: "pure"},
-		{id: 269,	pa: 6, name: "pretzel"},
-		{id: 344,	pa: 6, name: "tronco"},
-		{id:  44,	pa: 7, name: "bistec jugoso"},
-		{id: 149,	pa: 7, name: "melon"},
-		{id: 172,	pa: 7, name: "plato casero"},
-		{id: 203,	pa: 7, name: "malvaviscos"},
-		{id: 204,	pa: 7, name: "malvaviscos quemado"},
-		{id: 225,	pa: 7, name: "bistec de serrin"},
-		{id: 245,	pa: 7, name: "huevo"},
-		{id: 246,	pa: 7, name: "manzana tentadora"},
-		{id: 376,	pa: 7, name: "gran calabaza"},
-		{id: 392,	pa: 8, name: "Quantum PE"},
-		{id: 199,	pa: 5, name: "caramelos"},
-		{id:  59,	pa: 6, name: "carne humana"},
-		{id: 134,	pa: 6, name: "hueso con carne"}
-	],
-	waters : [
-		{id: 221,	pa: 6, name: "agua estancada"},
-		{id:   1,	pa: 6, name: "agua"}
-	],
-	ruteValue : { // lista de objetos que vale la pena recoger
-	},
-	list : [ // lista secuencial decresiente de prioridad de recolección de objetos
-		69,   	//Cinturón de herramientas
-		47,   	//Mochila super-práctica
-		21,   	//Mochila adicional
-		388,   	//Bicicleta de montaña
-		396,   	//Bicicleta de montaña (equipada)
-		387,   	//Bicicleta de montaña sin manillar
-		386,   	//Zapatillas deportivas gastadas
-		397,   	//Zapatillas deportivas gastadas (equipadas)
-		242,   	//Plano de construcción (¡muy raro!)
-		258,   	//Plano de construcción (¡muy raro!)
-		261,   	//Plano de construcción (¡muy raro!)
-		264,   	//Plano de construcción (¡muy raro!)
-		240,   	//Plano de construcción (inusual)
-		256,   	//Plano de construcción (inusual)
-		259,   	//Plano de construcción (inusual)
-		262,   	//Plano de construcción (inusual)
-		241,   	//Plano de construcción (raro)
-		257,   	//Plano de construcción (raro)
-		260,   	//Plano de construcción (raro)
-		263,   	//Plano de construcción (raro)
-		239,   	//Plano de construcción (común)
-		140,   	//Sierra de metal
-		144,   	//Sierra de metal en mal estado
-		255,   	//Vacuna para mutante
-		213,   	//Betapropín 5mg
-		70,   	//Twinoid 500mg
-		350,   	//Dulce de Navidad
-		377,   	//Estuche de medicamentos
-		212,   	//Betapropín 5mg vencido
-		286,   	//LSD
-		43,   	//Esteroides anabólicos
-		295,   	//Mini-libro de meditación
-		54,   	//Vendaje rudimentario
-		148,   	//Desinfectante efervescente
-		114,   	//Medicamento sin etiqueta
-		76,   	//Productos farmacéuticos
-		218,   	//Sustancia espesa
-		392,   	//Quantum Energy
-		79,   	//Café caliente
-		55,   	//Cerveza
-		268,   	//Jarra de cerveza
-		355,   	//Pinta pegajosa
-		336,   	//Vodka Rosquetoff
-		78,   	//« Levantamuertos »
-		1,   	//Ración de agua
-		221,   	//Agua estancada purificada
-		44,   	//Bistec jugoso
-		149,   	//Melón de intestino
-		172,   	//Plato casero delicioso
-		204,   	//Malvaviscos quemados
-		203,   	//Malvaviscos secos
-		225,   	//Bistec de serrín
-		245,   	//Huevo
-		246,   	//Manzana demasiado tentadora
-		129,   	//Tallarines chinos picantes
-		269,   	//Pretzel arenoso
-		123,   	//Alitas de pollo mordidas
-		126,   	//Sandwich misterioso
-		89,   	//Verdura sospechosa
-		125,   	//Tarta descompuesta
-		124,   	//Chocolate vencido
-		121,   	//Chicles secos
-		120,   	//Bizcochos enmohecidos
-		122,   	//Galletas rancias
-		119,   	//Bolsa de papas fritas rancias
-		4,   	//Lata de conservas abierta
-		171,   	//Plato casero extraño
-		127,   	//Tallarines chinos
-		45,   	//Carne irreconocible
-		337,   	//Poción chamánica
-		118,   	//Doggy-bag
-		3,   	//Lata de Estaño
-		199,   	//Puñado de caramelos
-		8,   	//Batidora eléctrica (cargada)
-		287,   	//Puntero láser potente de 4 cargas
-		15,   	//Machete
-		61,   	//Bolsa de agua explosiva
-		247,   	//Pomelo explosivo
-		107,   	//Bomba para cantimplora (lista)
-		288,   	//Puntero láser potente (3 cargas)
-		187,   	//Lanza-pilas Mark II (cargado)
-		182,   	//Rifle de agua (5 cargas)
-		289,   	//Puntero láser potente (2 cargas)
-		103,   	//Devastador (cargado)
-		183,   	//Rifle de agua (4 cargas)
-		20,   	//Abrelatas
-		12,   	//Destornillador
-		354,   	//Palo de hurling clásico
-		14,   	//Cuchillo dentado
-		93,   	//Rifle de agua (3 cargas)
-		179,   	//Pistola de agua (3 cargas)
-		51,   	//Globo de agua
-		290,   	//Puntero láser potente (1 carga)
-		94,   	//Rifle de agua (2 cargas)
-		180,   	//Pistola de agua (2 cargas)
-		170,   	//Cadena oxidada
-		11,   	//Llave inglesa
-		283,   	//Mina antipersonal
-		277,   	//Medalla de un soldado
-		39,   	//Perro guardián
-		270,   	//Perro salchicha pulgoso
-		331,   	//Calabaza encendida
-		201,   	//Antorcha
-		234,   	//Linterna Gagdet (2 cargas)
-		233,   	//Linterna Gagdet (1 carga)
-		232,   	//Linterna Gagdet (apagada)
-		285,   	//Guitarra artesanal
-		74,   	//Lámpara encendida
-		27,   	//Lámpara de mesa apagada
-		282,   	//Gatito furioso (digerido parcialmente)
-		178,   	//Pedazo de rejilla
-		284,   	//Diodo láser
-		279,   	//Bobina de hilo metálico
-		50,   	//Chatarra
-		49,   	//Tabla torcida
-		296,   	//Costal de hierba fresca
-		280,   	//Bidón de aceite vacío
-		2,   	//Pila
-		394,   	//Estuche para chelo
-		131,   	//Caja de juegos
-		348,   	//Paquete de regalo
-		198,   	//Lonchera
-		177,   	//Un paquete
-		197,   	//Paquete postal
-		176,   	//Un sobre
-		382,   	//Despertador chillón (3 cargas)
-		381,   	//Despertador chillón (2 cargas)
-		380,   	//Despertador chillón (1 carga)
-		374,   	//Despertador chillón (encendido)
-		373,   	//Despertador chillón (apagado)
-		276,   	//Huevo de Pascua
-		158,   	//Radius Mark II
-		157,   	//Radius Mark II descargado
-		404,   	//Guía
-		390,   	//Balón de fútbol
-		130,   	//Juego de cartas incompleto
-		32,   	//Dados
-		46,   	//Tela de carpa
-		345,   	//Traje de duendecillo
-		229,   	//Traje de Papá Noel
-		393,   	//Cámara fotográfica de post-guerra (4)
-		369,   	//Cámara fotográfica de post-guerra (3)
-		370,   	//Cámara fotográfica de post-guerra (2)
-		371,   	//Cámara fotográfica de post-guerra (1)
-		251,   	//Abrebotellas
-		159,   	//Repara-fácil
-		389,   	//Bandera
-		405,   	//Máscara Escalofriante
-		342,   	//Alma fuerte
-		265,   	//Alma errante
-		267,   	//Alma débil
-		266,   	//Alma torturada
-		48,   	//Cantimplora llena
-		38,   	//Rata gigante
-		36,   	//Gallina
-		220,   	//Agua estancada
-		294,   	//Muñequito de Chuck
-		110,   	//Fusil de asalto (vacío)
-		152,   	//Osito cariñosito
-		304,   	//Hits de Elvis
-		155,   	//Fajo de billetes
-		40,   	//Gato bonito
-		31,   	//Alfombra
-		327,   	//Polvo Súper-Fuzz
-		109,   	//Revólver (vacío)
-		293,   	//Felpudo explosivo
-		303,   	//CD de Britney Spears
-		332,   	//Guirnalda de cuervo
-		86,   	//Radio casetera
-		300,   	//CD de Phil Collins
-		224,   	//Osito cariñosito maldito
-		30,   	//Cadena + candado
-		174,   	//Cajas de cartón
-		230,   	//Teléfono móvil
-		135,   	//Hueso humano
-		95,   	//Rifle de agua (1 carga)
-		181,   	//Pistola de agua (1 carga)
-		5,   	//Lanzapilas 1-PDTG (cargado)
-		18,   	//Cutter
-		13,   	//Gran estaca
-		6,   	//Táser de autodefensa
-		16,   	//Navaja
-		17,   	//Navaja Suiza
-		202,   	//Antorcha consumida
-		291,   	//Puntero láser potente descargado
-		102,   	//Devastador (vacío)
-		186,   	//Lanza-pilas Mark II (vacío)
-		98,   	//Lanzapilas 1-PDTG (vacío)
-		278,   	//Aguashnikov (vacío)
-		7,   	//Rifle de agua (vacío)
-		56,   	//Bomba para cantimplora (vacía)
-		99,   	//Táser de autodefensa (apagado)
-		92,   	//Pistola de agua (vacía)
-		96,   	//Batidora eléctrica (apagada)
-		35,   	//Puñado de tornillos y tuercas
-		65,   	//Adhesivo
-		67,   	//Tubo de cobre
-		142,   	//Aparato electrónico descompuesto
-		145,   	//Mecanismo
-		82,   	//Componente electrónico
-		111,   	//Detonador compacto
-		58,   	//Explosivos
-		34,   	//Correa
-		281,   	//Lente convexa
-		292,   	//Telescopio
-		333,   	//Palo roto
-		84,   	//Hydratone 100mg
-		115,   	//Paracetoide 7g
-		23,   	//Inyección calmante
-		151,   	//Bomba de carnaval
-		217,   	//Bomba macabra
-		200,   	//Pedazo de contrachapado
-		105,   	//Transmisor « Radius »
-		106,   	//Bengala
-		372,   	//Cámara fotográfica de post-guerra incompleto
-		132,   	//Rifle de agua incompleto
-		64,   	//Batidora incompleta
-		53,   	//Bomba para cantimplora incompleta
-		185,   	//Calibrador PDTT Mark II
-		104,   	//Devastador incompleto
-		308,   	//Discurso motivador
-		101,   	//ElectroGym (cargado)
-		100,   	//ElectroGym (apagado)
-		228,   	//Gorro rojo maloliente
-		226,   	//Chaqueta roja usada
-		227,   	//Pantalones rojos usados
-		91,   	//Kit de herramientas
-		347,   	//Puñado de balas
-		399,   	//Sierra improvisada
-		42,   	//Pequeño vibrador (cargado)
-		133,   	//Pequeño vibrador (apagado)
-		184,   	//Cajetilla de cigarrillos abierta
-		22,   	//Caja de cerillas
-		156,   	//Herramientas sueltas
-		85,   	//Radio casetera apagada
-		248,   	//Maletín usado
-		165,   	//Hoja de papel embarrada
-		222,   	//Nota de un habitante desterrado
-		166,   	//Manual de instrucciones
-		169,   	//Pila de papeles
-		168,   	//Álbum de fotos
-		25,   	//Libro empolvado
-		167,   	//Libreta ilegible
-		164,   	//Una carta
-		207,   	//Una enciclopedia
-		314,   	//Una etiqueta
-		138,   	//Restos de metal
-		139,   	//Tronco podrido
-		62,   	//Bolsa de plástico con explosivo
-		60,   	//Bolsa de plástico
-		134,   	//Hueso con carne
-		59,   	//Carne humana
-		343,   	//Cuervo navideño
-		250,   	//Llave de percusión
-		249,   	//Llave magnética
-		254,   	//Molde para abrebotellas
-		253,   	//Molde para llave de percusión
-		252,   	//Molde para llave magnética
-		385,   	//Molde instantáneo para abrebotellas
-		384,   	//Molde instantáneo para llave de percusión
-		383,   	//Molde instantáneo para llave magnética
-		403,   	//Crumble rastrero
-		402,   	//Mermelada de larvas
-		401,   	//Puñado de insectos sazonados
-		398,   	//Manzana
-		400,   	//Puñado de insectos
-		298,   	//Cidra claviceps artesanal
-		297,   	//Claviceps purpurea
-		238,   	//Bola de arena
-		215,   	//Bola viscosa
-		216,   	//Trozo de pellejo
-		128,   	//Salsa picante
-		116,   	//Herbicida Ness-Quick
-		301,   	//Tapones de oído
-		150,   	//Pólvora brillante
-		87,   	//Cianuro
-		313,   	//Mosto sospechoso
-		194,   	//Frasco de veneno
-		395,   	//Toxina
-		195,   	//Producto corrosivo
-		223,   	//Tirita ensangrentada
-		356,   	//Moco de cuello negro
-		231,   	//Pellejo humano
-		237,   	//Bomba de humo «Aroma de pino»
-		219,   	//Puré de hongos carroñeros
-		214,   	//Hongos carroñeros
-		346,   	//Restos irreconocibles
-		391,   	//Balón de fútbol reventad
-		90,   	//Kit de herramientas en mal estado
-		188   	//Pila molida
-	],
-	heavyList : [
-		147,   	//Mesa Järpen
-		328,   	//Tubo de lanzamiento de fuegos artificiales
-		329,   	//Caja de fuegos artificiales
-		9,   	//Sierra eléctrica (cargada)
-		275,   	//Reno de Papá Noel
-		211,   	//Bombona de agua (3 Raciones)
-		97,   	//Sierra eléctrica (apagada)
-		63,   	//Sierra eléctrica incompleta
-		52,   	//Lámina de metal
-		113,   	//Adoquín de hormigón
-		26,   	//Colchón
-		192,   	//Puerta de coche
-		88,   	//Vieja puerta
-		146,   	//Caballete
-		154,   	//Plancha de madera
-		210,   	//Bombona de agua (2 Raciones)
-		161,   	//Vieja lavadora
-		163,   	//Frigorífico
-		162,   	//Horno cancerígeno
-		80,   	//Cafetera
-		81,   	//Cafetera desarmada
-		10,   	//Cortadora de césped
-		66,   	//Cortacésped incompleto
-		309,   	//Serpiente agonizante
-		41,   	//Serpiente de 2 metros
-		112,   	//Saco de cemento
-		37,   	//Cerdo apestoso
-		108,   	//Silla Ektörp-Gluten
-		28,   	//Alfombra persa
-		189,   	//Caja de materiales (3)
-		310,   	//Caja sorpresa (3 regalos)
-		117,   	//Caja de alimentos
-		209,   	//Bombona de agua (1 Ración)
-		376,   	//Gran calabaza
-		344,   	//Tronco de Navidad
-		190,   	//Caja de materiales (2)
-		311,   	//Caja sorpresa (2 regalos)
-		307,   	//Caja de Schrödinger
-		19,   	//Carrito
-		72,   	//Gran cofre de metal
-		73,   	//Caja con cachivaches
-		206,   	//Caja fuerte
-		71,   	//Caja de metal
-		244,   	//Cofre de arquitecto sellado
-		349,   	//Gran paquete de regalo
-		83,   	//Objetos de un habitante
-		243,   	//Maletín de arquitecto
-		196,   	//Reservas de habitante precavido
-		173,   	//Baúl de metal
-		175,   	//Barricadas
-		273,   	//Escritorio mal montado
-		24,   	//Mecedora
-		305,   	//Chaîne hi-fi rock’n’roll
-		306,   	//Equipo Hi-Fi defensivo
-		75,   	//Pequeño equipo de sonido encendido
-		143,   	//Mueble para armar
-		77,   	//Pedazos de láminas de metal
-		136,   	//Viga reforzada
-		137,   	//Estructuras metálicas
-		191,   	//Caja de materiales (1)
-		312,   	//Caja sorpresa (1 regalos)
-		274,   	//Cajero vacío
-		299,   	//Equipo de música maldito
-		29,   	//Equipo de sonido malogrado
-		330,   	//Calabaza suave tallada
-		353,   	//Calabaza suave
-		153,   	//Pedazo de caja
-		33,   	//Motor
-		160,   	//Motor incompleto
-		193,   	//Puerta de coche incompleta
-		68,   	//Carrito cojo
-		205,   	//Unidad central
-		57,   	//Retroproyector antiguo
-		271,   	//Lanzaestacas
-		272,   	//Aguashnikov
-		141,   	//Leña en buen estado
-		208,   	//Bombona de agua (vacía)
-		235,   	//Cadáver de un viajero
-		236   	//Cadáver carcomido
-	],
-	weaponList: [
-		8,   	//Batidora eléctrica (cargada)
-		287,   	//Puntero láser potente de 4 cargas
-		15,   	//Machete
-		61,   	//Bolsa de agua explosiva
-		247,   	//Pomelo explosivo
-		107,   	//Bomba para cantimplora (lista)
-		288,   	//Puntero láser potente (3 cargas)
-		187,   	//Lanza-pilas Mark II (cargado)
-		182,   	//Rifle de agua (5 cargas)
-		289,   	//Puntero láser potente (2 cargas)
-		103,   	//Devastador (cargado)
-		183,   	//Rifle de agua (4 cargas)
-		20,   	//Abrelatas
-		12,   	//Destornillador
-		354,   	//Palo de hurling clásico
-		14,   	//Cuchillo dentado
-		93,   	//Rifle de agua (3 cargas)
-		179,   	//Pistola de agua (3 cargas)
-		51,   	//Globo de agua
-		290,   	//Puntero láser potente (1 carga)
-		94,   	//Rifle de agua (2 cargas)
-		180,   	//Pistola de agua (2 cargas)
-		170,   	//Cadena oxidada
-		11,   	//Llave inglesa
-		230,   	//Teléfono móvil
-		135,   	//Hueso humano
-		95,   	//Rifle de agua (1 carga)
-		181,   	//Pistola de agua (1 carga)
-		5,   	//Lanzapilas 1-PDTG (cargado)
-		18,   	//Cutter
-		13,   	//Gran estaca
-		6,   	//Táser de autodefensa
-		16,   	//Navaja
-		17,   	//Navaja Suiza
-		202,   	//Antorcha consumida
-		39,   	//Perro guardián
-		270,   	//Perro salchicha pulgoso
-		201,   	//Antorcha
-		40,   	//Gato bonito
-		38,   	//Rata gigante
-		36   	//Gallina
-	],
-	weaponHeavyList: [
-		9,   	//Sierra eléctrica (cargada)
-		113,   	//Adoquín de hormigón
-		161,   	//Vieja lavadora
-		163,   	//Frigorífico
-		162,   	//Horno cancerígeno
-		37,   	//Cerdo apestoso
-		108,   	//Silla Ektörp-Gluten
-		205,   	//Unidad central
-		57,   	//Retroproyector antiguo
-		272   	//Aguashnikov
-	]
+    "foods": [
+        {
+            "id": 3,
+            "pa": 6,
+            "name": "lata cerrada"
+        },
+        {
+            "id": 118,
+            "pa": 6,
+            "name": "doggy-bag"
+        },
+        {
+            "id": 4,
+            "pa": 6,
+            "name": "lata abierta"
+        },
+        {
+            "id": 45,
+            "pa": 6,
+            "name": "carne irreconocible"
+        },
+        {
+            "id": 89,
+            "pa": 6,
+            "name": "verdura"
+        },
+        {
+            "id": 119,
+            "pa": 6,
+            "name": "papas"
+        },
+        {
+            "id": 120,
+            "pa": 6,
+            "name": "bizcochos"
+        },
+        {
+            "id": 121,
+            "pa": 6,
+            "name": "chicles"
+        },
+        {
+            "id": 122,
+            "pa": 6,
+            "name": "galletas"
+        },
+        {
+            "id": 123,
+            "pa": 6,
+            "name": "alitas"
+        },
+        {
+            "id": 124,
+            "pa": 6,
+            "name": "chocolate"
+        },
+        {
+            "id": 125,
+            "pa": 6,
+            "name": "tarta"
+        },
+        {
+            "id": 126,
+            "pa": 6,
+            "name": "sandwich"
+        },
+        {
+            "id": 127,
+            "pa": 6,
+            "name": "tallarines"
+        },
+        {
+            "id": 129,
+            "pa": 6,
+            "name": "tallarines preparado"
+        },
+        {
+            "id": 171,
+            "pa": 6,
+            "name": "plato casero extraño"
+        },
+        {
+            "id": 219,
+            "pa": 6,
+            "name": "pure"
+        },
+        {
+            "id": 269,
+            "pa": 6,
+            "name": "pretzel"
+        },
+        {
+            "id": 344,
+            "pa": 6,
+            "name": "tronco"
+        },
+        {
+            "id": 44,
+            "pa": 7,
+            "name": "bistec jugoso"
+        },
+        {
+            "id": 149,
+            "pa": 7,
+            "name": "melon"
+        },
+        {
+            "id": 172,
+            "pa": 7,
+            "name": "plato casero"
+        },
+        {
+            "id": 203,
+            "pa": 7,
+            "name": "malvaviscos"
+        },
+        {
+            "id": 204,
+            "pa": 7,
+            "name": "malvaviscos quemado"
+        },
+        {
+            "id": 225,
+            "pa": 7,
+            "name": "bistec de serrin"
+        },
+        {
+            "id": 245,
+            "pa": 7,
+            "name": "huevo"
+        },
+        {
+            "id": 246,
+            "pa": 7,
+            "name": "manzana tentadora"
+        },
+        {
+            "id": 376,
+            "pa": 7,
+            "name": "gran calabaza"
+        },
+        {
+            "id": 392,
+            "pa": 8,
+            "name": "Quantum PE"
+        },
+        {
+            "id": 199,
+            "pa": 5,
+            "name": "caramelos"
+        },
+        {
+            "id": 59,
+            "pa": 6,
+            "name": "carne humana"
+        },
+        {
+            "id": 134,
+            "pa": 6,
+            "name": "hueso con carne"
+        }
+    ],
+    "waters": [
+        {
+            "id": 221,
+            "pa": 6,
+            "name": "agua estancada"
+        },
+        {
+            "id": 1,
+            "pa": 6,
+            "name": "agua"
+        }
+    ],
+    "ruteValue": {
+    },
+    "list": [
+        69,
+        47,
+        21,
+        388,
+        396,
+        387,
+        386,
+        397,
+        242,
+        258,
+        261,
+        264,
+        240,
+        256,
+        259,
+        262,
+        241,
+        257,
+        260,
+        263,
+        239,
+        140,
+        144,
+        255,
+        213,
+        70,
+        350,
+        377,
+        212,
+        286,
+        43,
+        295,
+        54,
+        148,
+        114,
+        76,
+        218,
+        392,
+        79,
+        55,
+        268,
+        355,
+        336,
+        78,
+        1,
+        221,
+        44,
+        149,
+        172,
+        204,
+        203,
+        225,
+        245,
+        246,
+        129,
+        269,
+        123,
+        126,
+        89,
+        125,
+        124,
+        121,
+        120,
+        122,
+        119,
+        4,
+        171,
+        127,
+        45,
+        337,
+        118,
+        3,
+        199,
+        8,
+        287,
+        15,
+        61,
+        247,
+        107,
+        288,
+        187,
+        182,
+        289,
+        103,
+        183,
+        20,
+        12,
+        354,
+        14,
+        93,
+        179,
+        51,
+        290,
+        94,
+        180,
+        170,
+        11,
+        283,
+        277,
+        39,
+        270,
+        331,
+        201,
+        234,
+        233,
+        232,
+        285,
+        74,
+        27,
+        282,
+        178,
+        284,
+        279,
+        50,
+        49,
+        296,
+        280,
+        2,
+        394,
+        131,
+        348,
+        198,
+        177,
+        197,
+        176,
+        382,
+        381,
+        380,
+        374,
+        373,
+        276,
+        158,
+        157,
+        404,
+        390,
+        130,
+        32,
+        46,
+        345,
+        229,
+        393,
+        369,
+        370,
+        371,
+        251,
+        159,
+        389,
+        405,
+        342,
+        265,
+        267,
+        266,
+        48,
+        38,
+        36,
+        220,
+        294,
+        110,
+        152,
+        304,
+        155,
+        40,
+        31,
+        327,
+        109,
+        293,
+        303,
+        332,
+        86,
+        300,
+        224,
+        30,
+        174,
+        230,
+        135,
+        95,
+        181,
+        5,
+        18,
+        13,
+        6,
+        16,
+        17,
+        202,
+        291,
+        102,
+        186,
+        98,
+        278,
+        7,
+        56,
+        99,
+        92,
+        96,
+        35,
+        65,
+        67,
+        142,
+        145,
+        82,
+        111,
+        58,
+        34,
+        281,
+        292,
+        333,
+        84,
+        115,
+        23,
+        151,
+        217,
+        200,
+        105,
+        106,
+        372,
+        132,
+        64,
+        53,
+        185,
+        104,
+        308,
+        101,
+        100,
+        228,
+        226,
+        227,
+        91,
+        347,
+        399,
+        42,
+        133,
+        184,
+        22,
+        156,
+        85,
+        248,
+        165,
+        222,
+        166,
+        169,
+        168,
+        25,
+        167,
+        164,
+        207,
+        314,
+        138,
+        139,
+        62,
+        60,
+        134,
+        59,
+        343,
+        250,
+        249,
+        254,
+        253,
+        252,
+        385,
+        384,
+        383,
+        403,
+        402,
+        401,
+        398,
+        400,
+        298,
+        297,
+        238,
+        215,
+        216,
+        128,
+        116,
+        301,
+        150,
+        87,
+        313,
+        194,
+        395,
+        195,
+        223,
+        356,
+        231,
+        237,
+        219,
+        214,
+        346,
+        391,
+        90,
+        188
+    ],
+    "heavyList": [
+        147,
+        328,
+        329,
+        9,
+        275,
+        211,
+        97,
+        63,
+        52,
+        113,
+        26,
+        192,
+        88,
+        146,
+        154,
+        210,
+        161,
+        163,
+        162,
+        80,
+        81,
+        10,
+        66,
+        309,
+        41,
+        112,
+        37,
+        108,
+        28,
+        189,
+        310,
+        117,
+        209,
+        376,
+        344,
+        190,
+        311,
+        307,
+        19,
+        72,
+        73,
+        206,
+        71,
+        244,
+        349,
+        83,
+        243,
+        196,
+        173,
+        175,
+        273,
+        24,
+        305,
+        306,
+        75,
+        143,
+        77,
+        136,
+        137,
+        191,
+        312,
+        274,
+        299,
+        29,
+        330,
+        353,
+        153,
+        33,
+        160,
+        193,
+        68,
+        205,
+        57,
+        271,
+        272,
+        141,
+        208,
+        235,
+        236
+    ],
+    "weaponList": [
+        8,
+        287,
+        15,
+        61,
+        247,
+        107,
+        288,
+        187,
+        182,
+        289,
+        103,
+        183,
+        20,
+        12,
+        354,
+        14,
+        93,
+        179,
+        51,
+        290,
+        94,
+        180,
+        170,
+        11,
+        230,
+        135,
+        95,
+        181,
+        5,
+        18,
+        13,
+        6,
+        16,
+        17,
+        202,
+        39,
+        270,
+        201,
+        40,
+        38,
+        36
+    ],
+    "weaponHeavyList": [
+        9,
+        113,
+        161,
+        163,
+        162,
+        37,
+        108,
+        205,
+        57,
+        272
+    ]
 }
