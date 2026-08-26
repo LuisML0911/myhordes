@@ -1485,7 +1485,7 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 	if(dataSaved.log == undefined){
 		dataSaved.log = {};
 	}
-	dataSaved[getFormattedDate()] ={
+	dataSaved.log[getFormattedDate()] ={
 		request: {
 			url: url,
 			method: method,
