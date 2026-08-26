@@ -902,9 +902,11 @@ async function doAction(endpoint, method, bodyData) {
 	let result;
 	if (contentType && contentType.includes("application/json")) {
 		result = await response.json();
+		logTrace(endpoint, method, bodyData, response.status, result);
+	} else {
+		result = await response.text();
+		logTrace(endpoint, method, bodyData, response.status, {});
 	}
-	result = await response.text();
-	logTrace(endpoint, method, bodyData, response.status, result);
 	return result;
 }
 // leer JSON desde archivo
