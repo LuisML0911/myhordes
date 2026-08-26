@@ -1485,7 +1485,8 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 	if(dataSaved.log == undefined){
 		dataSaved.log = {};
 	}
-	dataSaved.log[getFormattedDate()] ={
+	const currentDate = getFormattedDate();
+	dataSaved.log[currentDate] = {
 		request: {
 			url: url,
 			method: method,
@@ -1496,7 +1497,7 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 			body: result
 		}
 	};
-	console.log(dataSaved[getFormattedDate()]);
+	console.log(dataSaved.log[currentDate]);
 	//writeJSON(nameFile_dataSaved, dataSaved);
 }
 
