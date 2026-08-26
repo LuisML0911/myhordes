@@ -636,6 +636,10 @@ async function main(){
 		if(dataSaved === undefined){
 			writeJSON(nameFile_dataSaved, {});
 		}
+	}finally{
+		if(Object.keys(dataSaved).length != 0){
+			writeJSON(nameFile_dataSaved, dataSaved);
+		}
 	}
 	
 	// se determinan acciones a realizar según la situación actual del jugador
@@ -739,7 +743,7 @@ async function startPlayTown(currentDay){
 	];
 	try{
 		for (; dataSaved[`day${currentDay}`].currentStep < steps.length; dataSaved[`day${currentDay}`].currentStep++) {
-			writeJSON(nameFile_dataSaved, dataSaved);
+			//writeJSON(nameFile_dataSaved, dataSaved);
 			if(!(await steps[dataSaved[`day${currentDay}`].currentStep]())){
 				break;
 			}
@@ -747,7 +751,7 @@ async function startPlayTown(currentDay){
 	}catch(exception){
 		console.log(exception);
 	}finally{
-		writeJSON(nameFile_dataSaved, dataSaved);
+		//writeJSON(nameFile_dataSaved, dataSaved);
 		//TODO: ADVERTIR POR TELEGRAM QUE NO FUE POSIBLE EJECUTAR NO°_PASO
 	}
 }
@@ -814,7 +818,7 @@ async function betweenSafeDays(currentDay){
 	];
 	try{
 		for (; dataSaved[`day${currentDay}`].currentStep < steps.length; dataSaved[`day${currentDay}`].currentStep++) {
-			writeJSON(nameFile_dataSaved, dataSaved);
+			//writeJSON(nameFile_dataSaved, dataSaved);
 			if(!(await steps[dataSaved[`day${currentDay}`].currentStep]())){
 				break;
 			}
@@ -822,7 +826,7 @@ async function betweenSafeDays(currentDay){
 	}catch(exception){
 		console.log(exception);
 	}finally{
-		writeJSON(nameFile_dataSaved, dataSaved);
+		//writeJSON(nameFile_dataSaved, dataSaved);
 		//TODO: ADVERTIR POR TELEGRAM QUE NO FUE POSIBLE EJECUTAR NO°_PASO
 	}
 }
@@ -878,7 +882,7 @@ async function playInDeserted(){
 				// TODO: acción si no logré moverme
 			}else{
 				currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
-				writeJSON(nameFile_dataSaved, dataSaved);
+				//writeJSON(nameFile_dataSaved, dataSaved);
 				await goto('/jx/beyond/desert/cached');
 				return await main();
 			}
@@ -1057,7 +1061,7 @@ async function playInDeserted(){
 					//await doAction("/api/beyond/desert/dig", "POST", {});
 					currentPoss.digged = true;
 					await digButton.click();
-					writeJSON(nameFile_dataSaved, dataSaved);
+					//writeJSON(nameFile_dataSaved, dataSaved);
 					await goto('/jx/beyond/desert/cached');
 					return await main();
 				}
@@ -1162,7 +1166,7 @@ async function playInDeserted(){
 							// TODO: acción si no logré moverme
 						}else{
 							currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
-							writeJSON(nameFile_dataSaved, dataSaved);
+							//writeJSON(nameFile_dataSaved, dataSaved);
 							await goto('/jx/beyond/desert/cached');
 							return await main();
 						}
@@ -1175,7 +1179,7 @@ async function playInDeserted(){
 		console.log(exception);
 		//TODO: ADVERTIR POR TELEGRAM QUE NO FUE POSIBLE EJECUTAR NO°_PASO
 	}finally{
-		writeJSON(nameFile_dataSaved, dataSaved);
+		//writeJSON(nameFile_dataSaved, dataSaved);
 	}
 }
 
@@ -1952,7 +1956,7 @@ function logTrace(url, method, body = undefined, status) {
 		body: body,
 		status: status
 	});
-	writeJSON(nameFile_dataSaved, dataSaved);
+	//writeJSON(nameFile_dataSaved, dataSaved);
 }
 
 
