@@ -1051,6 +1051,7 @@ async function playInDeserted(){
 					//await doAction("/api/beyond/desert/dig", "POST", {});
 					currentPoss.digged = true;
 					await digButton.click();
+					writeJSON(nameFile_dataSaved, dataSaved);
 					await goto('/jx/beyond/desert/cached');
 					return await main();
 				}
@@ -1353,6 +1354,7 @@ async function doAction(endpoint, method, bodyData) {
 		},
 		data: (method !== "GET" && method !== "HEAD") ? bodyData : undefined
 	});
+	logTrace(endpoint, method, bodyData, response.status);
 	const contentType = response.headers()["content-type"];
 	if (contentType && contentType.includes("application/json")) {
 		return await response.json();
@@ -1933,3 +1935,18 @@ function findClosestWeaponsCombination(list, totalKills, inv) {
 
   return best;
 }
+function logTrace(url, method, body = undefined, status) {
+	if(dataSaved.log == undefined){
+		dataSaved.log = [];
+	}
+	dataSaved.log.push({
+		time: new Date().toISOString(),
+		url: url,
+		method: method,
+		body: body,
+		status: status
+	});
+	writeJSON(nameFile_dataSaved, dataSaved);
+}
+
+
