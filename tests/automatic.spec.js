@@ -428,7 +428,11 @@ async function playInDeserted(){
 			await doAction("/api/beyond/desert/exit", "POST", {});
 			await goto('/jx/town/bank');
 			await pag.waitForSelector('#header-rucksack-items');
+			let inv = await getInventoryIds();
 			await dropPlayerInventory(inv);
+			let playInv = await getPlayerInventory(inv);
+			let outfit = await searchItemIdInv([315], playInv);
+			await doAction("/api/town/house/action", "POST", {item: outfit, action: "163"});
 		}else{
 			// 1. Evaluar si la zona esta controlada por los zombies, si esta controlada intentar liberar y actualizar para evaluar si siguie controlada, si sigue controlada repetir 3 veces antes de alertar.
 			const contZ = parseInt(await pag.textContent('.zombies-cp'), 10);
