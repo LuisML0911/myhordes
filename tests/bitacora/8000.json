@@ -440,7 +440,7 @@
         }
       ],
       "tNotDried": 16,
-      "currentPoss": 8
+      "currentPoss": 9
     }
   },
   "log": [
@@ -2437,6 +2437,1829 @@
             {
               "name": "Expires",
               "value": "Wed, 26 Aug 2026 05:41:30 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Ajax-Control",
+              "value": "process"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:34.504Z",
+      "url": "/jx/town/bank",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "82239c30e3e0181f1279d4d83d01a0b8",
+          "url": "https://myhord.es/jx/town/bank",
+          "status": 403,
+          "statusText": "Forbidden",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Length",
+              "value": "0"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=UTF-8"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Ajax-Control",
+              "value": "reset"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Length",
+              "value": "0"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=UTF-8"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Ajax-Control",
+              "value": "reset"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:35.038Z",
+      "url": "/jx/beyond/desert/cached",
+      "method": "POST",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "9cb3b611a30498cfebe82fa28ce05d1d",
+          "url": "https://myhord.es/jx/beyond/desert/cached",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=UTF-8"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=UTF-8"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:34 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:35.271Z",
+      "url": "/rest/v1/game/inventory/7372658",
+      "method": "PATCH",
+      "body": {
+        "d": "down-all",
+        "mod": null,
+        "to": "7370475"
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "6d7a433a4a9c6f193cefd1bdba52d694",
+          "url": "https://myhord.es/rest/v1/game/inventory/7372658",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:35.414Z",
+      "url": "/rest/v1/game/inventory/7370475/27922789",
+      "method": "PATCH",
+      "body": {
+        "d": "up",
+        "mod": null,
+        "to": "7372658"
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "d9ec47712913db6f0e5ff7c6267abf58",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475/27922789",
+          "status": 400,
+          "statusText": "Bad Request",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:35.588Z",
+      "url": "/rest/v1/game/inventory/7370475/28021034",
+      "method": "PATCH",
+      "body": {
+        "d": "up",
+        "mod": null,
+        "to": "7372658"
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "c93f6f457fc2cb30bb9675e8ea82ca6d",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475/28021034",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:35.738Z",
+      "url": "/rest/v1/game/inventory/7372658",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "ae3baed9930dbdf150ceea63404d23bc",
+          "url": "https://myhord.es/rest/v1/game/inventory/7372658",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:35.880Z",
+      "url": "/rest/v1/game/inventory/7372658",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "63675a059dacabdfbbb65132bbd6f417",
+          "url": "https://myhord.es/rest/v1/game/inventory/7372658",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.021Z",
+      "url": "/rest/v1/game/inventory/7370475",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "aecdb7f09c668972ec91fc92446ee3dd",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:35 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.173Z",
+      "url": "/rest/v1/game/inventory/7370475",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "059ec01d29b16de5a1766c8869ad9fab",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.338Z",
+      "url": "/rest/v1/game/inventory/7370475/28011480",
+      "method": "PATCH",
+      "body": {
+        "d": "up",
+        "mod": null,
+        "to": "7372658"
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "0fd6daac088ecc3e417404678a349a64",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475/28011480",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.482Z",
+      "url": "/rest/v1/game/inventory/7370475",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "e90d3dc2ca6d931821ae2f2c78831fec",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.664Z",
+      "url": "/rest/v1/game/inventory/7370475/27987426",
+      "method": "PATCH",
+      "body": {
+        "d": "up",
+        "mod": null,
+        "to": "7372658"
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "fd8b08289e45ee650c8d7b5fe4b410a5",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475/27987426",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.817Z",
+      "url": "/rest/v1/game/inventory/7370475",
+      "method": "GET",
+      "body": {},
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "f82f4099ae284d05134359847b80ed23",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "0"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:36.995Z",
+      "url": "/rest/v1/game/inventory/7370475/27988781",
+      "method": "PATCH",
+      "body": {
+        "d": "up",
+        "mod": null,
+        "to": "7372658"
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "ad245b39edae305dc180bc69a1e403d1",
+          "url": "https://myhord.es/rest/v1/game/inventory/7370475/27988781",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:36 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Client-Signals",
+              "value": "log-changed"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-08-26T05:41:47.632Z",
+      "url": "/api/beyond/desert/move",
+      "method": "POST",
+      "body": {
+        "x": -1,
+        "y": -4
+      },
+      "response": {
+        "_apiName": "APIResponse",
+        "_request": {
+          "_type": "APIRequestContext",
+          "_guid": "request-context@a5d3b7d65ac84f6ed1f7f69b3b9935dc"
+        },
+        "_initializer": {
+          "fetchUid": "311f2a745c66a4e9db698d49dac6a5af",
+          "url": "https://myhord.es/api/beyond/desert/move",
+          "status": 200,
+          "statusText": "OK",
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:47 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:47 GMT"
+            },
+            {
+              "name": "Server",
+              "value": "Apache/2.4.66 (Unix) OpenSSL/3.5.6"
+            },
+            {
+              "name": "Symfony-Debug-Toolbar-Replace",
+              "value": "1"
+            },
+            {
+              "name": "X-Ajax-Control",
+              "value": "process"
+            },
+            {
+              "name": "X-Real-Server",
+              "value": "c716785dbd59"
+            },
+            {
+              "name": "X-Semaphores-Acquired",
+              "value": "1"
+            },
+            {
+              "name": "X-Session-Domain",
+              "value": "37978:261713:4:1"
+            },
+            {
+              "name": "X-Session-Lang",
+              "value": "es"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ]
+        },
+        "_headers": {
+          "_headersMap": {
+            "_map": {}
+          },
+          "_headersArray": [
+            {
+              "name": "Cache-Control",
+              "value": "max-age=0, must-revalidate, private"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Wed, 26 Aug 2026 05:41:47 GMT"
+            },
+            {
+              "name": "Expires",
+              "value": "Wed, 26 Aug 2026 05:41:47 GMT"
             },
             {
               "name": "Server",
