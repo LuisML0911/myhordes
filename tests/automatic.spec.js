@@ -1364,7 +1364,7 @@ async function doAction(endpoint, method, bodyData) {
 		},
 		data: (method !== "GET" && method !== "HEAD") ? bodyData : undefined
 	});
-	logTrace(endpoint, method, bodyData, response.status);
+	logTrace(endpoint, method, bodyData, response);
 	const contentType = response.headers()["content-type"];
 	if (contentType && contentType.includes("application/json")) {
 		return await response.json();
@@ -1945,7 +1945,7 @@ function findClosestWeaponsCombination(list, totalKills, inv) {
 
   return best;
 }
-function logTrace(url, method, body = undefined, status) {
+function logTrace(url, method, body = undefined, response) {
 	if(dataSaved.log == undefined){
 		dataSaved.log = [];
 	}
@@ -1954,7 +1954,8 @@ function logTrace(url, method, body = undefined, status) {
 		url: url,
 		method: method,
 		body: body,
-		status: status
+		status: response.status,
+		response: response
 	});
 	//writeJSON(nameFile_dataSaved, dataSaved);
 }
