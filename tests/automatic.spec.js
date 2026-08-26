@@ -46,6 +46,7 @@ let gestHorderData = {};
 let externalTools = false;
 let countMainInvocation = 0;
 let uniqueProfile;
+let weaponListData = {};
 
 const items = {
 	foods : [
@@ -622,6 +623,7 @@ async function main(){
 		lastDataSaved = readJSON(nameFile_lastDataSaved);
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		dataSaved = readJSON(nameFile_dataSaved);
+		weaponListData = readJSON('data/weaponListData.json');
 	}catch(exception){
 		//console.log(exception);
 		writeJSON(nameFile_lastDataSaved, lastDataSaved);
@@ -679,8 +681,9 @@ async function startPlayTown(currentDay){
 			const weapons = Object.entries(weaponsGestHordes.data.items)
 			.filter(([id, obj]) => obj.kill_min !== undefined && obj.kill_min !== null)
 			.map(([id, obj]) => ({ id, ...obj }));
-			dataSaved.weaponList = weapons.filter(obj => obj.encombrant === false);
-			dataSaved.weaponHeavyList = weapons.filter(obj => obj.encombrant === true);
+			weaponListData.weaponList = weapons.filter(obj => obj.encombrant === false);
+			weaponListData.weaponHeavyList = weapons.filter(obj => obj.encombrant === true);
+			writeJSON('data/weaponListData.json', weaponListData);
 		}
 	}
 	
@@ -899,7 +902,7 @@ async function playInDeserted(){
 				await dropPlayerInventory(inv);
 				let playInv = await getPlayerInventory(inv);
 				let deseInv = await getDesertInventory(inv);
-				const combination = findClosestWeaponsCombination([...dataSaved.weaponList, ...dataSaved.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
+				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...dataSaved.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
 				if(combination != null){
 					const useObj = combination.combo.reduce((min, obj) => obj.chance_kill < min.chance_kill ? obj : min);
 					await doAction("/api/beyond/desert/action", "POST", {item: useObj.key, action: "118"});
@@ -1093,7 +1096,7 @@ async function playInDeserted(){
 						let deseInv = await getDesertInventory(inv);
 						let takeHeavy = true;
 						const weaponHeavyList = dataSaved.weaponHeavyList.map(o => o.id);
-						const weaponList = dataSaved.weaponList.map(o => o.id);
+						const weaponList = weaponListData.weaponList.map(o => o.id);
 						while(Object.keys(playInv).length < dataSaved.invSize && Object.keys(deseInv).length != 0){
 							if(currentSaved.route.currentPoss <= 4){ // si se encuentra a X PA de distancia, solo toma las armas
 								if(takeHeavy){
