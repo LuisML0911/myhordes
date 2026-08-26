@@ -643,6 +643,12 @@
       "url": "/rest/v1/game/inventory/7372658",
       "method": "GET",
       "body": {}
+    },
+    {
+      "time": "2026-08-26T05:22:32.092Z",
+      "url": "/rest/v1/game/inventory/7370449",
+      "method": "GET",
+      "body": {}
     }
   ]
 }
