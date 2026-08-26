@@ -898,12 +898,14 @@ async function doAction(endpoint, method, bodyData) {
 		},
 		data: (method !== "GET" && method !== "HEAD") ? bodyData : undefined
 	});
-	logTrace(endpoint, method, bodyData, response);
 	const contentType = response.headers()["content-type"];
+	let result;
 	if (contentType && contentType.includes("application/json")) {
-		return await response.json();
+		result = await response.json();
 	}
-	return await response.text();
+	result = await response.text();
+	logTrace(endpoint, method, bodyData, response.status, result);
+	return result;
 }
 // leer JSON desde archivo
 function readJSON(filePath) {
@@ -1479,19 +1481,35 @@ function findClosestWeaponsCombination(list, totalKills, inv) {
 
   return best;
 }
-function logTrace(url, method, body = undefined, response) {
+function logTrace(url, method, body = undefined, status = undefined, result = undefined) {
 	if(dataSaved.log == undefined){
-		dataSaved.log = [];
+		dataSaved.log = {};
 	}
-	dataSaved.log.push({
-		time: new Date().toISOString(),
-		url: url,
-		method: method,
-		body: body,
-		status: response.status,
-		response: response
-	});
+	dataSaved[getFormattedDate()] ={
+		request: {
+			url: url,
+			method: method,
+			body: body
+		},
+		response: {
+			status: status,
+			body: result
+		}
+	};
 	//writeJSON(nameFile_dataSaved, dataSaved);
 }
 
-
+function getFormattedDate() {
+	const d = new Date();
+	
+	const yyyy = d.getFullYear();
+	const mm = (d.getMonth() + 1 < 10 ? '0' : '') + (d.getMonth() + 1);
+	const dd = (d.getDate() < 10 ? '0' : '') + d.getDate();
+	
+	const hh = (d.getHours() < 10 ? '0' : '') + d.getHours();
+	const ii = (d.getMinutes() < 10 ? '0' : '') + d.getMinutes();
+	const ss = (d.getSeconds() < 10 ? '0' : '') + d.getSeconds();
+	const millis = (d.getMilliseconds() < 100 ? (d.getMilliseconds() < 10 ? '00' : '0') : '') + d.getMilliseconds();
+	
+	return `${yyyy}${mm}${dd}_${hh}${ii}${ss}_${millis}`;
+}
