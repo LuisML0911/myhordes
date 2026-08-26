@@ -460,6 +460,15 @@
         "item": "27922789",
         "action": "13"
       }
+    },
+    {
+      "time": "2026-08-26T04:24:36.197Z",
+      "url": "/api/beyond/desert/action",
+      "method": "POST",
+      "body": {
+        "item": "28021034",
+        "action": "172"
+      }
     }
   ]
 }
