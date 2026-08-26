@@ -38,8 +38,8 @@ const constFile = path.join(".", "tests", "constants");
 const lastWordsFile = path.join(constFile, "lastWords.json");
 let lastWords = {};
 const baseFiles = path.join(".", "tests", "bitacora");
-const nameFile_lastDataSaved = path.join(baseFiles, ".last.json");
-let lastDataSaved = {};
+const nameFile_= path.join(baseFiles, ".last.json");
+let = {};
 let dataSaved = {};
 let nameFile_dataSaved = baseFiles;
 let gestHorderData = {};
@@ -620,10 +620,16 @@ async function main(){
 	}
 	// se recuperan constantes del juego e historico del pueblo
 	try{
-		lastDataSaved = readJSON(nameFile_lastDataSaved);
+		if(Object.keys(lastDataSaved).length === 0){
+			lastDataSaved = readJSON(nameFile_lastDataSaved);
+		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
-		dataSaved = readJSON(nameFile_dataSaved);
-		weaponListData = readJSON('data/weaponListData.json');
+		if(Object.keys(dataSaved).length === 0){
+			dataSaved = readJSON(nameFile_dataSaved);
+		}
+		if(Object.keys(weaponListData).length === 0){
+			weaponListData = readJSON('data/weaponListData.json');
+		}
 	}catch(exception){
 		//console.log(exception);
 		writeJSON(nameFile_lastDataSaved, lastDataSaved);
