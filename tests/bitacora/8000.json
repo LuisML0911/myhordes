@@ -511,6 +511,12 @@
         "mod": null,
         "to": "7372658"
       }
+    },
+    {
+      "time": "2026-08-26T05:09:24.407Z",
+      "url": "/rest/v1/game/inventory/7372658",
+      "method": "GET",
+      "body": {}
     }
   ]
 }
