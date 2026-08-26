@@ -541,6 +541,16 @@
       "url": "/jx/beyond/desert/cached",
       "method": "POST",
       "body": {}
+    },
+    {
+      "time": "2026-08-26T05:16:56.907Z",
+      "url": "/rest/v1/game/inventory/7372658",
+      "method": "PATCH",
+      "body": {
+        "d": "down-all",
+        "mod": null,
+        "to": "7370449"
+      }
     }
   ]
 }
