@@ -441,5 +441,16 @@
       "tNotDried": 16,
       "currentPoss": 7
     }
-  }
+  },
+  "log": [
+    {
+      "time": "2026-08-26T04:24:32.273Z",
+      "url": "/api/beyond/desert/action",
+      "method": "POST",
+      "body": {
+        "item": "27922789",
+        "action": "13"
+      }
+    }
+  ]
 }
