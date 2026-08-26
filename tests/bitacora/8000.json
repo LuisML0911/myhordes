@@ -529,6 +529,12 @@
       "url": "/rest/v1/game/inventory/7370449",
       "method": "GET",
       "body": {}
+    },
+    {
+      "time": "2026-08-26T05:16:52.268Z",
+      "url": "/jx/town/bank",
+      "method": "GET",
+      "body": {}
     }
   ]
 }
