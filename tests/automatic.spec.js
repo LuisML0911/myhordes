@@ -1106,7 +1106,7 @@ async function playInDeserted(){
 						let playInv = await getPlayerInventory(inv);
 						let deseInv = await getDesertInventory(inv);
 						let takeHeavy = true;
-						const weaponHeavyList = dataSaved.weaponHeavyList.map(o => o.id);
+						const weaponHeavyList = weaponListData.weaponHeavyList.map(o => o.id);
 						const weaponList = weaponListData.weaponList.map(o => o.id);
 						while(Object.keys(playInv).length < dataSaved.invSize && Object.keys(deseInv).length != 0){
 							if(currentSaved.route.currentPoss <= 4){ // si se encuentra a X PA de distancia, solo toma las armas
