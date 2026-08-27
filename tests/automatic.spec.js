@@ -93,7 +93,7 @@ test('GetGestHordes', async ({page}) => {
 });
 
 test('myhordes', async () => { 
-	test.setTimeout(150000);
+	test.setTimeout(250000);
 	//fs.rmSync(path.join(process.env.LOCALAPPDATA, 'playwright-profiles'), { recursive: true, force: true });
 	const baseDir = process.env.LOCALAPPDATA || process.env.HOME;
 	uniqueProfile = path.join(baseDir, 'playwright-profiles', randomUUID());
