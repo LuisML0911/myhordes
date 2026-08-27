@@ -1,0 +1,203 @@
+{
+  "log": {
+    "20260827_223647_088": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7984,
+              "name": "Dark crossroad",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 4,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 7995,
+              "name": "Altgediente Bastion",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8019,
+              "name": "Wasserlose Trainingslager",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 3,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8029,
+              "name": "Strict community",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 14,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 4,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8030,
+              "name": "Laderas Sucias",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 23,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 2,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8031,
+              "name": "Crêtes anéanties",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 1,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8033,
+              "name": "Côtes de la Marque de la Louve",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 32,
+              "type": 1,
+              "mayor": true,
+              "event": false,
+              "coalitions": 15,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8034,
+              "name": "Engeances des Conquises",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 8,
+              "type": 2,
+              "mayor": true,
+              "event": false,
+              "coalitions": 7,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8035,
+              "name": "Toundras de Putréfaction",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 12,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 9,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260827_223652_315": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8030",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
