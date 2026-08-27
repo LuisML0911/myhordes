@@ -1048,6 +1048,8 @@ async function UseAndReturn(inv, storageInventory, item, act){
 		let plaInv = searchItemIdInv([item], await getPlayerInventory(inv))
 		if(plaInv){
 			await doAction("/api/town/house/action", "POST", {item: plaInv, action: act});
+			console.log("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv);
+			console.log({d: "down", mod: null, to: inv.IdInvSto});
 			await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
 		}
 	}
