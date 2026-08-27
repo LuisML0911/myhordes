@@ -22330,7 +22330,8 @@
         {
           "x": 2,
           "y": 0,
-          "dried": false
+          "dried": false,
+          "digged": true
         },
         {
           "x": 3,
