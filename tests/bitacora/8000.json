@@ -21370,6 +21370,21 @@
           "success": true
         }
       }
+    },
+    "20260827_040941_243": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day5": {
@@ -21480,7 +21495,7 @@
         }
       ],
       "tNotDried": 14,
-      "currentPoss": 0
+      "currentPoss": 1
     }
   }
 }
