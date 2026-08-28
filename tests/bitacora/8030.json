@@ -4622,6 +4622,28 @@
           "error": "305"
         }
       }
+    },
+    "20260828_052550_642": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "status": 0,
+        "body": {}
+      }
+    },
+    "20260828_052551_567": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "status": 0,
+        "body": {}
+      }
     }
   },
   "day1": {
