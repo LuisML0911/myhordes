@@ -277,7 +277,7 @@ async function startPlayTown(currentDay){
 	];
 	try{
 		for (; dataSaved[`day${currentDay}`].currentStep < steps.length; dataSaved[`day${currentDay}`].currentStep++) {
-			//writeJSON(nameFile_dataSaved, dataSaved);
+			writeJSON(nameFile_dataSaved, dataSaved);
 			if(!(await steps[dataSaved[`day${currentDay}`].currentStep]())){
 				break;
 			}
@@ -285,7 +285,7 @@ async function startPlayTown(currentDay){
 	}catch(exception){
 		console.log(exception);
 	}finally{
-		//writeJSON(nameFile_dataSaved, dataSaved);
+		writeJSON(nameFile_dataSaved, dataSaved);
 		//TODO: ADVERTIR POR TELEGRAM QUE NO FUE POSIBLE EJECUTAR NO°_PASO
 	}
 }
