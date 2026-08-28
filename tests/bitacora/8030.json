@@ -198,6 +198,37 @@
           "url": "/jx/game/landing"
         }
       }
+    },
+    "20260828_051658_329": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {}
+      }
+    },
+    "20260828_051659_273": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {}
+      }
     }
+  },
+  "day1": {
+    "currentStep": 0,
+    "purge": true
+  },
+  "hasUsedDrugs": false,
+  "heroicAction": {
+    "hallazgo": true,
+    "retorno": true,
+    "golpe": true,
+    "pa": true
   }
 }
