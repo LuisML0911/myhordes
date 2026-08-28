@@ -167,7 +167,7 @@ async function main(){
 	}catch(exception){
 		//console.log(exception);
 		writeJSON(nameFile_lastDataSaved, lastDataSaved);
-		if(dataSaved === undefined){
+		if(Object.keys(dataSaved).length === 0){
 			writeJSON(nameFile_dataSaved, {});
 		}
 	}finally{
