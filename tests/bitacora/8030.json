@@ -4645,27 +4645,5 @@
         "body": {}
       }
     }
-  },
-  "day1": {
-    "currentStep": 6,
-    "purge": true,
-    "startItems": {
-      "idFood": 119,
-      "idWater": 1,
-      "idInvFood": "28041671",
-      "idInvWater": "28059215"
-    },
-    "route": {
-      "way": [],
-      "tNotDried": -2,
-      "currentPoss": 0
-    }
-  },
-  "hasUsedDrugs": false,
-  "heroicAction": {
-    "hallazgo": true,
-    "retorno": true,
-    "golpe": true,
-    "pa": true
   }
 }
