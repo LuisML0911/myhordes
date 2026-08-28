@@ -9073,13 +9073,18 @@
     }
   },
   "day1": {
-    "currentStep": 4,
+    "currentStep": 5,
     "purge": true,
     "startItems": {
       "idFood": 119,
       "idWater": 1,
       "idInvFood": "28041671",
       "idInvWater": "28059215"
+    },
+    "route": {
+      "way": [],
+      "tNotDried": -2,
+      "currentPoss": 0
     }
   },
   "hasUsedDrugs": false,
