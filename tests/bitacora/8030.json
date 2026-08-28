@@ -4428,13 +4428,114 @@
     }
   },
   "day1": {
-    "currentStep": 4,
+    "currentStep": 5,
     "purge": true,
     "startItems": {
       "idFood": 119,
       "idWater": 1,
       "idInvFood": "28041671",
       "idInvWater": "28059215"
+    },
+    "route": {
+      "way": [
+        {
+          "x": 0,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 4,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 4,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": 3,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": 2,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": 1,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": -1,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": -2,
+          "y": -2,
+          "dried": false
+        },
+        {
+          "x": -2,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": -1,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": -1,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "dried": false
+        }
+      ],
+      "tNotDried": 17,
+      "currentPoss": 0
     }
   },
   "hasUsedDrugs": false,
