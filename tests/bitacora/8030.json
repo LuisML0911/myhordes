@@ -1,1 +1,37 @@
-{}
+{
+  "log": {
+    "20260828_053606_875": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "status": 0,
+        "body": {}
+      }
+    },
+    "20260828_053607_841": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "status": 0,
+        "body": {}
+      }
+    }
+  },
+  "day1": {
+    "currentStep": 0,
+    "purge": true
+  },
+  "hasUsedDrugs": false,
+  "heroicAction": {
+    "hallazgo": true,
+    "retorno": true,
+    "golpe": true,
+    "pa": true
+  }
+}
