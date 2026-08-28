@@ -909,7 +909,7 @@ async function doAction(endpoint, method, bodyData) {
 		logTrace(endpoint, method, bodyData, response.status, result);
 	} else {
 		result = await response.text();
-		logTrace(endpoint, method, bodyData, response.status, {});
+		logTrace(endpoint, method, bodyData, 0, {});
 	}
 	return result;
 }
