@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260829_022805_346": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7984,
+              "name": "Dark crossroad",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 5,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 7995,
+              "name": "Altgediente Bastion",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8029,
+              "name": "Strict community",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 34,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 4,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8031,
+              "name": "Crêtes anéanties",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 15,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 8,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8036,
+              "name": "Widerwärtiger Ponyhof",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8038,
+              "name": "Abismo Extraño",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 4,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8039,
+              "name": "Étendues passées",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 10,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260829_022809_578": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8038",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
