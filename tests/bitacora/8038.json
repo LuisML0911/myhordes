@@ -899,11 +899,456 @@
           ]
         }
       }
+    },
+    "20260829_022827_425": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415067",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": true,
+          "rsc": false,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "categories": [
+            {
+              "id": 15,
+              "items": [
+                {
+                  "i": 28079593,
+                  "p": 76,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -76,
+                    1,
+                    4
+                  ]
+                },
+                {
+                  "i": 28079591,
+                  "p": 115,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -115,
+                    1,
+                    6
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 22,
+              "items": [
+                {
+                  "i": 28080731,
+                  "p": 83,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -83,
+                    1,
+                    9
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 9,
+              "items": [
+                {
+                  "i": 28080732,
+                  "p": 118,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -118,
+                    1,
+                    9
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 25,
+              "items": [
+                {
+                  "i": 28079595,
+                  "p": 159,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -159,
+                    1,
+                    6
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260829_022827_613": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7417640",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7415067"
+        }
+      },
+      "response": {
+        "body": {
+          "success": false,
+          "messages": "Por ahora, no necesitas hacer esto."
+        }
+      }
+    },
+    "20260829_022827_826": {
+      "request": {
+        "url": "/rest/v1/game/town/facilities/well",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
+    },
+    "20260829_022828_075": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415067/28080732",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7417640"
+        }
+      },
+      "response": {
+        "body": {
+          "success": true,
+          "errors": [],
+          "reload": false,
+          "incidentals": {
+            "towndef": 14,
+            "towndef_items": 0,
+            "towndef_item_count": 0
+          },
+          "messages": "Has recibido tu ración diaria: <span class='tool'><img alt='' src='/build/images/item/item_water.85230dbb.gif' /> Ración de agua</span><hr/>Acabas de tomar <span class='tool'><img alt='' src='/build/images/item/item_food_bag.9cf6d333.gif' /> Doggy-bag</span> del Almacén. <strong>No intentes pasarte de listo</strong>, los demás habitantes podrían castigarte.",
+          "source": {
+            "bank": true,
+            "rsc": false,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "categories": [
+              {
+                "id": 15,
+                "items": [
+                  {
+                    "i": 28079593,
+                    "p": 76,
+                    "c": 1,
+                    "b": false,
+                    "h": false,
+                    "e": false,
+                    "w": null,
+                    "s": [
+                      0,
+                      0,
+                      0,
+                      -76,
+                      1,
+                      7
+                    ]
+                  },
+                  {
+                    "i": 28079591,
+                    "p": 115,
+                    "c": 1,
+                    "b": false,
+                    "h": false,
+                    "e": false,
+                    "w": null,
+                    "s": [
+                      0,
+                      0,
+                      0,
+                      -115,
+                      1,
+                      7
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 22,
+                "items": [
+                  {
+                    "i": 28080731,
+                    "p": 83,
+                    "c": 1,
+                    "b": false,
+                    "h": false,
+                    "e": false,
+                    "w": null,
+                    "s": [
+                      0,
+                      0,
+                      0,
+                      -83,
+                      1,
+                      0
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 25,
+                "items": [
+                  {
+                    "i": 28079595,
+                    "p": 159,
+                    "c": 1,
+                    "b": false,
+                    "h": false,
+                    "e": false,
+                    "w": null,
+                    "s": [
+                      0,
+                      0,
+                      0,
+                      -159,
+                      1,
+                      0
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "target": {
+            "bank": false,
+            "rsc": false,
+            "size": 6,
+            "heavy": 1,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28080730,
+                "p": 315,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  100,
+                  -315,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28080733,
+                "p": 319,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  80,
+                  -319,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28080734,
+                "p": 1,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -1,
+                  1,
+                  5
+                ]
+              },
+              {
+                "i": 28080732,
+                "p": 118,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -118,
+                  1,
+                  6
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "20260829_022828_270": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7417640",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28080730,
+              "p": 315,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -315,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28080733,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28080734,
+              "p": 1,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -1,
+                1,
+                4
+              ]
+            },
+            {
+              "i": 28080732,
+              "p": 118,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -118,
+                1,
+                7
+              ]
+            }
+          ]
+        }
+      }
     }
   },
   "day1": {
-    "currentStep": 2,
-    "purge": true
+    "currentStep": 3,
+    "purge": true,
+    "startItems": {
+      "idFood": 118,
+      "idWater": 1,
+      "idInvFood": "28080732",
+      "idInvWater": "28080734"
+    }
   },
   "hasUsedDrugs": false,
   "heroicAction": {
