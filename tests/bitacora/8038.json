@@ -2423,7 +2423,8 @@
           "x": 2,
           "y": 0,
           "dried": false,
-          "diggedRuin": true
+          "diggedRuin": true,
+          "digged": true
         },
         {
           "x": 3,
