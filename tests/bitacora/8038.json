@@ -2601,6 +2601,306 @@
           "success": true
         }
       }
+    },
+    "20260830_072926_684": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260830_072927_267": {
+      "request": {
+        "url": "/jx/beyond/desert/cached",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260830_072927_476": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7417640",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7415408"
+        }
+      },
+      "response": {
+        "body": {
+          "success": false,
+          "messages": "Por ahora, no necesitas hacer esto."
+        }
+      }
+    },
+    "20260830_072927_624": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415408/28080732",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7417640"
+        }
+      },
+      "response": {
+        "body": []
+      }
+    },
+    "20260830_072927_770": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415408/28080734",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7417640"
+        }
+      },
+      "response": {
+        "body": []
+      }
+    },
+    "20260830_072927_918": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7417640",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28080730,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                5
+              ]
+            },
+            {
+              "i": 28080733,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260830_072928_080": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7417640",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28080730,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                4
+              ]
+            },
+            {
+              "i": 28080733,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260830_072928_223": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415408",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28099010,
+              "p": 138,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -138,
+                1,
+                6
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260830_072928_372": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415408",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28099010,
+              "p": 138,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -138,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260830_072928_512": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7415408",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28099010,
+              "p": 138,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -138,
+                1,
+                6
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260830_072939_212": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 4,
+          "y": 0
+        }
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
@@ -2715,7 +3015,7 @@
         }
       ],
       "tNotDried": 17,
-      "currentPoss": 3
+      "currentPoss": 4
     }
   },
   "hasUsedDrugs": false,
