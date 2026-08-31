@@ -2,7 +2,7 @@ name: Update GestHordes Data
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # cada domingo a medianoche UTC
+    - cron: '0 21 * * *'   # cada domingo a medianoche UTC
   workflow_dispatch:       # también lo puedes lanzar manualmente
   
 permissions:
