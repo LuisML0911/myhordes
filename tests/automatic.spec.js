@@ -450,7 +450,7 @@ async function playInDeserted(){
 				await dropPlayerInventory(inv);
 				let playInv = await getPlayerInventory(inv);
 				let deseInv = await getDesertInventory(inv);
-				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...dataSaved.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
+				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...weaponListData.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
 				if(combination != null){
 					const useObj = combination.combo.reduce((min, obj) => obj.chance_kill < min.chance_kill ? obj : min);
 					await doAction("/api/beyond/desert/action", "POST", {item: useObj.key, action: "118"});
