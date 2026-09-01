@@ -1,0 +1,203 @@
+{
+  "log": {
+    "20260901_004822_348": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7984,
+              "name": "Dark crossroad",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 11,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 4,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 7995,
+              "name": "Altgediente Bastion",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8040,
+              "name": "Modrige Ghulgebeine",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 5,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8044,
+              "name": "Vaux implacables",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 3,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8048,
+              "name": "Ensenadas del Mal Menor",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 4,
+              "type": 4,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": true,
+                "whitelist": false
+              },
+              "custom_rules": true
+            },
+            {
+              "id": 8050,
+              "name": "Avernos de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 10,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8053,
+              "name": "Enclave de l'Orient",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 19,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 6,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8054,
+              "name": "Cirques des Exilés",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 1,
+              "type": 1,
+              "mayor": true,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8055,
+              "name": "Perverted plantation of irma",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 1,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260901_004826_422": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8050",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
