@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260902_233443_371": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8040,
+              "name": "Modrige Ghulgebeine",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 10,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8044,
+              "name": "Vaux implacables",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 14,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 2,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8055,
+              "name": "Perverted plantation of irma",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 25,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8058,
+              "name": "Praderas Deplorables",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 11,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8061,
+              "name": "Faille fantomatique",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 17,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8062,
+              "name": "Arcane region",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8063,
+              "name": "Hungernde Hustende",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260902_233447_179": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8058",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
