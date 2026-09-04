@@ -160,9 +160,16 @@ async function main(){
 	try{
 		if(Object.keys(lastDataSaved).length === 0){
 			lastDataSaved = readJSON(nameFile_lastDataSaved);
-			pag.on('response', async (response) => {
+			const [newPage] = await Promise.all([
+				page.context().waitForEvent('page'),
+				page.locator('img.header-directory-icon').click({ timeout: 3000 }),
+				page.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 }),
+				page.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
+			]);
+			newPage.on('response', async (response) => {
 				try {
 					const url = response.url();
+					console.log("OKA");
 					if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
 						console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
 					}
@@ -170,6 +177,7 @@ async function main(){
 					//console.log("❌ Error leyendo response:", err.message);
 				}
 			});
+			await newPage.close();
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
