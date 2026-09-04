@@ -18175,6 +18175,61 @@
           "success": true
         }
       }
+    },
+    "20260904_194333_759": {
+      "request": {
+        "url": "/jx/beyond/partial/desert/actions",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260904_194334_179": {
+      "request": {
+        "url": "/jx/beyond/partial/desert/actions",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260904_194334_527": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28172143",
+          "action": null
+        }
+      },
+      "response": {
+        "body": {
+          "error": "1"
+        }
+      }
+    },
+    "20260904_194334_948": {
+      "request": {
+        "url": "/jx/beyond/partial/desert/actions",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260904_194335_343": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28178549",
+          "action": "172"
+        }
+      },
+      "response": {
+        "body": {
+          "url": null,
+          "success": true
+        }
+      }
     }
   },
   "day1": {
@@ -18183,8 +18238,7 @@
     "startItems": {
       "idFood": 149,
       "idWater": 1,
-      "idInvFood": "28172143",
-      "idInvWater": "28178549"
+      "idInvFood": "28172143"
     },
     "route": {
       "way": [
