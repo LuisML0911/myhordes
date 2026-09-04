@@ -166,28 +166,31 @@ async function main(){
 				pag.context().waitForEvent('page'),
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
-			newPage.on('response', async (response) => {
-				try {
-					const url = response.url();
-					console.log(url);
-					if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
-						console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
-						await newPage.close();
-					}
-				} catch (err) {
-					//console.log("❌ Error leyendo response:", err.message);
-				}
-			});
-			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-			newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
+			
+			await newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
 			.catch(async () => {
-				console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-				await newPage.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
-				newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
-				.catch(async () => {
-					console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-					await newPage.close();
+				const newPage2 = await newPage.context().newPage();
+				await newPage2.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
+				newPage2.on('response', async (response) => {
+					try {
+						const url = response.url();
+						console.log(url);
+						if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
+							console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
+							await newPage2.close();
+						}
+					} catch (err) {
+						//console.log("❌ Error leyendo response:", err.message);
+					}
 				});
+				console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+				await newPage.close();
+				await newPage2.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
+				.catch(async () => {
+					console.log("🌐 Nueva pestaña abierta en: " + newPage2.url());
+					await newPage2.close();
+				});
+				
 			});
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
