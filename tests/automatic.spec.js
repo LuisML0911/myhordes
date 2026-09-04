@@ -65,7 +65,7 @@ test('UpdateWeaponData', async ({ page }) => {
 		return res.json();
 		});
 	} catch (err) {
-		console.log('❌ No se pudo obtener JSON válido:', err.message);
+		//console.log('❌ No se pudo obtener JSON válido:', err.message);
 		return; // salir sin hacer commit
 	}
 
@@ -76,7 +76,7 @@ test('GetGestHordes', async ({page}) => {
 	const idTown = lastDataSaved.idTown;
 	await page.goto('https://gesthordes.fr/news', { waitUntil: 'networkidle' });	
 	const cookies = await page.context().cookies();
-	console.log(cookies);
+	//console.log(cookies);
 	const response = await page.evaluate(async (idTown) => {
 		const res = await fetch(`https://gesthordes.fr/rest/v1/carte/${idTown}`, {
 			headers: {
@@ -86,7 +86,7 @@ test('GetGestHordes', async ({page}) => {
 		});
 		return res.json();
 	}, idTown);
-	console.log(response);
+	//console.log(response);
 	await page.goto(`https://gesthordes.fr/carte/${idTown}`);
 
 	writeJSON('data/gestHordes.json', response);
@@ -122,11 +122,11 @@ test('myhordes', async () => {
 		});
 		pag = await browserPlay.newPage();
 		
-		console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
+		//console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
 		await goto('/jx/town/dashboard');
-		console.error("Sitio redirigido: " + pag.url());
+		//console.error("Sitio redirigido: " + pag.url());
 		await new Promise(r => setTimeout(r, 3000));
-		console.error("Sitio redirigido tras 3 seg: " + pag.url());
+		//console.error("Sitio redirigido tras 3 seg: " + pag.url());
 		
 		if(Object.keys(weaponListData).length === 0){
 			weaponListData = readJSON('data/weaponListData.json');
@@ -167,7 +167,7 @@ async function main(){
 						console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
 					}
 				} catch (err) {
-					console.log("❌ Error leyendo response:", err.message);
+					//console.log("❌ Error leyendo response:", err.message);
 				}
 			});
 		}
@@ -740,11 +740,11 @@ async function acceptDead(){
 	writeJSON(nameFile_dataSaved, dataSaved);
 	
 	lastWords = readJSON(lastWordsFile);
-	console.log(lastWords);
+	//console.log(lastWords);
 	await pag.type('#last_words', lastWords.dead[Math.floor(Math.random() * lastWords.dead.length)], { delay: 150 });
 	await pag.on('dialog', async dialog => {
-		console.log(`Tipo de diálogo: ${dialog.type()}`);
-		console.log(`Mensaje: ${dialog.message()}`);
+		//console.log(`Tipo de diálogo: ${dialog.type()}`);
+		//console.log(`Mensaje: ${dialog.message()}`);
 		await dialog.accept(); // acepta el alert
 	});
 
@@ -769,10 +769,10 @@ async function login(){
 	// Se recupera URL base final que si haya logrado responder
 	basePath = new URL(pag.url()).origin;
 	
-	console.error("Iniciando Login: " + pag.url());
+	//console.error("Iniciando Login: " + pag.url());
 	// Se realiza autenticación
 	await goto('/jx/public/login');
-	console.error("Haciendo Login: " + pag.url());
+	//console.error("Haciendo Login: " + pag.url());
 	try{
 		await pag.click('#et_login_button', {timeout: 3000});
 		await pag.waitForNavigation({ waitUntil: 'domcontentloaded' });
@@ -780,7 +780,7 @@ async function login(){
 		await pag.type('input[name="password"]', pass, { delay: 150 });
 		await pag.click('input[name="sign_in"]');
 		await pag.waitForSelector('hordes-header-ui', {state: 'attached',timeout: 5000});
-		console.error("Login Terminado: " + pag.url());
+		//console.error("Login Terminado: " + pag.url());
 	}catch(exception){
 		if (exception.name === 'TimeoutError') {
 			console.error("Se agotó el tiempo de espera al intentar hacer click");
@@ -927,7 +927,7 @@ async function doAction(endpoint, method, bodyData) {
 // leer JSON desde archivo
 function readJSON(filePath) {
 	const data = fs.readFileSync(filePath);
-	console.log(data);
+	//console.log(data);
 	return JSON.parse(data);
 }
 // escribir JSON en archivo
@@ -947,7 +947,7 @@ function writeJSON(filePath, data) {
 		'@github.com/' + process.env.GITHUB_REPOSITORY + '.git HEAD:main');
 		console.log(`Archivo ${filePath} actualizado`);
 	} catch(error){
-		console.error(`Error al guardar cambios para archivo ${filePath} en GitHub: `, error.message);
+		//console.error(`Error al guardar cambios para archivo ${filePath} en GitHub: `, error.message);
 	}
 }
 
@@ -1059,8 +1059,8 @@ async function UseAndReturn(inv, storageInventory, item, act){
 		let plaInv = searchItemIdInv([item], await getPlayerInventory(inv))
 		if(plaInv){
 			await doAction("/api/town/house/action", "POST", {item: plaInv, action: act});
-			console.log("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv);
-			console.log({d: "down", mod: null, to: inv.IdInvSto});
+			//console.log("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv);
+			//console.log({d: "down", mod: null, to: inv.IdInvSto});
 			await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
 		}
 	}
@@ -1266,7 +1266,7 @@ async function getRoute(PAs, tGroupControl = 2){
 	
 	// 2. se ponderan las rutas y se recupera la mas alta
 	const village = getVillageInfo();
-	console.log(village);
+	//console.log(village);
 	let rutaOpt = {way:[]};
 	let tFOpt = -1;
 	for await (const chunk of loadRoutesInChunks(path.join(constFile, `routes_${tPAs}.json`), 32)) {
@@ -1523,7 +1523,7 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 			body: result
 		}
 	};
-	console.log(dataSaved.log[currentDate]);
+	//console.log(dataSaved.log[currentDate]);
 	//writeJSON(nameFile_dataSaved, dataSaved);
 }
 
