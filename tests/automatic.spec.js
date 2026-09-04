@@ -453,7 +453,7 @@ async function playInDeserted(){
 				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...weaponListData.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
 				if(combination != null){
 					const useObj = combination.combo.reduce((min, obj) => obj.chance_kill < min.chance_kill ? obj : min);
-					await doAction("/api/beyond/desert/action", "POST", {item: useObj.key, action: "118"});
+					await doAction("/api/beyond/desert/action", "POST", {item: useObj.key, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), useObj.key)});
 					canUseWeapon = true;
 				}else{
 					let battery = await searchItemIdInv([2], deseInv);
@@ -470,8 +470,8 @@ async function playInDeserted(){
 						if(weaponBattery != undefined){
 							moveItem(inv.IdInvDes, inv.IdInvPer, battery);
 							moveItem(inv.IdInvDes, inv.IdInvPer, weaponBattery);
-							await doAction("/api/beyond/desert/action", "POST", {item: weaponBattery, action: "55"});
-							await doAction("/api/beyond/desert/action", "POST", {item: weaponBattery, action: "118"});
+							await doAction("/api/beyond/desert/action", "POST", {item: weaponBattery, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), weaponBattery)});
+							await doAction("/api/beyond/desert/action", "POST", {item: weaponBattery, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), weaponBattery)});
 							canUseWeaponBattery = true;
 						}
 					}
@@ -613,9 +613,9 @@ async function playInDeserted(){
 					if(currentPAs == 0){ // consumir
 						let canUseItem = false;
 						//comer
-						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: "16"})).error){
+						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvFood)})).error){
 							//tomar agua
-							if(currentSaved?.startItems?.idInvWater === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvWater, action: "171"})).error){
+							if(currentSaved?.startItems?.idInvWater === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvWater, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvWater)})).error){
 								// TODO: acción si no logré comer ni tomar agua
 							}else{
 								currentSaved.startItems.idInvWater = undefined;
@@ -1054,6 +1054,13 @@ async function UseAndReturn(inv, storageInventory, item, act){
 		}
 	}
 }
+function getActionIdFromHtml(htmlText, provokingId) {
+	const parser = new DOMParser();
+	const doc = parser.parseFromString(htmlText, "text/html");
+	const li = doc.querySelector(`li[x-provoking-id="${provokingId}"]`);
+	return li ? li.getAttribute("x-action-id") : null;
+}
+
 // mueve un objeto entre inventarios
 async function moveItem(fromIdInv, toIdInv, id){
 	let dir = "";
