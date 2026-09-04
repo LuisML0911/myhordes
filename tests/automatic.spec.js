@@ -121,6 +121,7 @@ test('myhordes', async () => {
 			] : []
 		});
 		pag = await browserPlay.newPage();
+		
 		console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
 		await goto('/jx/town/dashboard');
 		console.error("Sitio redirigido: " + pag.url());
@@ -159,6 +160,16 @@ async function main(){
 	try{
 		if(Object.keys(lastDataSaved).length === 0){
 			lastDataSaved = readJSON(nameFile_lastDataSaved);
+			pag.on('response', async (response) => {
+				try {
+					const url = response.url();
+					if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
+						console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
+					}
+				} catch (err) {
+					console.log("❌ Error leyendo response:", err.message);
+				}
+			});
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
