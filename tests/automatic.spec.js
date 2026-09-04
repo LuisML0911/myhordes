@@ -163,10 +163,11 @@ async function main(){
 			await pag.locator('img.header-directory-icon').click({ timeout: 3000 });
 			await pag.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 });
 			const [newPage] = await Promise.all([
-				pag.context().waitForEvent('page'),
+				context.waitForEvent('page'),
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
 			console.log("OKA_0");
+			console.log("🌐 Nueva pestaña abierta en:", newPage.url());
 			newPage.on('response', async (response) => {
 				try {
 					const url = response.url();
