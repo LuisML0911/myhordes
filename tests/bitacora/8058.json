@@ -18237,8 +18237,7 @@
     "purge": true,
     "startItems": {
       "idFood": 149,
-      "idWater": 1,
-      "idInvFood": "28172143"
+      "idWater": 1
     },
     "route": {
       "way": [
