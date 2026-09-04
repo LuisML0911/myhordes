@@ -123,9 +123,9 @@ test('myhordes', async () => {
 		pag = await browserPlay.newPage();
 		
 		//console.error("Llendo a sitio MyHordes para redirigir: " + pag.url());
-		await goto('/jx/town/dashboard');
+		//await goto('/jx/town/dashboard');
 		//console.error("Sitio redirigido: " + pag.url());
-		await new Promise(r => setTimeout(r, 3000));
+		//await new Promise(r => setTimeout(r, 3000));
 		//console.error("Sitio redirigido tras 3 seg: " + pag.url());
 		
 		if(Object.keys(weaponListData).length === 0){
@@ -151,6 +151,8 @@ test('myhordes', async () => {
 	}
 });
 async function main(){
+	await goto('/jx/town/dashboard');
+	await new Promise(r => setTimeout(r, 3000));
 	countMainInvocation++;
 	// prevee bucles
 	if(countMainInvocation > 24){
@@ -654,8 +656,6 @@ async function playInDeserted(){
 					if(currentPAs == 0){ // consumir
 						let canUseItem = false;
 						//comer
-						console.log(" A VER ");
-						console.log(await doAction("/jx/beyond/partial/desert/actions", "POST", {}));
 						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvFood)})).error){
 							//tomar agua
 							if(currentSaved?.startItems?.idInvWater === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvWater, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvWater)})).error){
