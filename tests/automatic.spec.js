@@ -161,10 +161,10 @@ async function main(){
 		if(Object.keys(lastDataSaved).length === 0){
 			lastDataSaved = readJSON(nameFile_lastDataSaved);
 			const [newPage] = await Promise.all([
-				page.context().waitForEvent('page'),
-				page.locator('img.header-directory-icon').click({ timeout: 3000 }),
-				page.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 }),
-				page.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
+				pag.context().waitForEvent('page'),
+				pag.locator('img.header-directory-icon').click({ timeout: 3000 }),
+				pag.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 }),
+				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
 			newPage.on('response', async (response) => {
 				try {
