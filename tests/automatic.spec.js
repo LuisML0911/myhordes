@@ -167,7 +167,7 @@ async function main(){
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
 			
-			await newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
+			await newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 3000 })
 			.catch(async () => {
 				const newPage2 = await newPage.context().newPage();
 				await newPage2.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
@@ -184,11 +184,11 @@ async function main(){
 					}
 				});
 				console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-				await newPage.close();
+				//await newPage.close();
 				await newPage2.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
 				.catch(async () => {
 					console.log("🌐 Nueva pestaña abierta en: " + newPage2.url());
-					await newPage2.close();
+					//await newPage2.close();
 				});
 				
 			});
