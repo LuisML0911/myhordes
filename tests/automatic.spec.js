@@ -160,6 +160,7 @@ async function main(){
 	try{
 		if(Object.keys(lastDataSaved).length === 0){
 			lastDataSaved = readJSON(nameFile_lastDataSaved);
+			/*
 			await pag.locator('img.header-directory-icon').click({ timeout: 3000 });
 			await pag.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 });
 			const [newPage] = await Promise.all([
@@ -198,6 +199,7 @@ async function main(){
 				});
 				
 			});
+			*/
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
@@ -652,6 +654,8 @@ async function playInDeserted(){
 					if(currentPAs == 0){ // consumir
 						let canUseItem = false;
 						//comer
+						console.log(" A VER ");
+						console.log(await doAction("/jx/beyond/partial/desert/actions", "POST", {}));
 						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvFood)})).error){
 							//tomar agua
 							if(currentSaved?.startItems?.idInvWater === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvWater, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvWater)})).error){
