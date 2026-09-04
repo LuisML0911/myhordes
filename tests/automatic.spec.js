@@ -179,17 +179,11 @@ async function main(){
 				}
 			});
 			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-			await new Promise(r => setTimeout(r, 3000));
-			await newPage.waitForLoadState('networkidle');
-			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-			await new Promise(r => setTimeout(r, 3000));
-			await newPage.waitForLoadState('networkidle');
-			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-			await new Promise(r => setTimeout(r, 3000));
-			await newPage.waitForLoadState('networkidle');
-			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
-			await new Promise(r => setTimeout(r, 3000));
-			await newPage.waitForLoadState('networkidle');
+			newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
+			.catch(async () => {
+				console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+				await newPage.close();
+			});
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
