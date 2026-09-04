@@ -615,7 +615,7 @@ async function playInDeserted(){
 						//comer
 						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: "16"})).error){
 							//tomar agua
-							if(currentSaved?.startItems?.idInvWater === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvWater, action: "172"})).error){
+							if(currentSaved?.startItems?.idInvWater === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvWater, action: "171"})).error){
 								// TODO: acción si no logré comer ni tomar agua
 							}else{
 								currentSaved.startItems.idInvWater = undefined;
