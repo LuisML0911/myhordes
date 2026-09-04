@@ -475,7 +475,7 @@ async function playInDeserted(){
 			await dropPlayerInventory(inv);
 			let playInv = await getPlayerInventory(inv);
 			let outfit = await searchItemIdInv([315], playInv);
-			await doAction("/api/town/house/action", "POST", {item: outfit, action: "163"});
+			await doAction("/api/town/house/action", "POST", {item: outfit, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), outfit)});
 		}else{
 			// 1. Evaluar si la zona esta controlada por los zombies, si esta controlada intentar liberar y actualizar para evaluar si siguie controlada, si sigue controlada repetir 3 veces antes de alertar.
 			const contZ = parseInt(await pag.textContent('.zombies-cp'), 10);
@@ -1090,7 +1090,7 @@ async function UseAndReturn(inv, storageInventory, item, act){
 		await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+stoInv, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
 		let plaInv = searchItemIdInv([item], await getPlayerInventory(inv))
 		if(plaInv){
-			await doAction("/api/town/house/action", "POST", {item: plaInv, action: act});
+			await doAction("/api/town/house/action", "POST", {item: plaInv, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), plaInv)});
 			//console.log("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv);
 			//console.log({d: "down", mod: null, to: inv.IdInvSto});
 			await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+plaInv, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
@@ -1156,7 +1156,7 @@ async function prepareToExplore(inv, storageInventory){
 				actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+abrelatas, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
 				if(actInv?.success){
 					//abre la lata
-					await doAction("/api/town/house/action", "POST", {item: hasLata, action: "12"});
+					await doAction("/api/town/house/action", "POST", {item: hasLata, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), hasLata)});
 					if(abrelata = searchItemIdInv([20], actAbrLat.target)){
 						//regresa el abre latas
 						await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelata, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
@@ -1172,7 +1172,7 @@ async function prepareToExplore(inv, storageInventory){
 			let hasDoggyBag = searchItemIdInv([118], actInv.target);
 			if(hasDoggyBag){
 				//abre doggy-back
-				await doAction("/api/town/house/action", "POST", {item: hasDoggyBag, action: "32"});
+				await doAction("/api/town/house/action", "POST", {item: hasDoggyBag, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), hasDoggyBag)});
 			}
 		}
 	}
