@@ -166,14 +166,14 @@ async function main(){
 				pag.context().waitForEvent('page'),
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
-			await newPage.waitForLoadState('networkidle'); 
 			console.log("OKA_0");
 			newPage.on('response', async (response) => {
 				try {
 					const url = response.url();
-					console.log("OKA");
+					console.log(url);
 					if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
 						console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
+						await newPage.close();
 					}
 				} catch (err) {
 					//console.log("❌ Error leyendo response:", err.message);
