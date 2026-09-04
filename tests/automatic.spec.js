@@ -160,12 +160,14 @@ async function main(){
 	try{
 		if(Object.keys(lastDataSaved).length === 0){
 			lastDataSaved = readJSON(nameFile_lastDataSaved);
+			await pag.locator('img.header-directory-icon').click({ timeout: 3000 });
+			await pag.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 });
 			const [newPage] = await Promise.all([
 				pag.context().waitForEvent('page'),
-				pag.locator('img.header-directory-icon').click({ timeout: 3000 }),
-				pag.locator('img[alt="Gest\'Hordes"]').click({ timeout: 3000 }),
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
+			await newPage.waitForLoadState('networkidle'); 
+			console.log("OKA_0");
 			newPage.on('response', async (response) => {
 				try {
 					const url = response.url();
@@ -177,7 +179,6 @@ async function main(){
 					//console.log("❌ Error leyendo response:", err.message);
 				}
 			});
-			await newPage.close();
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
