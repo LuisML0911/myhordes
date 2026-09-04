@@ -166,8 +166,6 @@ async function main(){
 				pag.context().waitForEvent('page'),
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
-			console.log("OKA_0");
-			console.log("🌐 Nueva pestaña abierta en:", newPage.url());
 			newPage.on('response', async (response) => {
 				try {
 					const url = response.url();
@@ -180,6 +178,18 @@ async function main(){
 					//console.log("❌ Error leyendo response:", err.message);
 				}
 			});
+			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+			await new Promise(r => setTimeout(r, 3000));
+			await newPage.waitForLoadState('networkidle');
+			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+			await new Promise(r => setTimeout(r, 3000));
+			await newPage.waitForLoadState('networkidle');
+			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+			await new Promise(r => setTimeout(r, 3000));
+			await newPage.waitForLoadState('networkidle');
+			console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+			await new Promise(r => setTimeout(r, 3000));
+			await newPage.waitForLoadState('networkidle');
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
