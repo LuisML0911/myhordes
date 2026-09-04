@@ -167,27 +167,33 @@ async function main(){
 				pag.locator('form[action="https://gesthordes.fr/login"] button[type="submit"]').click({ timeout: 3000 }),
 			]);
 			
-			await newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 3000 })
+			await newPage.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 2000 })
 			.catch(async () => {
 				const newPage2 = await newPage.context().newPage();
 				await newPage2.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
-				newPage2.on('response', async (response) => {
-					try {
-						const url = response.url();
-						console.log(url);
-						if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
-							console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
-							await newPage2.close();
-						}
-					} catch (err) {
-						//console.log("❌ Error leyendo response:", err.message);
-					}
-				});
-				console.log("🌐 Nueva pestaña abierta en: " + newPage.url());
+				console.log("🌐 Nueva pestaña 1 abierta en: " + newPage.url());
 				//await newPage.close();
-				await newPage2.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 120000 })
+				await newPage2.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 4000 })
 				.catch(async () => {
-					console.log("🌐 Nueva pestaña abierta en: " + newPage2.url());
+					const newPage3 = await newPage2.context().newPage();
+					await newPage3.goto(`https://gesthordes.fr/carte/${lastDataSaved.idTown}`);
+					newPage3.on('response', async (response) => {
+						try {
+							const url = response.url();
+							console.log(url);
+							if (url.includes(`/rest/v1/carte/${lastDataSaved.idTown}` )) {
+								console.log("✅ Respuesta GestHordes interceptada y guardada:", await response.json());
+								//await newPage2.close();
+							}
+						} catch (err) {
+							//console.log("❌ Error leyendo response:", err.message);
+						}
+					});
+					console.log("🌐 Nueva pestaña 2 abierta en: " + newPage2.url());
+					await newPage3.locator('div#zoneCarte').waitFor({ state: 'visible', timeout: 4000 })
+					.catch(async () => {
+						console.log("🌐 Nueva pestaña 3 abierta en: " + newPage3.url());
+					});
 					//await newPage2.close();
 				});
 				
