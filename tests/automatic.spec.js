@@ -1098,8 +1098,7 @@ async function UseAndReturn(inv, storageInventory, item, act){
 	}
 }
 function getActionIdFromHtml(htmlText, provokingId) {
-	const parser = new DOMParser();
-	const doc = parser.parseFromString(htmlText, "text/html");
+	const doc = new JSDOM(htmlText).window.document;
 	const li = doc.querySelector(`li[x-provoking-id="${provokingId}"]`);
 	return li ? li.getAttribute("x-action-id") : null;
 }
