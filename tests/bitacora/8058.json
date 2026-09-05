@@ -51087,6 +51087,30 @@
           "success": true
         }
       }
+    },
+    "20260905_192806_170": {
+      "request": {
+        "url": "/jx/beyond/partial/desert/actions",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260905_192806_513": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28221152",
+          "action": "172"
+        }
+      },
+      "response": {
+        "body": {
+          "url": null,
+          "success": true
+        }
+      }
     }
   },
   "day1": {
@@ -51228,8 +51252,7 @@
     "purge": false,
     "startItems": {
       "idFood": 129,
-      "idWater": 1,
-      "idInvWater": "28221152"
+      "idWater": 1
     },
     "route": {
       "way": [
