@@ -1219,8 +1219,8 @@
       "id_mh": 201,
       "category_objet_id": 5,
       "type_objet_id": null,
-      "decharge_id": 4,
-      "type_decharge_id": 4,
+      "decharge_id": 6,
+      "type_decharge_id": 6,
       "caracteristiques_ids": [
         531,
         532,
@@ -1413,8 +1413,8 @@
       "id_mh": 282,
       "category_objet_id": 2,
       "type_objet_id": null,
-      "decharge_id": 4,
-      "type_decharge_id": 4,
+      "decharge_id": 3,
+      "type_decharge_id": 3,
       "caracteristiques_ids": [
         654,
         655,
@@ -1884,8 +1884,8 @@
       "id_mh": 113,
       "category_objet_id": 5,
       "type_objet_id": 1,
-      "decharge_id": null,
-      "type_decharge_id": null,
+      "decharge_id": 6,
+      "type_decharge_id": 6,
       "caracteristiques_ids": [
         374,
         375,
