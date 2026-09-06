@@ -84896,6 +84896,34 @@
           "success": true
         }
       }
+    },
+    "20260906_204254_337": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260906_204255_112": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260906_204255_361": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door/exit",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
