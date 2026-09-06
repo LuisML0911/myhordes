@@ -70386,6 +70386,2372 @@
           "success": true
         }
       }
+    },
+    "20260906_154137_893": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260906_154138_673": {
+      "request": {
+        "url": "/jx/beyond/desert/cached",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260906_154139_000": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7445316",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7438434"
+        }
+      },
+      "response": {
+        "body": {
+          "success": true,
+          "errors": [],
+          "reload": false,
+          "incidentals": [],
+          "messages": "",
+          "source": {
+            "bank": false,
+            "rsc": false,
+            "size": 6,
+            "heavy": 1,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28178543,
+                "p": 316,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  100,
+                  -316,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28178546,
+                "p": 319,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  80,
+                  -319,
+                  1,
+                  4
+                ]
+              }
+            ]
+          },
+          "target": {
+            "bank": false,
+            "rsc": false,
+            "size": 0,
+            "heavy": 0,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28213713,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28244493,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28247403,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  6
+                ]
+              },
+              {
+                "i": 28244891,
+                "p": 98,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -98,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28249914,
+                "p": 112,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -112,
+                  1,
+                  3
+                ]
+              },
+              {
+                "i": 28249915,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28220916,
+                "p": 237,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -237,
+                  1,
+                  3
+                ]
+              },
+              {
+                "i": 28247402,
+                "p": 279,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -279,
+                  1,
+                  6
+                ]
+              },
+              {
+                "i": 28241232,
+                "p": 1,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -1,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28214518,
+                "p": 73,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": "0 pts ataque",
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -73,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28209864,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  3
+                ]
+              },
+              {
+                "i": 28214476,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  5
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "20260906_154139_232": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434/28241232",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7445316"
+        }
+      },
+      "response": {
+        "body": {
+          "success": true,
+          "errors": [],
+          "reload": false,
+          "incidentals": [],
+          "messages": "",
+          "source": {
+            "bank": false,
+            "rsc": false,
+            "size": 0,
+            "heavy": 0,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28244493,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28213713,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28247403,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28214518,
+                "p": 73,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": "0 pts ataque",
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -73,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28244891,
+                "p": 98,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -98,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28249914,
+                "p": 112,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -112,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28209864,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28214476,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28249915,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28220916,
+                "p": 237,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -237,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28247402,
+                "p": 279,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -279,
+                  1,
+                  8
+                ]
+              }
+            ]
+          },
+          "target": {
+            "bank": false,
+            "rsc": false,
+            "size": 6,
+            "heavy": 1,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28178543,
+                "p": 316,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  100,
+                  -316,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28178546,
+                "p": 319,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  80,
+                  -319,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28241232,
+                "p": 1,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -1,
+                  1,
+                  1
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "20260906_154139_416": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7445316",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28178543,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                4
+              ]
+            },
+            {
+              "i": 28178546,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                2
+              ]
+            },
+            {
+              "i": 28241232,
+              "p": 1,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -1,
+                1,
+                7
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260906_154139_602": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7445316",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28178543,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                3
+              ]
+            },
+            {
+              "i": 28178546,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28241232,
+              "p": 1,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -1,
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260906_154139_783": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28244493,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28213713,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                5
+              ]
+            },
+            {
+              "i": 28247403,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28214518,
+              "p": 73,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": "0 pts ataque",
+              "s": [
+                0,
+                0,
+                0,
+                -73,
+                1,
+                0
+              ]
+            },
+            {
+              "i": 28244891,
+              "p": 98,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -98,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28249914,
+              "p": 112,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -112,
+                1,
+                3
+              ]
+            },
+            {
+              "i": 28209864,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28214476,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                0
+              ]
+            },
+            {
+              "i": 28249915,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28220916,
+              "p": 237,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -237,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28247402,
+              "p": 279,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -279,
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260906_154139_977": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28244493,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28213713,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28247403,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                2
+              ]
+            },
+            {
+              "i": 28214518,
+              "p": 73,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": "0 pts ataque",
+              "s": [
+                0,
+                0,
+                0,
+                -73,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28244891,
+              "p": 98,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -98,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28249914,
+              "p": 112,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -112,
+                1,
+                0
+              ]
+            },
+            {
+              "i": 28209864,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28214476,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28249915,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28220916,
+              "p": 237,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -237,
+                1,
+                2
+              ]
+            },
+            {
+              "i": 28247402,
+              "p": 279,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -279,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260906_154140_203": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434/28214518",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7445316"
+        }
+      },
+      "response": {
+        "body": {
+          "success": true,
+          "errors": [],
+          "reload": false,
+          "incidentals": [],
+          "messages": "",
+          "source": {
+            "bank": false,
+            "rsc": false,
+            "size": 0,
+            "heavy": 0,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28244493,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  8
+                ]
+              },
+              {
+                "i": 28213713,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28247403,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  5
+                ]
+              },
+              {
+                "i": 28244891,
+                "p": 98,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -98,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28249914,
+                "p": 112,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -112,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28209864,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28214476,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  3
+                ]
+              },
+              {
+                "i": 28249915,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28220916,
+                "p": 237,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -237,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28247402,
+                "p": 279,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -279,
+                  1,
+                  7
+                ]
+              }
+            ]
+          },
+          "target": {
+            "bank": false,
+            "rsc": false,
+            "size": 6,
+            "heavy": 1,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28178543,
+                "p": 316,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  100,
+                  -316,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28178546,
+                "p": 319,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  80,
+                  -319,
+                  1,
+                  6
+                ]
+              },
+              {
+                "i": 28241232,
+                "p": 1,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -1,
+                  1,
+                  0
+                ]
+              },
+              {
+                "i": 28214518,
+                "p": 73,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": "0 pts ataque",
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -73,
+                  1,
+                  3
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "20260906_154140_383": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28213713,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                1
+              ]
+            },
+            {
+              "i": 28247403,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28244493,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28244891,
+              "p": 98,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -98,
+                1,
+                5
+              ]
+            },
+            {
+              "i": 28249914,
+              "p": 112,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -112,
+                1,
+                5
+              ]
+            },
+            {
+              "i": 28209864,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                4
+              ]
+            },
+            {
+              "i": 28214476,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28249915,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                4
+              ]
+            },
+            {
+              "i": 28220916,
+              "p": 237,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -237,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28247402,
+              "p": 279,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -279,
+                1,
+                5
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260906_154140_603": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434/28209864",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7445316"
+        }
+      },
+      "response": {
+        "body": {
+          "success": true,
+          "errors": [],
+          "reload": false,
+          "incidentals": [],
+          "messages": "",
+          "source": {
+            "bank": false,
+            "rsc": false,
+            "size": 0,
+            "heavy": 0,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28213713,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  5
+                ]
+              },
+              {
+                "i": 28247403,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  3
+                ]
+              },
+              {
+                "i": 28244493,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28244891,
+                "p": 98,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -98,
+                  1,
+                  6
+                ]
+              },
+              {
+                "i": 28249914,
+                "p": 112,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -112,
+                  1,
+                  5
+                ]
+              },
+              {
+                "i": 28214476,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  7
+                ]
+              },
+              {
+                "i": 28249915,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28220916,
+                "p": 237,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -237,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28247402,
+                "p": 279,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -279,
+                  1,
+                  5
+                ]
+              }
+            ]
+          },
+          "target": {
+            "bank": false,
+            "rsc": false,
+            "size": 6,
+            "heavy": 1,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28178543,
+                "p": 316,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  100,
+                  -316,
+                  1,
+                  7
+                ]
+              },
+              {
+                "i": 28178546,
+                "p": 319,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  80,
+                  -319,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28241232,
+                "p": 1,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -1,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28214518,
+                "p": 73,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": "0 pts ataque",
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -73,
+                  1,
+                  7
+                ]
+              },
+              {
+                "i": 28209864,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  8
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "20260906_154140_790": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28213713,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28244493,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28247403,
+              "p": 60,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -60,
+                1,
+                3
+              ]
+            },
+            {
+              "i": 28244891,
+              "p": 98,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -98,
+                1,
+                5
+              ]
+            },
+            {
+              "i": 28249914,
+              "p": 112,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -112,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28214476,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28249915,
+              "p": 139,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -139,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28220916,
+              "p": 237,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -237,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28247402,
+              "p": 279,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -279,
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260906_154141_014": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7438434/28213713",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7445316"
+        }
+      },
+      "response": {
+        "body": {
+          "success": true,
+          "errors": [],
+          "reload": false,
+          "incidentals": [],
+          "messages": "",
+          "source": {
+            "bank": false,
+            "rsc": false,
+            "size": 0,
+            "heavy": 0,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28244493,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28247403,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28244891,
+                "p": 98,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -98,
+                  1,
+                  2
+                ]
+              },
+              {
+                "i": 28249914,
+                "p": 112,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -112,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28214476,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  6
+                ]
+              },
+              {
+                "i": 28249915,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28220916,
+                "p": 237,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -237,
+                  1,
+                  1
+                ]
+              },
+              {
+                "i": 28247402,
+                "p": 279,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -279,
+                  1,
+                  1
+                ]
+              }
+            ]
+          },
+          "target": {
+            "bank": false,
+            "rsc": false,
+            "size": 6,
+            "heavy": 1,
+            "mods": {
+              "has_drunk": false,
+              "cata": null
+            },
+            "items": [
+              {
+                "i": 28178543,
+                "p": 316,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  100,
+                  -316,
+                  1,
+                  4
+                ]
+              },
+              {
+                "i": 28178546,
+                "p": 319,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": true,
+                "w": null,
+                "s": [
+                  1,
+                  0,
+                  80,
+                  -319,
+                  1,
+                  7
+                ]
+              },
+              {
+                "i": 28241232,
+                "p": 1,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -1,
+                  1,
+                  8
+                ]
+              },
+              {
+                "i": 28214518,
+                "p": 73,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": "0 pts ataque",
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -73,
+                  1,
+                  5
+                ]
+              },
+              {
+                "i": 28209864,
+                "p": 139,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -139,
+                  1,
+                  9
+                ]
+              },
+              {
+                "i": 28213713,
+                "p": 60,
+                "c": 1,
+                "b": false,
+                "h": false,
+                "e": false,
+                "w": null,
+                "s": [
+                  0,
+                  0,
+                  0,
+                  -60,
+                  1,
+                  1
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "20260906_154153_844": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 4,
+          "y": -1
+        }
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
@@ -70763,7 +73129,7 @@
         }
       ],
       "tNotDried": 16,
-      "currentPoss": 8
+      "currentPoss": 9
     }
   }
 }
