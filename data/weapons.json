@@ -2,8 +2,8 @@
   "success": true,
   "status": 200,
   "data": {
-    "version": "2026-08-29-10-03-18",
-    "generated_at": 1787990598,
+    "version": "2026-09-05-19-19-33",
+    "generated_at": 1788628773,
     "items": [
       {
         "id": 1,
@@ -4140,8 +4140,8 @@
         "id_mh": 113,
         "category_objet_id": 5,
         "type_objet_id": 1,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 6,
+        "type_decharge_id": 6,
         "caracteristiques_ids": [
           374,
           375,
@@ -5381,8 +5381,8 @@
         "id_mh": 147,
         "category_objet_id": 5,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 6,
+        "type_decharge_id": 6,
         "caracteristiques_ids": [
           421,
           422,
@@ -7345,8 +7345,8 @@
         "id_mh": 201,
         "category_objet_id": 5,
         "type_objet_id": null,
-        "decharge_id": 4,
-        "type_decharge_id": 4,
+        "decharge_id": 6,
+        "type_decharge_id": 6,
         "caracteristiques_ids": [
           531,
           532,
@@ -9855,8 +9855,8 @@
         "id_mh": 271,
         "category_objet_id": 3,
         "type_objet_id": null,
-        "decharge_id": 4,
-        "type_decharge_id": 4,
+        "decharge_id": null,
+        "type_decharge_id": null,
         "caracteristiques_ids": [
           631,
           632,
@@ -10254,8 +10254,8 @@
         "id_mh": 282,
         "category_objet_id": 2,
         "type_objet_id": null,
-        "decharge_id": 4,
-        "type_decharge_id": 4,
+        "decharge_id": 3,
+        "type_decharge_id": 3,
         "caracteristiques_ids": [
           654,
           655,
@@ -13140,8 +13140,8 @@
         "id_mh": 365,
         "category_objet_id": 7,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 5,
+        "type_decharge_id": 5,
         "caracteristiques_ids": [],
         "item_result_ids": []
       },
@@ -13173,8 +13173,8 @@
         "id_mh": 366,
         "category_objet_id": 7,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 5,
+        "type_decharge_id": 5,
         "caracteristiques_ids": [],
         "item_result_ids": []
       },
@@ -13206,8 +13206,8 @@
         "id_mh": 367,
         "category_objet_id": 7,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 5,
+        "type_decharge_id": 5,
         "caracteristiques_ids": [],
         "item_result_ids": []
       },
@@ -13658,8 +13658,8 @@
         "id_mh": 377,
         "category_objet_id": 7,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 5,
+        "type_decharge_id": 5,
         "caracteristiques_ids": [],
         "item_result_ids": []
       },
@@ -13759,8 +13759,8 @@
         "id_mh": 380,
         "category_objet_id": 7,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 5,
+        "type_decharge_id": 5,
         "caracteristiques_ids": [],
         "item_result_ids": []
       },
@@ -13825,8 +13825,8 @@
         "id_mh": 382,
         "category_objet_id": 7,
         "type_objet_id": null,
-        "decharge_id": null,
-        "type_decharge_id": null,
+        "decharge_id": 5,
+        "type_decharge_id": 5,
         "caracteristiques_ids": [],
         "item_result_ids": []
       },
