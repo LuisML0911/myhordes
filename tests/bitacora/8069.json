@@ -12152,7 +12152,8 @@
           "x": 0,
           "y": 3,
           "dried": false,
-          "diggedRuin": true
+          "diggedRuin": true,
+          "digged": true
         },
         {
           "x": 1,
