@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260907_234230_555": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8062,
+              "name": "Arcane region",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8063,
+              "name": "Hungernde Hustende",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8075,
+              "name": "Durchgeknallte Treffen",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 1,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8077,
+              "name": "Indolences indignes",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 3,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8079,
+              "name": "Tormented headland",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 37,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 4,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8081,
+              "name": "Pocilga Telúrica",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 14,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 2,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8083,
+              "name": "Bastions du Haut",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 31,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 11,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260907_234234_531": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8081",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
