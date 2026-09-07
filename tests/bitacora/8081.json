@@ -3209,7 +3209,8 @@
           "x": 1,
           "y": 0,
           "dried": false,
-          "purged": true
+          "purged": true,
+          "diggedRuin": true
         },
         {
           "x": 2,
