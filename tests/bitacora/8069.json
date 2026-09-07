@@ -15459,7 +15459,8 @@
           "x": 1,
           "y": 3,
           "dried": false,
-          "purged": true
+          "purged": true,
+          "digged": true
         },
         {
           "x": 1,
