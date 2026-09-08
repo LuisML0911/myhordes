@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260908_225610_157": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8062,
+              "name": "Arcane region",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 1,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8063,
+              "name": "Hungernde Hustende",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8075,
+              "name": "Durchgeknallte Treffen",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 5,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8077,
+              "name": "Indolences indignes",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 5,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8086,
+              "name": "Menacing mound",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 14,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 6,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8087,
+              "name": "Cirque atrabilaire",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 28,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 2,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8088,
+              "name": "Feria Psicótica",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 6,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260908_225613_296": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8088",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
