@@ -147836,7 +147836,8 @@
         {
           "x": 6,
           "y": 1,
-          "dried": false
+          "dried": false,
+          "digged": true
         },
         {
           "x": 5,
