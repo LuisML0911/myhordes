@@ -4407,6 +4407,18 @@
           "error": "305"
         }
       }
+    },
+    "20260913_001124_649": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door/exit",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
