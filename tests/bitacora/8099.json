@@ -30960,6 +30960,22 @@
         "body": {}
       },
       "response": {}
+    },
+    "20260914_190810_541": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260914_190811_475": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
     }
   },
   "day1": {
