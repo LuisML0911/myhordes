@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260915_233726_819": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 7988,
+              "name": "Grieta Hedionda de la Avaricia",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 5,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8063,
+              "name": "Hungernde Hustende",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8102,
+              "name": "Promenade du Printemps",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 16,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8106,
+              "name": "Cuadra Crítica",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 38,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 3,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8107,
+              "name": "Pustulent cairn",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 27,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 2,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8109,
+              "name": "Altbackene Altare",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 31,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 15,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8111,
+              "name": "Plateaux totalitaires",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 19,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 5,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8112,
+              "name": "Vengeful hillsides",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260915_233731_019": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8106",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
