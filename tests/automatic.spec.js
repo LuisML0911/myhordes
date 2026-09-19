@@ -690,9 +690,11 @@ async function playInDeserted(){
 						const weaponHeavyList = weaponListData.weaponHeavyList.map(o => o.id);
 						const weaponList = weaponListData.weaponList.map(o => o.id);
 						while(Object.keys(playInv).length < dataSaved.invSize && Object.keys(deseInv).length != 0){
-							if(currentSaved.route.currentPoss <= 4){ // si se encuentra a X PA de distancia, solo toma las armas
+							if(currentSaved.route.currentPoss <= 4){ // si se encuentra a X PA de distancia
 								if(takeHeavy){
-									let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, weaponHeavyList);
+									//let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, weaponHeavyList); // solo toma las armas
+									const primeraMitad = items.heavyList.slice(0, Math.floor(items.heavyList.length / 2));
+									let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, primeraMitad);
 									if(playInvTemp == undefined){
 										takeHeavy = false;
 										continue;
@@ -703,7 +705,9 @@ async function playInDeserted(){
 										takeHeavy = false;
 									}
 								}else{
-									let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, weaponList);
+									//let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, weaponList);// solo toma las armas
+									const primeraMitad = items.list.slice(0, Math.floor(items.list.length / 2));
+									let playInvTemp = await searchMoveItem(inv.IdInvDes, inv.IdInvPer, primeraMitad);
 									if(playInvTemp == undefined){
 										break;
 									}else{
