@@ -5963,6 +5963,194 @@
           "success": true
         }
       }
+    },
+    "20260919_232452_337": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260919_232453_051": {
+      "request": {
+        "url": "/jx/beyond/desert/cached",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260919_232453_459": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7522597",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7516602"
+        }
+      },
+      "response": {
+        "body": {
+          "success": false,
+          "messages": "Por ahora, no necesitas hacer esto."
+        }
+      }
+    },
+    "20260919_232453_646": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7522597",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28540228,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                6
+              ]
+            },
+            {
+              "i": 28540233,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                2
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260919_232453_832": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7516602",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28550233,
+              "p": 111,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -111,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28556159,
+              "p": 188,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -188,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28543795,
+              "p": 280,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -280,
+                1,
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260919_232454_015": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7516602/28534117",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7522597"
+        }
+      },
+      "response": {
+        "body": []
+      }
+    },
+    "20260919_232454_204": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7516602/28540238",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7522597"
+        }
+      },
+      "response": {
+        "body": []
+      }
     }
   },
   "day1": {
@@ -5996,7 +6184,8 @@
         {
           "x": 2,
           "y": 1,
-          "dried": false
+          "dried": false,
+          "purged": true
         },
         {
           "x": 3,
