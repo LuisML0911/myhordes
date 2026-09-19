@@ -801,10 +801,10 @@ async function login(){
 	// Se recupera URL base final que si haya logrado responder
 	basePath = new URL(pag.url()).origin;
 	
-	//console.error("Iniciando Login: " + pag.url());
+	console.error("Iniciando Login: " + pag.url());
 	// Se realiza autenticación
 	await goto('/jx/public/login');
-	//console.error("Haciendo Login: " + pag.url());
+	console.error("Haciendo Login: " + pag.url());
 	try{
 		await pag.click('#et_login_button', {timeout: 3000});
 		await pag.waitForNavigation({ waitUntil: 'domcontentloaded' });
@@ -812,7 +812,7 @@ async function login(){
 		await pag.type('input[name="password"]', pass, { delay: 150 });
 		await pag.click('input[name="sign_in"]');
 		await pag.waitForSelector('hordes-header-ui', {state: 'attached',timeout: 5000});
-		//console.error("Login Terminado: " + pag.url());
+		console.error("Login Terminado: " + pag.url());
 	}catch(exception){
 		if (exception.name === 'TimeoutError') {
 			console.error("Se agotó el tiempo de espera al intentar hacer click");
