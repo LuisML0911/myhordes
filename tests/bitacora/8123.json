@@ -3484,6 +3484,21 @@
           "success": true
         }
       }
+    },
+    "20260919_080500_442": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
@@ -3594,7 +3609,7 @@
         }
       ],
       "tNotDried": 15,
-      "currentPoss": 0
+      "currentPoss": 1
     }
   },
   "hasUsedDrugs": false,
