@@ -229,7 +229,7 @@ async function evaluateWebSite(){
 	if (actions[currentPath]) {
 		await actions[currentPath]();
 	} else {
-		await pag.waitForSelector('#postbox');
+		await pag.waitForLoadState('networkidle');
 		await evaluateWebSite();
 	}
 }
