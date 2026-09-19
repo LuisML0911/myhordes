@@ -810,7 +810,11 @@ async function login(){
 		await pag.waitForNavigation({ waitUntil: 'domcontentloaded' });
 		await pag.type('input[name="login"]', user, { delay: 150 });
 		await pag.type('input[name="password"]', pass, { delay: 150 });
-		await pag.click('input[name="sign_in"]');
+		await pag.evaluate(() => {
+			const btn = document.querySelector('input[name="sign_in"]');
+			if (btn) btn.removeAttribute('disabled');
+		});
+		await pag.click('input[name="sign_in"]', {timeout: 1000});
 		await pag.waitForSelector('hordes-header-ui', {state: 'attached',timeout: 5000});
 		console.error("Login Terminado: " + pag.url());
 	}catch(exception){
