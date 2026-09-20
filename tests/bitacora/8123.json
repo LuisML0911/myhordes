@@ -21955,6 +21955,302 @@
       "response": {
         "body": []
       }
+    },
+    "20260920_190025_002": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260920_190025_610": {
+      "request": {
+        "url": "/jx/beyond/desert/cached",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260920_190025_849": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7522597",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7516627"
+        }
+      },
+      "response": {
+        "body": {
+          "success": false,
+          "messages": "Por ahora, no necesitas hacer esto."
+        }
+      }
+    },
+    "20260920_190026_004": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7522597",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28540228,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                2
+              ]
+            },
+            {
+              "i": 28540233,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                7
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260920_190026_162": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7516627",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28559622,
+              "p": 2,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -2,
+                1,
+                2
+              ]
+            },
+            {
+              "i": 28559625,
+              "p": 3,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -3,
+                1,
+                9
+              ]
+            },
+            {
+              "i": 28565813,
+              "p": 3,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -3,
+                1,
+                8
+              ]
+            },
+            {
+              "i": 28564855,
+              "p": 38,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": "0 pts ataque",
+              "s": [
+                0,
+                0,
+                0,
+                -38,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28569491,
+              "p": 108,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": "0 pts ataque",
+              "s": [
+                0,
+                0,
+                0,
+                -108,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28565065,
+              "p": 138,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -138,
+                1,
+                1
+              ]
+            },
+            {
+              "i": 28556246,
+              "p": 188,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -188,
+                1,
+                4
+              ]
+            },
+            {
+              "i": 28559279,
+              "p": 269,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": null,
+              "s": [
+                0,
+                0,
+                0,
+                -269,
+                1,
+                9
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260920_190026_430": {
+      "request": {
+        "url": "/jx/beyond/partial/desert/actions",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260920_190026_689": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28569491",
+          "action": null
+        }
+      },
+      "response": {
+        "body": {
+          "error": "1"
+        }
+      }
+    },
+    "20260920_190026_830": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7516627/28534117",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7522597"
+        }
+      },
+      "response": {
+        "body": []
+      }
+    },
+    "20260920_190026_973": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7516627/28540238",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7522597"
+        }
+      },
+      "response": {
+        "body": []
+      }
     }
   },
   "day1": {
