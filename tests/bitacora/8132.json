@@ -2172,6 +2172,18 @@
           "error": "305"
         }
       }
+    },
+    "20260920_232731_063": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door/exit",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
