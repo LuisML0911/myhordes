@@ -2184,6 +2184,21 @@
           "success": true
         }
       }
+    },
+    "20260920_232737_282": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
@@ -2294,7 +2309,7 @@
         }
       ],
       "tNotDried": 15,
-      "currentPoss": 0
+      "currentPoss": 1
     }
   },
   "hasUsedDrugs": false,
