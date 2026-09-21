@@ -27919,6 +27919,155 @@
           "error": "1"
         }
       }
+    },
+    "20260921_224902_330": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260921_224903_068": {
+      "request": {
+        "url": "/jx/beyond/desert/cached",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260921_224903_313": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7531033",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7528318"
+        }
+      },
+      "response": {
+        "body": {
+          "success": false,
+          "messages": "Por ahora, no necesitas hacer esto."
+        }
+      }
+    },
+    "20260921_224903_495": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7531033",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 6,
+          "heavy": 1,
+          "mods": {
+            "has_drunk": true,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28579650,
+              "p": 316,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                100,
+                -316,
+                1,
+                7
+              ]
+            },
+            {
+              "i": 28579655,
+              "p": 319,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": true,
+              "w": null,
+              "s": [
+                1,
+                0,
+                80,
+                -319,
+                1,
+                6
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260921_224903_685": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7528318",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": false,
+          "rsc": false,
+          "size": 0,
+          "heavy": 0,
+          "mods": {
+            "has_drunk": true,
+            "cata": null
+          },
+          "items": [
+            {
+              "i": 28579659,
+              "p": 162,
+              "c": 1,
+              "b": false,
+              "h": false,
+              "e": false,
+              "w": "0 pts ataque",
+              "s": [
+                0,
+                0,
+                0,
+                -162,
+                1,
+                4
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260921_224903_967": {
+      "request": {
+        "url": "/jx/beyond/partial/desert/actions",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260921_224904_193": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28579659",
+          "action": null
+        }
+      },
+      "response": {
+        "body": {
+          "error": "1"
+        }
+      }
     }
   },
   "day1": {
