@@ -38094,6 +38094,22 @@
           "success": true
         }
       }
+    },
+    "20260922_210404_641": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260922_210405_489": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
     }
   },
   "day1": {
