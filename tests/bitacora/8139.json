@@ -9742,6 +9742,22 @@
           "success": true
         }
       }
+    },
+    "20260924_201937_557": {
+      "request": {
+        "url": "/jx/town/bank",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
+    },
+    "20260924_201938_483": {
+      "request": {
+        "url": "/jx/town/house/dash",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {}
     }
   },
   "day1": {
