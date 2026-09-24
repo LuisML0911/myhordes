@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260924_004625_806": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 8063,
+              "name": "Hungernde Hustende",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8117,
+              "name": "Unwürdiges Pony",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 5,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8121,
+              "name": "Aldea del Queseyó",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8126,
+              "name": "Grottes de l'Est",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 30,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 5,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8139,
+              "name": "Canto Áspero",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 34,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 4,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8143,
+              "name": "Invisible fort",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 13,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 5,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8145,
+              "name": "Engeance  tordue de Hk L'insoumis",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 37,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 9,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8146,
+              "name": "Tortuous arenas",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 1,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260924_004629_021": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8139",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
