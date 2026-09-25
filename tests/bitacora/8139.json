@@ -25923,7 +25923,8 @@
         {
           "x": 5,
           "y": 3,
-          "dried": false
+          "dried": false,
+          "digged": true
         },
         {
           "x": 5,
