@@ -590,10 +590,136 @@
           }
         }
       }
+    },
+    "20260926_000339_145": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7557458",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": true,
+          "rsc": false,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "categories": [
+            {
+              "id": 22,
+              "items": [
+                {
+                  "i": 28691158,
+                  "p": 83,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -83,
+                    1,
+                    8
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 9,
+              "items": [
+                {
+                  "i": 28691159,
+                  "p": 118,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -118,
+                    1,
+                    2
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "20260926_000339_333": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7557458",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "bank": true,
+          "rsc": false,
+          "mods": {
+            "has_drunk": false,
+            "cata": null
+          },
+          "categories": [
+            {
+              "id": 22,
+              "items": [
+                {
+                  "i": 28691158,
+                  "p": 83,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -83,
+                    1,
+                    4
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 9,
+              "items": [
+                {
+                  "i": 28691159,
+                  "p": 118,
+                  "c": 1,
+                  "b": false,
+                  "h": false,
+                  "e": false,
+                  "w": null,
+                  "s": [
+                    0,
+                    0,
+                    0,
+                    -118,
+                    1,
+                    1
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   },
   "day1": {
-    "currentStep": 1,
+    "currentStep": 2,
     "purge": true
   },
   "hasUsedDrugs": false,
