@@ -1,8 +1,10 @@
 name: Update Weapons Data
 
 on:
-  schedule:
-    - cron: '0 0 * * 0'   # cada domingo a medianoche UTC
+  repository_dispatch:
+    types: [updateWeaponsByPowerAutomate]
+  #schedule:
+  #  - cron: '0 0 * * 0'   # cada domingo a medianoche UTC
   workflow_dispatch:       # también lo puedes lanzar manualmente
   
 permissions:
