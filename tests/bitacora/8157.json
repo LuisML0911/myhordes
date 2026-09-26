@@ -1047,6 +1047,18 @@
           "success": true
         }
       }
+    },
+    "20260926_000351_931": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door/exit",
+        "method": "POST",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "success": true
+        }
+      }
     }
   },
   "day1": {
