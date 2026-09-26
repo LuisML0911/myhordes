@@ -1,0 +1,171 @@
+{
+  "log": {
+    "20260926_000315_402": {
+      "request": {
+        "url": "/rest/v1/game/lobby/list",
+        "method": "GET",
+        "body": {}
+      },
+      "response": {
+        "body": {
+          "towns": [
+            {
+              "id": 8063,
+              "name": "Hungernde Hustende",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8121,
+              "name": "Aldea del Queseyó",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8146,
+              "name": "Tortuous arenas",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 3,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8150,
+              "name": "Vaux anéantis",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 9,
+              "type": 3,
+              "mayor": false,
+              "event": false,
+              "coalitions": 4,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8152,
+              "name": "Chilling theatre",
+              "population": 40,
+              "language": "en",
+              "citizenCount": 7,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8155,
+              "name": "Vestiges de la Mort rampante",
+              "population": 40,
+              "language": "fr",
+              "citizenCount": 23,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8156,
+              "name": "Fröhliches Gesindel",
+              "population": 40,
+              "language": "de",
+              "citizenCount": 0,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            },
+            {
+              "id": 8157,
+              "name": "Abismo de Zombiepolares",
+              "population": 40,
+              "language": "es",
+              "citizenCount": 0,
+              "type": 2,
+              "mayor": false,
+              "event": false,
+              "coalitions": 0,
+              "protection": {
+                "password": false,
+                "whitelist": false
+              },
+              "custom_rules": false
+            }
+          ]
+        }
+      }
+    },
+    "20260926_000319_112": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8157",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              28,
+              32,
+              36,
+              40,
+              44
+            ]
+          }
+        }
+      },
+      "response": {
+        "body": {
+          "url": "/jx/game/landing"
+        }
+      }
+    }
+  }
+}
