@@ -3,8 +3,8 @@ name: Play
 on:
   repository_dispatch:
     types: [playByPowerAutomate] # Este nombre debe coincidir con el que envíes desde Power Automate
-  schedule:
-    - cron: "*/30 * * * *"
+  #schedule:
+  #  - cron: "*/30 * * * *"
   workflow_dispatch:       # también lo puedes lanzar manualmente
 
 permissions:
