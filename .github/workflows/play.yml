@@ -2,7 +2,7 @@ name: Play
 
 on:
   repository_dispatch:
-    types: [playByPowerAutomate] # Este nombre debe coincidir con el que envíes desde Power Automate
+    types: [playByPowerAutomate]
   #schedule:
   #  - cron: "*/30 * * * *"
   workflow_dispatch:       # también lo puedes lanzar manualmente
