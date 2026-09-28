@@ -671,6 +671,13 @@ async function playInDeserted(){
 					const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
 					if(currentPAs == 0){ // consumir
 						console.log("No tiene PAs, intenta consumir");
+						await dropPlayerInventory(inv);
+						if(currentSaved.startItems.idInvFood != undefined){
+							await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvFood);
+						}
+						if(currentSaved.startItems.idInvWater != undefined){
+							await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvWater);
+						}
 						let canUseItem = false;
 						//comer
 						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvFood)})).error){
