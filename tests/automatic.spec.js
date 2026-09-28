@@ -955,12 +955,15 @@ async function doAction(endpoint, method, bodyData) {
 	});
 	const contentType = response.headers()["content-type"];
 	let result;
-	if (contentType && contentType.includes("application/json")) {
-		result = await response.json();
-		logTrace(endpoint, method, bodyData, response?.status(), result);
-	} else {
-		result = await response.text();
-		logTrace(endpoint, method, bodyData);
+	const status = response?.status();
+	if(status >= 200 &&  && status <= 206){
+		if (contentType && contentType.includes("application/json")) {
+			result = await response.json();
+			logTrace(endpoint, method, bodyData,status, result);
+		} else {
+			result = await response.text();
+			logTrace(endpoint, method, bodyData);
+		}
 	}
 	return result;
 }
