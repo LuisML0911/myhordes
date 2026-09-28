@@ -955,13 +955,12 @@ async function doAction(endpoint, method, bodyData) {
 	});
 	const contentType = response.headers()["content-type"];
 	let result;
-	const status = response?.status();
 	if (contentType && contentType.includes("application/json")) {
 		result = await response.json();
-		logTrace(endpoint, method, bodyData,status, result);
+		logTrace(endpoint, method, bodyData, response?.status(), result);
 	} else {
 		result = await response.text();
-		logTrace(endpoint, method, bodyData);
+		logTrace(endpoint, method, bodyData, response?.status());
 	}
 	return result;
 }
@@ -1551,7 +1550,8 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 	if(dataSaved.log == undefined){
 		dataSaved.log = {};
 	}
-	if(method != 'GET' && status >= 200 && status <= 206){
+	const urlsConsum = ["/jx/beyond/partial/desert/actions"];
+	if(method != 'GET' && status >= 200 && status <= 206 && !urlsConsum.includes(url)){
 		const currentDate = getFormattedDate();
 		dataSaved.log[currentDate] = {
 			request: {
