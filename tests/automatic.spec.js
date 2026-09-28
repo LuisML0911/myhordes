@@ -956,14 +956,12 @@ async function doAction(endpoint, method, bodyData) {
 	const contentType = response.headers()["content-type"];
 	let result;
 	const status = response?.status();
-	if(method != 'GET' && status >= 200 &&  && status <= 206){
-		if (contentType && contentType.includes("application/json")) {
-			result = await response.json();
-			logTrace(endpoint, method, bodyData,status, result);
-		} else {
-			result = await response.text();
-			logTrace(endpoint, method, bodyData);
-		}
+	if (contentType && contentType.includes("application/json")) {
+		result = await response.json();
+		logTrace(endpoint, method, bodyData,status, result);
+	} else {
+		result = await response.text();
+		logTrace(endpoint, method, bodyData);
 	}
 	return result;
 }
@@ -1553,21 +1551,23 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 	if(dataSaved.log == undefined){
 		dataSaved.log = {};
 	}
-	const currentDate = getFormattedDate();
-	dataSaved.log[currentDate] = {
-		request: {
-			url: url,
-			method: method,
-			body: body
-		},
-		status: status
-		/*
-		response: {
-			status: status,
-			body: result
-		}
-		*/
-	};
+	if(method != 'GET' && status >= 200 && status <= 206){
+		const currentDate = getFormattedDate();
+		dataSaved.log[currentDate] = {
+			request: {
+				url: url,
+				method: method,
+				body: body
+			},
+			status: status
+			/*
+			response: {
+				status: status,
+				body: result
+			}
+			*/
+		};
+	}
 	//console.log(dataSaved.log[currentDate]);
 	//writeJSON(nameFile_dataSaved, dataSaved);
 }
