@@ -48,6 +48,19 @@ let countMainInvocation = 0;
 let uniqueProfile;
 let weaponListData = {};
 let items = {};
+test('resetLogs', async ({ page }) => {
+	// Navegar para que el navegador obtenga la cookie de Cloudflare
+	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
+
+	lastDataSaved = readJSON(nameFile_lastDataSaved);
+	nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
+	if(Object.keys(dataSaved).length === 0){
+		dataSaved = readJSON(nameFile_dataSaved);
+	}
+	dataSaved.log = {}
+
+	writeJSON(nameFile_dataSaved, dataSaved);
+});
 test('UpdateWeaponData', async ({ page }) => {
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
 	await page.goto('https://gesthordes.fr/rest/v1/prototype/all');
@@ -69,7 +82,7 @@ test('UpdateWeaponData', async ({ page }) => {
 		return; // salir sin hacer commit
 	}
 
-	writeJSON('data/weapons.json', data);
+	writeJSON('test/bitacora/weapons.json', data);
 });
 test('GetGestHordes', async ({page}) => {
 	lastDataSaved = readJSON(nameFile_lastDataSaved);
