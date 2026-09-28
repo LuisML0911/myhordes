@@ -1180,7 +1180,7 @@ async function prepareToExplore(inv, storageInventory){
 	}
 	const foods = items.foods.map(food => food.id);;
 	//recoger comida
-	let abrelatas = searchItemIdInv([20], storageInventory);
+	let abrelatas = searchItemIdInv([12,17,20,140], storageInventory);
 	let idF = searchItemIdInv(abrelatas?foods:foods.slice(1), storageInventory);
 	if(idF){
 		let actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+idF, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
@@ -1193,14 +1193,14 @@ async function prepareToExplore(inv, storageInventory){
 				if(actInv?.success){
 					//abre la lata
 					await doAction("/api/town/house/action", "POST", {item: hasLata, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), hasLata)});
-					if(abrelata = searchItemIdInv([20], actAbrLat.target)){
+					if(abrelatas = searchItemIdInv([12,17,20,140], actInv.target)){
 						//regresa el abre latas
-						await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelata, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
+						await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelatas, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
 					}
 				}else{
 					// regresa la lata
 					await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+hasLata, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
-					idF = searchItemIdInv(abrelatas?foods:foods.slice(1), storageInventory);
+					idF = searchItemIdInv(foods.slice(1), storageInventory);
 					actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+idF, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
 				}
 			}
