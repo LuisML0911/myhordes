@@ -665,6 +665,7 @@ async function playInDeserted(){
 				// 4. Si faltan 4 horas para el ataque deberá avanzar sin agotar la zona hasta completar la ruta.
 				const mgdZoneNote = await pag.locator('#mgd-zone-note').count();
 				const attackTime = await pag.locator('div.attack-time').innerText();
+				let inv = await getInventoryIds();
 				if (await mgdZoneNote > 0 || /^~[3210]:/.test(attackTime) || currentPoss.dried) {// moverse
 					console.log("Inicia flujo para moverse");
 					// 3. Al moverse si no se cuenta con PA's suficientes deberán consumirse los recursos preparados para la ruta.
@@ -700,7 +701,6 @@ async function playInDeserted(){
 					}else{ // moverse
 						console.log("Recoge por prioridad antes de moverse");
 						// recoger items
-						let inv = await getInventoryIds();
 						await dropPlayerInventory(inv);
 						if(currentSaved.startItems.idInvFood != undefined){
 							await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvFood);
