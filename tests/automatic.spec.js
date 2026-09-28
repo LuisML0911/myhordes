@@ -956,7 +956,7 @@ async function doAction(endpoint, method, bodyData) {
 	const contentType = response.headers()["content-type"];
 	let result;
 	const status = response?.status();
-	if(status >= 200 &&  && status <= 206){
+	if(status >= 200 &&  && status <= 206 && method != 'GET'){
 		if (contentType && contentType.includes("application/json")) {
 			result = await response.json();
 			logTrace(endpoint, method, bodyData,status, result);
