@@ -433,6 +433,9 @@ async function playInDeserted(){
 	try{
 		// se busca el día actual y se ejecuta el proceso correspondiente
 		let currentDay = parseInt((await pag.locator('span.day-number').innerText()).replace(/\D/g, ''), 10);
+		if(dataSaved[`day${currentDay}`]?.camping){
+			return;
+		}
 		const currentSaved = dataSaved[`day${currentDay}`];
 		const currentPoss = currentSaved.route.way[currentSaved.route.currentPoss];
 		/*
@@ -560,8 +563,9 @@ async function playInDeserted(){
 									}else{
 										if (/^~[0]:/.test(attackTime)) { // si queda 1 hora o menos acampar
 											if(dataSaved.heroicAction.pa){
-												if((await doAction("https://myhord.es/api/beyond/desert/heroic", "POST", {action: "4"})).error){}else{
-													dataSaved.heroicAction.pa = false;
+												dataSaved.heroicAction.pa = false;
+												if((await doAction("https://myhord.es/api/beyond/desert/heroic", "POST", {action: "4"})).error){
+												}else{
 													currentSaved.usedHeroicAction = true;
 													canUseHeroicAction = true;
 													// TODO: evaluar si es mejor acampar que gastar esos PAs
@@ -593,6 +597,7 @@ async function playInDeserted(){
 													// esconderse
 													await doAction("/api/beyond/desert/camping ", "POST", {action: "6"});
 												}
+												dataSaved[`day${currentDay}`].camping = true;
 												dataSaved[`day${currentDay + 1}`] = dataSaved[`day${currentDay}`];
 												await goto('/jx/beyond/desert/cached');
 												return;
