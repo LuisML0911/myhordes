@@ -509,6 +509,7 @@ async function playInDeserted(){
 				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...weaponListData.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
 				if(combination != null){
 					const useObj = combination.combo.reduce((min, obj) => obj.chance_kill < min.chance_kill ? obj : min);
+					await moveItem(inv.IdInvDes, inv.IdInvPer, useObj.key);
 					await doAction("/api/beyond/desert/action", "POST", {item: useObj.key, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), useObj.key)});
 					canUseWeapon = true;
 				}else{
@@ -524,8 +525,8 @@ async function playInDeserted(){
 							96   	//Batidora eléctrica (apagada)
 						], deseInv);
 						if(weaponBattery != undefined){
-							moveItem(inv.IdInvDes, inv.IdInvPer, battery);
-							moveItem(inv.IdInvDes, inv.IdInvPer, weaponBattery);
+							await moveItem(inv.IdInvDes, inv.IdInvPer, battery);
+							await moveItem(inv.IdInvDes, inv.IdInvPer, weaponBattery);
 							await doAction("/api/beyond/desert/action", "POST", {item: weaponBattery, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), weaponBattery)});
 							await doAction("/api/beyond/desert/action", "POST", {item: weaponBattery, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), weaponBattery)});
 							canUseWeaponBattery = true;
@@ -1138,7 +1139,7 @@ async function moveItem(fromIdInv, toIdInv, id){
 async function searchMoveItem(fromIdInv, toIdInv, arrItemsToSearch){
 	let id = searchItemIdInv(arrItemsToSearch, await getInventory(fromIdInv));
 	if(id != undefined){
-		return moveItem(fromIdInv, toIdInv, id);
+		return await moveItem(fromIdInv, toIdInv, id);
 	} else {
 		return undefined;
 	}
