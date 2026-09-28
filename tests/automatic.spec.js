@@ -957,7 +957,7 @@ async function doAction(endpoint, method, bodyData) {
 	let result;
 	if (contentType && contentType.includes("application/json")) {
 		result = await response.json();
-		logTrace(endpoint, method, bodyData, response.status, result);
+		logTrace(endpoint, method, bodyData, response?.status(), result);
 	} else {
 		result = await response.text();
 		logTrace(endpoint, method, bodyData);
@@ -1557,10 +1557,13 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 			method: method,
 			body: body
 		},
+		status: status
+		/*
 		response: {
 			status: status,
 			body: result
 		}
+		*/
 	};
 	//console.log(dataSaved.log[currentDate]);
 	//writeJSON(nameFile_dataSaved, dataSaved);
