@@ -5,6 +5,7 @@
     "purge": true,
     "startItems": {
       "idFood": 118,
+      "idInvFood": 2871316,
       "idWater": 1
     },
     "route": {
