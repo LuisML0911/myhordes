@@ -428,6 +428,7 @@ async function defaultPlayTown(currentDay){
 
 // flujo principal cuando el jugador esta en el desierto
 async function playInDeserted(){
+	console.log("Inicia playInDeserted()");
 	await pag.waitForSelector('#header-rucksack-items');
 	try{
 		// se busca el día actual y se ejecuta el proceso correspondiente
@@ -665,9 +666,11 @@ async function playInDeserted(){
 				const mgdZoneNote = await pag.locator('#mgd-zone-note').count();
 				const attackTime = await pag.locator('div.attack-time').innerText();
 				if (await mgdZoneNote > 0 || /^~[3210]:/.test(attackTime) || currentPoss.dried) {// moverse
+					console.log("Inicia flujo para moverse");
 					// 3. Al moverse si no se cuenta con PA's suficientes deberán consumirse los recursos preparados para la ruta.
 					const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
 					if(currentPAs == 0){ // consumir
+						console.log("No tiene PAs, intenta consumir");
 						let canUseItem = false;
 						//comer
 						if(currentSaved?.startItems?.idInvFood === undefined || (await doAction("/api/beyond/desert/action", "POST", {item: currentSaved.startItems.idInvFood, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), currentSaved.startItems.idInvFood)})).error){
@@ -688,6 +691,7 @@ async function playInDeserted(){
 							// TODO: Avisar que se ha quedado sin PAs y no logró consumir nada
 						}
 					}else{ // moverse
+						console.log("Recoge por prioridad antes de moverse");
 						// recoger items
 						let inv = await getInventoryIds();
 						await dropPlayerInventory(inv);
@@ -755,6 +759,7 @@ async function playInDeserted(){
 							}
 						}
 						// actualizar GestHordes
+						console.log("Actualizar GestHordes");
 						await goto('/jx/beyond/desert/cached');
 						await pag.waitForSelector('#header-rucksack-items');
 						await updateGestHordes();
@@ -764,6 +769,7 @@ async function playInDeserted(){
 						if((await doAction("/api/beyond/desert/move", "POST", { x: nextPoss.x, y: nextPoss.y })).error){
 							// TODO: acción si no logré moverme
 						}else{
+							console.log(`Se mueve a [${nextPoss.x}, ${nextPoss.y}]`);
 							currentSaved.route.currentPoss = currentSaved.route.currentPoss + 1;
 							//writeJSON(nameFile_dataSaved, dataSaved);
 							await goto('/jx/beyond/desert/cached');
@@ -1565,8 +1571,8 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 	if(dataSaved.log == undefined){
 		dataSaved.log = {};
 	}
-	const urlsConsum = ["/jx/beyond/partial/desert/actions"];
-	if(method != 'GET' && status >= 200 && status <= 206 && !urlsConsum.includes(url)){
+	const urlsInvalidLog = ["/jx/beyond/partial/desert/actions"];
+	if(method != 'GET' && status >= 200 && status <= 206 && !urlsInvalidLog.includes(url)){
 		const currentDate = getFormattedDate();
 		dataSaved.log[currentDate] = {
 			request: {
@@ -1582,6 +1588,7 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 			}
 			*/
 		};
+		console.log(dataSaved.log[currentDate]);
 	}
 	//console.log(dataSaved.log[currentDate]);
 	//writeJSON(nameFile_dataSaved, dataSaved);
