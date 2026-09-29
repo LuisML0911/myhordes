@@ -1583,7 +1583,7 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 	if(dataSaved.log == undefined){
 		dataSaved.log = {};
 	}
-	const urlsInvalidLog = ["/jx/beyond/partial/desert/actions"];
+	const urlsInvalidLog = ["/jx/beyond/partial/desert/actions", "/jx/beyond/desert/cached"];
 	if(method != 'GET' && status >= 200 && status <= 206 && !urlsInvalidLog.includes(url)){
 		const currentDate = getFormattedDate();
 		dataSaved.log[currentDate] = {
