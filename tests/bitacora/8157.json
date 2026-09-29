@@ -480,6 +480,60 @@
         }
       },
       "status": 200
+    },
+    "20260929_224116_219": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7558612",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7557458"
+        }
+      },
+      "status": 200
+    },
+    "20260929_224117_003": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7558612",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7557458"
+        }
+      },
+      "status": 200
+    },
+    "20260929_224117_726": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7557458/28713855",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7558612"
+        }
+      },
+      "status": 200
+    },
+    "20260929_224118_105": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door",
+        "method": "PATCH",
+        "body": {
+          "action": "open"
+        }
+      },
+      "status": 200
+    },
+    "20260929_224120_704": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door/exit",
+        "method": "POST",
+        "body": {}
+      },
+      "status": 200
     }
   },
   "day1": {
@@ -606,5 +660,116 @@
     "golpe": true,
     "pa": true
   },
-  "invSize": 6
+  "invSize": 6,
+  "day2": {
+    "currentStep": 5,
+    "purge": false,
+    "startItems": {
+      "idFood": 4,
+      "idWater": 1,
+      "idInvFood": "28777511",
+      "idInvWater": "28777510"
+    },
+    "route": {
+      "way": [
+        {
+          "x": 0,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "dried": false
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "dried": false
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "dried": false
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "dried": false
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "dried": false
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "dried": false
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "dried": false
+        }
+      ],
+      "tNotDried": 17,
+      "currentPoss": 0
+    }
+  }
 }
