@@ -771,16 +771,20 @@ async function playInDeserted(){
 								}
 							}
 						}
-						let pala = await searchItemIdInv([319], playInv);
-						if(pala != undefined){
-							await doAction("/api/beyond/desert/action", "POST", {item: pala, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), pala)});
+						try{
+							let pala = await searchItemIdInv([319], playInv);
+							if(pala != undefined){
+								await doAction("/api/beyond/desert/action", "POST", {item: pala, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), pala)});
+							}
+						}catch(exception){
+							console.log(exception);
 						}
 						// actualizar GestHordes
 						console.log("Actualizar GestHordes");
 						await goto('/jx/beyond/desert/cached');
 						await pag.waitForSelector('#header-rucksack-items');
 						await updateGestHordes();
-						await new Promise(r => setTimeout(r, 2000));
+						await new Promise(r => setTimeout(r, 3500));
 						// ir a la siguiente posición
 						const nextPoss = currentSaved.route.way[currentSaved.route.currentPoss + 1];
 						if((await doAction("/api/beyond/desert/move", "POST", { x: nextPoss.x, y: nextPoss.y })).error){
@@ -1272,7 +1276,7 @@ async function updateGestHordes(){
 	// activar actualización de herramientas externas
 	try{
 		if(!externalTools) {
-			await pag.waitForSelector('.mho-new-changelog', {timeout: 7000});
+			await pag.waitForSelector('.mho-new-changelog', {timeout: 10000});
 			await pag.evaluate(() => {
 				return new Promise(resolve => {
 					setTimeout(() => {
@@ -1281,10 +1285,10 @@ async function updateGestHordes(){
 							el.classList.add('mho-btn-opened');
 						}
 						resolve();
-					}, 2000);
+					}, 4000);
 				});
 			});
-			await pag.check('#synchronize_external_tools_input', {timeout: 7000});
+			await pag.check('#synchronize_external_tools_input', {timeout: 10000});
 			externalTools = true;
 		}
 	}catch(exception){
