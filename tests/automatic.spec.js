@@ -491,7 +491,7 @@ async function playInDeserted(){
 			let inv = await getInventoryIds();
 			await dropPlayerInventory(inv);
 			let playInv = await getPlayerInventory(inv);
-			let outfit = await searchItemIdInv([315], playInv);
+			let outfit = await searchItemIdInv([316], playInv);
 			await doAction("/api/town/house/action", "POST", {item: outfit, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), outfit)});
 		}else{
 			// 1. Evaluar si la zona esta controlada por los zombies, si esta controlada intentar liberar y actualizar para evaluar si siguie controlada, si sigue controlada repetir 3 veces antes de alertar.
@@ -769,6 +769,10 @@ async function playInDeserted(){
 									}
 								}
 							}
+						}
+						let pala = await searchMoveItem([319], playInv);
+						if(pala != undefined){
+							await doAction("/api/beyond/desert/action", "POST", {item: pala, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), pala)});
 						}
 						// actualizar GestHordes
 						console.log("Actualizar GestHordes");
