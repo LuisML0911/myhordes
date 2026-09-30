@@ -60,6 +60,7 @@ test('resetLogs', async ({ page }) => {
 	dataSaved.log = {}
 
 	writeJSON(nameFile_dataSaved, dataSaved);
+	createRoutes(20);
 });
 test('UpdateWeaponData', async ({ page }) => {
 	// Navegar para que el navegador obtenga la cookie de Cloudflare
