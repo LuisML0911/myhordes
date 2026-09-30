@@ -1497,27 +1497,29 @@ function createRoutes(PAs, Ox = 0, Oy = 0) {
     if (fs.existsSync(filePath)) {
         return {};
     } else {
+		fs.mkdirSync(path.dirname(filePath), { recursive: true });
 		const stream = fs.createWriteStream(filePath);
 		let count = 0;
 		for (let ruta of generateRoutesGen(PAs, Ox, Oy)) {
 			stream.write(JSON.stringify(ruta) + '\n');
 			count++;
 		}
-		stream.end();
-		// Agregar y commitear cambios
-        try {
-            execSync('git config user.name "github-actions[bot]"');
-            execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
-            execSync(`git add .`);
-            execSync(`git commit -m "file changed: ${filePath}" || echo "No changes to commit"`);
-            execSync('git pull --rebase https://x-access-token:' + process.env.GITHUB_TOKEN +
-                '@github.com/' + process.env.GITHUB_REPOSITORY + '.git main');
-            execSync('git push https://x-access-token:' + process.env.GITHUB_TOKEN +
-                '@github.com/' + process.env.GITHUB_REPOSITORY + '.git HEAD:main');
-            console.log(`Archivo ${filePath} actualizado`);
-        } catch (error) {
-            console.error(`Error al guardar cambios para archivo ${filePath}:`, error.message);
-        }
+		stream.end(() => {
+			console.log(`Se guardaron ${count} rutas en ${filePath}`);
+			try {
+				execSync('git config user.name "github-actions[bot]"');
+				execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+				execSync(`git add -f ${filePath}`);
+				execSync(`git commit -m "file changed: ${filePath}" || echo "No changes to commit"`);
+				execSync('git pull --rebase https://x-access-token:' + process.env.GITHUB_TOKEN +
+					'@github.com/' + process.env.GITHUB_REPOSITORY + '.git main');
+				execSync('git push https://x-access-token:' + process.env.GITHUB_TOKEN +
+					'@github.com/' + process.env.GITHUB_REPOSITORY + '.git HEAD:main');
+				console.log(`Archivo ${filePath} actualizado en GitHub`);
+			} catch (error) {
+				console.error(`Error al guardar cambios para archivo ${filePath}:`, error.message);
+			}
+		});
 		
         return {};
     }
