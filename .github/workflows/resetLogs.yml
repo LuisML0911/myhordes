@@ -42,11 +42,3 @@ jobs:
 
     - name: Run Playwright tests
       run: npx playwright test --reporter=list --grep "resetLogs"
-      
-    - name: Commit generated routes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add routes_*.json
-        git commit -m "Add generated routes from resetLogs"
-        git push
