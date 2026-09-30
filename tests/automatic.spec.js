@@ -805,6 +805,7 @@ async function acceptDead(){
 	await pag.waitForSelector('button[x-ajax-href="/jx/game/raventimes"]');
 	
 	dataSaved = {};
+	lastDataSaved.inv = undefined;
 	writeJSON(nameFile_dataSaved, dataSaved);
 	
 	lastWords = readJSON(lastWordsFile);
@@ -1083,24 +1084,34 @@ async function getDesertInventory(inv) {
 // @return: inv : {IdInvPer, IdInvSto, IdInvBau, IdInvDes}
 async function getInventoryIds() {
 	try {
-		const inventoryElement = new JSDOM(await doAction("/jx/town/bank", "GET", {})).window.document.querySelector("hordes-inventory");
-		if (inventoryElement) {
-			const IdInvPer = inventoryElement.getAttribute("data-inventory-a-id");
-			if(IdInvPer){
-				idPlayerInv = IdInvPer;
+		if(currentPath != "/jx/beyond/desert/cached"){
+			if(lastDataSaved.inv != undefined){
+				return lastDataSaved.inv;
+			}else{
+				const inventoryElement = new JSDOM(await doAction("/jx/town/bank", "GET", {})).window.document.querySelector("hordes-inventory");
+				if (inventoryElement) {
+					const IdInvPer = inventoryElement.getAttribute("data-inventory-a-id");
+					if(IdInvPer){
+						idPlayerInv = IdInvPer;
+					}
+					const IdInvSto = inventoryElement.getAttribute("data-inventory-b-id");
+					
+					const inventoryHouseElement = new JSDOM(await doAction("/jx/town/house/dash", "GET", {})).window.document.querySelector("hordes-inventory");
+					if(inventoryHouseElement){
+						const IdInvBau = inventoryHouseElement.getAttribute("data-inventory-b-id");
+						lastDataSaved.inv = {
+							IdInvPer: IdInvPer,
+							IdInvSto: IdInvSto,
+							IdInvBau: IdInvBau
+						};
+						return { IdInvPer, IdInvSto, IdInvBau };
+					} else {
+						console.error("No se encontró el elemento <hordes-inventory> en el HTML.");
+						return undefined;
+					}
+				}
 			}
-			const IdInvSto = inventoryElement.getAttribute("data-inventory-b-id");
-			
-			const inventoryHouseElement = new JSDOM(await doAction("/jx/town/house/dash", "GET", {})).window.document.querySelector("hordes-inventory");
-			if(inventoryHouseElement){
-				const IdInvBau = inventoryHouseElement.getAttribute("data-inventory-b-id");
-				return { IdInvPer, IdInvSto, IdInvBau };
-			} else {
-				console.error("No se encontró el elemento <hordes-inventory> en el HTML.");
-				return undefined;
-			}
-		} else {
-			console.error("No se encontró el elemento <hordes-inventory> en el HTML.");
+		}else{
 			const inventoryElementDesert = new JSDOM(await doAction("/jx/beyond/desert/cached", "POST", {})).window.document.querySelector("hordes-inventory");
 			if (inventoryElementDesert) {
 				const IdInvPer = inventoryElementDesert.getAttribute("data-inventory-a-id");
@@ -1118,7 +1129,7 @@ async function getInventoryIds() {
 	} catch (error) {
 		console.error("Error al obtener los IDs:", error);
 	}
-			return undefined;
+	return undefined;
 }
 // cierra el portal del pueblo
 async function closePortal(){
