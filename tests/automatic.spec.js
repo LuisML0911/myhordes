@@ -1607,8 +1607,8 @@ function logTrace(url, method, body = undefined, status = undefined, result = un
 				url: url,
 				method: method,
 				body: body
-			},
-			status: status
+			}
+			//,status: status
 			/*
 			response: {
 				status: status,
