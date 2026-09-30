@@ -1491,7 +1491,9 @@ function* generateRoutesGen(PAs, Ox = 0, Oy = 0, x = 0, y = 0, currentPA = 0, pa
 }
 // Función envolvente con persistencia
 function createRoutes(PAs, Ox = 0, Oy = 0) {
-    const filePath = path.join(constFile, `routes_${PAs}.json`);
+    //const filePath = path.join(constFile, `routes_${PAs}.json`);
+	const filePath = path.join(process.cwd(), 'tests/constants', `routes_${PAs}.json`);
+
     if (fs.existsSync(filePath)) {
         return {};
     } else {
@@ -1506,7 +1508,7 @@ function createRoutes(PAs, Ox = 0, Oy = 0) {
         try {
             execSync('git config user.name "github-actions[bot]"');
             execSync('git config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
-            execSync(`git add ${filePath}`);
+            execSync(`git add .`);
             execSync(`git commit -m "file changed: ${filePath}" || echo "No changes to commit"`);
             execSync('git pull --rebase https://x-access-token:' + process.env.GITHUB_TOKEN +
                 '@github.com/' + process.env.GITHUB_REPOSITORY + '.git main');
