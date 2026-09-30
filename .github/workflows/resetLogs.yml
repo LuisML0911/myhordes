@@ -17,6 +17,14 @@ jobs:
     - uses: actions/setup-node@v5
       with:
         node-version: lts/*
+        
+    - name: Setup Git LFS
+      run: |
+        git lfs install
+        git lfs track "tests/constants/*.json"
+        git add .gitattributes
+        git commit -m "Track JSON files with Git LFS" || echo "No changes"
+        git push
 
     - name: Cache Node.js modules
       uses: actions/cache@v5
