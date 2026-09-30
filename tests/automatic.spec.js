@@ -770,7 +770,7 @@ async function playInDeserted(){
 								}
 							}
 						}
-						let pala = await searchMoveItem([319], playInv);
+						let pala = await searchItemIdInv([319], playInv);
 						if(pala != undefined){
 							await doAction("/api/beyond/desert/action", "POST", {item: pala, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), pala)});
 						}
