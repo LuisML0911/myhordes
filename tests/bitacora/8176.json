@@ -72,7 +72,7 @@
     }
   },
   "day1": {
-    "currentStep": 5,
+    "currentStep": 6,
     "purge": true,
     "startItems": {
       "idFood": 118,
@@ -90,7 +90,8 @@
         {
           "x": 1,
           "y": 0,
-          "dried": false
+          "dried": false,
+          "digged": true
         },
         {
           "x": 2,
