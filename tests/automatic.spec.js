@@ -686,14 +686,13 @@ async function playInDeserted(){
 				const digButton = await pag.locator('#dig_button');
 				if(await digButton.count() > 0  && currentPoss.digged == undefined){ // escavar
 					try{
-						//await doAction("/api/beyond/desert/dig", "POST", {});
 						currentPoss.digged = true;
 						await digButton.click({ timeout: 20000 });
-						//writeJSON(nameFile_dataSaved, dataSaved);
+					}catch(e){
+						currentPoss.dried = true;
+					}finally{
 						await goto('/jx/beyond/desert/cached');
 						return await main();
-					}catch(e){
-						currentPoss.digged = true;
 					}
 				}
 				
