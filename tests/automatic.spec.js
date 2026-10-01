@@ -323,7 +323,7 @@ async function startPlayTown(currentDay){
 			const foodToExplore = items.foods.find(food => food.id === dataSaved[`day${currentDay}`].startItems.idFood);
 			const waterToExplore = items.waters.find(water => water.id === dataSaved[`day${currentDay}`].startItems.idWater);
 			const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
-			dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 1 : 2);
+			dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 2 : 3);
 			return true;
 		},
 		async () => { // salir al desierto -> avance en el desierto (función playInDeserted)
@@ -396,7 +396,7 @@ async function betweenSafeDays(currentDay){
 			const waterToExplore = items.waters.find(water => water.id === dataSaved[`day${currentDay}`].startItems.idWater);
 			const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
 			if(foodToExplore != undefined && waterToExplore != undefined){
-				dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 1 : 2);
+				dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 2 : 3);
 			}
 			return true;
 		},
@@ -1346,7 +1346,7 @@ async function updateGestHordes(){
 	}
 }
 // crea una ruta basada en GestHordes
-async function getRoute(PAs, tGroupControl = 2){
+async function getRoute(PAs, tGroupControl = 3){
 	console.log(`(PAs: ${PAs})`);
 	gestHorderData = await getGestHordes();
 	const zones = gestHorderData.data.carte.zones;
