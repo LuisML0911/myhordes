@@ -219,7 +219,13 @@ async function main(){
 		}
 		nameFile_dataSaved = path.join(baseFiles, lastDataSaved.idTown + ".json");
 		if(Object.keys(dataSaved).length === 0){
+			try{
 			dataSaved = readJSON(nameFile_dataSaved);
+			}catch(ex){
+				dataSaved = {};
+				lastDataSaved.inv = undefined;
+				writeJSON(nameFile_dataSaved, dataSaved);
+			}
 		}
 		// se determinan acciones a realizar según la situación actual del jugador
 		await evaluateWebSite();
