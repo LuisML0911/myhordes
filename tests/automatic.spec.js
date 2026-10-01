@@ -221,6 +221,8 @@ async function main(){
 		if(Object.keys(dataSaved).length === 0){
 			dataSaved = readJSON(nameFile_dataSaved);
 		}
+		// se determinan acciones a realizar según la situación actual del jugador
+		await evaluateWebSite();
 	}catch(exception){
 		//console.log(exception);
 		writeJSON(nameFile_lastDataSaved, lastDataSaved);
@@ -231,10 +233,10 @@ async function main(){
 		if(Object.keys(dataSaved).length != 0){
 			writeJSON(nameFile_dataSaved, dataSaved);
 		}
+		if(Object.keys(lastDataSaved).length != 0){
+			writeJSON(nameFile_lastDataSaved, lastDataSaved);
+		}
 	}
-	
-	// se determinan acciones a realizar según la situación actual del jugador
-	await evaluateWebSite();
 }
 
 // segun el path del sitio actual realiza las asignaciones correspondientes
