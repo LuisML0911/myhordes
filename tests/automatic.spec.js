@@ -536,9 +536,12 @@ async function playInDeserted(){
 				await dropPlayerInventory(inv);
 				let playInv = await getPlayerInventory(inv);
 				let deseInv = await getDesertInventory(inv);
+				console.error(`list: ${[...weaponListData.weaponList, ...weaponListData.weaponHeavyList]}`);
 				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...weaponListData.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
+				console.error(`combination: ${combination}`);
 				if(combination != null){
 					const useObj = combination.combo.reduce((min, obj) => obj.chance_kill < min.chance_kill ? obj : min);
+					console.error(`useObj: ${useObj}`);
 					await moveItem(inv.IdInvDes, inv.IdInvPer, useObj.key);
 					await doAction("/api/beyond/desert/action", "POST", {item: useObj.key, action: getActionIdFromHtml(await doAction("/jx/beyond/partial/desert/actions", "POST", {}), useObj.key)});
 					canUseWeapon = true;
