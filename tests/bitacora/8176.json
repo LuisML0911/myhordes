@@ -1,7 +1,19 @@
 {
-  "log": {},
+  "log": {
+    "20261001_041637_494": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7581498",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7580357"
+        }
+      }
+    }
+  },
   "day1": {
-    "currentStep": 0,
+    "currentStep": 1,
     "purge": true
   },
   "hasUsedDrugs": false,
