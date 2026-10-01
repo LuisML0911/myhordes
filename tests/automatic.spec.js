@@ -493,6 +493,12 @@ async function playInDeserted(){
 		
 		// 5. Si se encuentra al final de la ruta en [0,0] entrar al pueblo, TODO: sino intentar acampar
 		if(currentSaved.route.currentPoss != 0 && currentPoss.x == 0 && currentPoss.y == 0){
+			const currentDate = getFormattedDate();
+			if(dataSaved.test == undefined){
+				dataSaved.test = {};
+			}
+			dataSaved.test[currentDate] = {};
+			
 			// salir del desierto
 			await doAction("/api/beyond/desert/exit", "POST", {});
 			await goto('/jx/town/bank');
@@ -501,7 +507,18 @@ async function playInDeserted(){
 			await dropPlayerInventory(inv);
 			let playInv = await getPlayerInventory(inv);
 			let outfit = await searchItemIdInv([316], playInv);
-			await doAction("/api/town/house/action", "POST", {item: outfit, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), outfit)});
+			console.log(`outfit: ${outfit}`);
+			dataSaved.test[currentDate].outfit = outfit;
+			
+			let doActionObj = await doAction("/jx/town/house/dash", "POST", {});
+			console.log(`doActionObj: ${doActionObj}`);
+			dataSaved.test[currentDate].doActionObj = doActionObj;
+			
+			let getActionIdFromHtmlObj = getActionIdFromHtml(doActionObj, outfit);
+			console.log(`getActionIdFromHtmlObj: ${getActionIdFromHtmlObj}`);
+			dataSaved.test[currentDate].getActionIdFromHtmlObj = getActionIdFromHtmlObj;
+			
+			await doAction("/api/town/house/action", "POST", {item: outfit, action: getActionIdFromHtmlObj, outfit)});
 		}else{
 			// 1. Evaluar si la zona esta controlada por los zombies, si esta controlada intentar liberar y actualizar para evaluar si siguie controlada, si sigue controlada repetir 3 veces antes de alertar.
 			const contZ = parseInt(await pag.textContent('.zombies-cp'), 10);
@@ -1206,6 +1223,12 @@ async function dropPlayerInventory(inv){
 }
 // recupera objetos del almacen para una exploracion
 async function prepareToExplore(inv, storageInventory){
+	const currentDate = getFormattedDate();
+	if(dataSaved.test == undefined){
+		dataSaved.test = {};
+	}
+	dataSaved.test[currentDate] = {};
+	
 	//tirar inventario
 	await doAction("/rest/v1/game/inventory/" + inv.IdInvPer, "PATCH", {d: "down-all", mod: null, to: inv.IdInvSto});
 	const waters = items.waters.map(water => water.id);
@@ -1221,16 +1244,20 @@ async function prepareToExplore(inv, storageInventory){
 	let idF = searchItemIdInv(abrelatas?foods:foods.slice(1), storageInventory);
 	if(idF){
 		let actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+idF, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
+		dataSaved.test[currentDate].actInv0 = actInv;
 		if(actInv?.success){
 			//evalua si se recogió una lata
 			let hasLata = searchItemIdInv([3], actInv.target);
+			dataSaved.test[currentDate].hasLata = hasLata;
 			if(hasLata){
 				//recoge abre latas
 				actInv = await doAction("/rest/v1/game/inventory/"+inv.IdInvSto+"/"+abrelatas, "PATCH", {d: "up", mod: null, to: inv.IdInvPer});
+				dataSaved.test[currentDate].actInv1 = actInv;
 				if(actInv?.success){
 					//abre la lata
 					await doAction("/api/town/house/action", "POST", {item: hasLata, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), hasLata)});
 					if(abrelatas = searchItemIdInv([12,17,20,140], actInv.target)){
+						dataSaved.test[currentDate].abrelatas = abrelatas;
 						//regresa el abre latas
 						await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelatas, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
 					}
@@ -1243,9 +1270,14 @@ async function prepareToExplore(inv, storageInventory){
 			}
 			//evalua si se recogió un doggybag
 			let hasDoggyBag = searchItemIdInv([118], actInv.target);
+			dataSaved.test[currentDate].hasDoggyBag = hasDoggyBag;
 			if(hasDoggyBag){
 				//abre doggy-back
-				await doAction("/api/town/house/action", "POST", {item: hasDoggyBag, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), hasDoggyBag)});
+				let doActionObj = await doAction("/jx/town/house/dash", "POST", {});
+				dataSaved.test[currentDate].doActionObj = doActionObj;
+				let getActionIdFromHtmlObj = getActionIdFromHtml(doActionObj, hasDoggyBag);
+				dataSaved.test[currentDate].getActionIdFromHtmlObj = getActionIdFromHtmlObj;
+				await doAction("/api/town/house/action", "POST", {item: hasDoggyBag, action: getActionIdFromHtmlObj, hasDoggyBag)});
 			}
 		}
 	}
