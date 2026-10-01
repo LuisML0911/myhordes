@@ -1030,8 +1030,13 @@ async function doAction(endpoint, method, bodyData) {
 	const contentType = response.headers()["content-type"];
 	let result;
 	if (contentType && contentType.includes("application/json")) {
-		result = await response.json();
-		logTrace(endpoint, method, bodyData, response?.status(), result);
+		try{
+			result = await response.json();
+			logTrace(endpoint, method, bodyData, response?.status(), result);
+		}catch(err){
+			result = await response.text();
+			logTrace(endpoint, method, bodyData, response?.status());
+		}
 	} else {
 		result = await response.text();
 		logTrace(endpoint, method, bodyData, response?.status());
