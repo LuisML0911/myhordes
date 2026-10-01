@@ -915,7 +915,7 @@ async function selectJob(){
 	await doAction("/rest/v1/game/welcome/" + lastDataSaved.idTown, "PATCH", {"identity": null, "profession": {"id": 3}, 
 	// TODO: FUNCTION TO UPDATE LAST ID UPGRADES AVAILABLES
 	//"skills": {"ids": [28, 32, 36, 40, 44]}});
-	"skills": {"ids": [25, 29, 33, 38, 41]}});
+	"skills": {"ids": [25, 29, 33, 37, 41]}});
 	await new Promise(r => setTimeout(r, 2000));
 	await goto('/jx/town/dashboard');
 	await new Promise(r => setTimeout(r, 2000));
