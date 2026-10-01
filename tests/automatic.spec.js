@@ -518,7 +518,7 @@ async function playInDeserted(){
 			console.log(`getActionIdFromHtmlObj: ${getActionIdFromHtmlObj}`);
 			dataSaved.test[currentDate].getActionIdFromHtmlObj = getActionIdFromHtmlObj;
 			
-			await doAction("/api/town/house/action", "POST", {item: outfit, action: getActionIdFromHtmlObj, outfit)});
+			await doAction("/api/town/house/action", "POST", {item: outfit, action: getActionIdFromHtmlObj, outfit});
 		}else{
 			// 1. Evaluar si la zona esta controlada por los zombies, si esta controlada intentar liberar y actualizar para evaluar si siguie controlada, si sigue controlada repetir 3 veces antes de alertar.
 			const contZ = parseInt(await pag.textContent('.zombies-cp'), 10);
