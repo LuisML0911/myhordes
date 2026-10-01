@@ -1,1 +1,14 @@
-{}
+{
+  "log": {},
+  "day1": {
+    "currentStep": 0,
+    "purge": true
+  },
+  "hasUsedDrugs": false,
+  "heroicAction": {
+    "hallazgo": true,
+    "retorno": true,
+    "golpe": true,
+    "pa": true
+  }
+}
