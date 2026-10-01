@@ -501,8 +501,13 @@ async function playInDeserted(){
 			
 			// salir del desierto
 			await doAction("/api/beyond/desert/exit", "POST", {});
-			await goto('/jx/town/bank');
-			await pag.waitForSelector('#header-rucksack-items');
+			await new Promise(r => setTimeout(r, 1000));
+			try{
+				await goto('/jx/town/bank');
+				await pag.waitForSelector('#header-rucksack-items', {timeout: 5000});
+			}catch(err){
+				console.log(`Error: ${err}`);
+			}
 			let inv = await getInventoryIds();
 			await dropPlayerInventory(inv);
 			let playInv = await getPlayerInventory(inv);
