@@ -43,10 +43,19 @@
           "to": "7581498"
         }
       }
+    },
+    "20261001_041644_932": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door",
+        "method": "PATCH",
+        "body": {
+          "action": "open"
+        }
+      }
     }
   },
   "day1": {
-    "currentStep": 3,
+    "currentStep": 4,
     "purge": true,
     "startItems": {
       "idFood": 118,
