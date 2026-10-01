@@ -685,12 +685,16 @@ async function playInDeserted(){
 				// 2. Si es posible escavar se intentará recolectar recursos antes de moverse.
 				const digButton = await pag.locator('#dig_button');
 				if(await digButton.count() > 0  && currentPoss.digged == undefined){ // escavar
-					//await doAction("/api/beyond/desert/dig", "POST", {});
-					currentPoss.digged = true;
-					await digButton.click({ timeout: 3000 });
-					//writeJSON(nameFile_dataSaved, dataSaved);
-					await goto('/jx/beyond/desert/cached');
-					return await main();
+					try{
+						//await doAction("/api/beyond/desert/dig", "POST", {});
+						currentPoss.digged = true;
+						await digButton.click({ timeout: 20000 });
+						//writeJSON(nameFile_dataSaved, dataSaved);
+						await goto('/jx/beyond/desert/cached');
+						return await main();
+					}catch(e){
+						currentPoss.digged = true;
+					}
 				}
 				
 				// 4. Si faltan 4 horas para el ataque deberá avanzar sin agotar la zona hasta completar la ruta.
