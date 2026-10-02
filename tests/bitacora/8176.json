@@ -1628,7 +1628,8 @@
           "x": 3,
           "y": 0,
           "dried": false,
-          "diggedRuin": true
+          "diggedRuin": true,
+          "digged": true
         },
         {
           "x": 4,
