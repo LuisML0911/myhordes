@@ -1259,7 +1259,7 @@ async function prepareToExplore(inv, storageInventory){
 		dataSaved.test[currentDate].actInv0 = actInv;
 		if(actInv?.success){
 			//evalua si se recogió una lata
-			let hasLata = searchItemIdInv([3], actInv.target);
+			let hasLata = searchItemIdInv([3], actInv?.target?.items);
 			dataSaved.test[currentDate].hasLata = hasLata;
 			if(hasLata){
 				//recoge abre latas
@@ -1268,7 +1268,7 @@ async function prepareToExplore(inv, storageInventory){
 				if(actInv?.success){
 					//abre la lata
 					await doAction("/api/town/house/action", "POST", {item: hasLata, action: getActionIdFromHtml(await doAction("/jx/town/house/dash", "POST", {}), hasLata)});
-					if(abrelatas = searchItemIdInv([12,17,20,140], actInv.target)){
+					if(abrelatas = searchItemIdInv([12,17,20,140], actInv?.target?.items)){
 						dataSaved.test[currentDate].abrelatas = abrelatas;
 						//regresa el abre latas
 						await doAction("/rest/v1/game/inventory/"+inv.IdInvPer+"/"+abrelatas, "PATCH", {d: "down", mod: null, to: inv.IdInvSto});
@@ -1281,7 +1281,7 @@ async function prepareToExplore(inv, storageInventory){
 				}
 			}
 			//evalua si se recogió un doggybag
-			let hasDoggyBag = searchItemIdInv([118], actInv.target);
+			let hasDoggyBag = searchItemIdInv([118], actInv?.target?.items);
 			dataSaved.test[currentDate].hasDoggyBag = hasDoggyBag;
 			if(hasDoggyBag){
 				//abre doggy-back
