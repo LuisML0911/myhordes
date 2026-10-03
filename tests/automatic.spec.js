@@ -736,6 +736,7 @@ async function playInDeserted(){
 							canUseItem = true;
 						}
 						if(canUseItem){
+							writeJSON(nameFile_dataSaved, dataSaved);
 							return await main();
 						}else{
 							// TODO: Avisar que se ha quedado sin PAs y no logró consumir nada
