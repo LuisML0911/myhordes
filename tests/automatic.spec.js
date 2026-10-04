@@ -574,14 +574,14 @@ async function playInDeserted(){
 					if(!canUseWeaponBattery && (!purge || /^~[0123]:/.test(attackTime))){
 						if(currentSaved.usedHeroicAction == undefined){
 							if(dataSaved.heroicAction.golpe){
-								if((await doAction("https://myhord.es/api/beyond/desert/heroic", "POST", {action: "3"})).error){}else{
+								if((await doAction("/api/beyond/desert/heroic", "POST", {action: "3"})).error){}else{
 									dataSaved.heroicAction.golpe = false;
 									currentSaved.usedHeroicAction = true;
 									canUseHeroicAction = true;
 								}
 							}else{
 								if(dataSaved.heroicAction.hallazgo){
-									if((await doAction("https://myhord.es/api/beyond/desert/heroic", "POST", {action: "2"})).error){}else{// , [PENDIENTE]
+									if((await doAction("/api/beyond/desert/heroic", "POST", {action: "2"})).error){}else{// , [PENDIENTE]
 										dataSaved.heroicAction.hallazgo = false;
 										currentSaved.usedHeroicAction = true;
 										canUseHeroicAction = true;
@@ -590,7 +590,7 @@ async function playInDeserted(){
 									}
 								}else{
 									if(dataSaved.heroicAction.retorno && /^~[0]:/.test(attackTime) /* solo usar cuando queda 1 hora */){ 
-										if((await doAction("https://myhord.es/api/beyond/desert/heroic", "POST", {action: "1"})).error){}else{
+										if((await doAction("/api/beyond/desert/heroic", "POST", {action: "1"})).error){}else{
 											dataSaved.heroicAction.retorno = false;
 											currentSaved.usedHeroicAction = true;
 											canUseHeroicAction = true;
@@ -599,7 +599,7 @@ async function playInDeserted(){
 										if (/^~[0]:/.test(attackTime)) { // si queda 1 hora o menos acampar
 											if(dataSaved.heroicAction.pa){
 												dataSaved.heroicAction.pa = false;
-												if((await doAction("https://myhord.es/api/beyond/desert/heroic", "POST", {action: "4"})).error){
+												if((await doAction("/api/beyond/desert/heroic", "POST", {action: "4"})).error){
 												}else{
 													currentSaved.usedHeroicAction = true;
 													canUseHeroicAction = true;
