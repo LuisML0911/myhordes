@@ -548,6 +548,48 @@
           "y": 1
         }
       }
+    },
+    "20261004_205445_073": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7595053",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7589957"
+        }
+      }
+    },
+    "20261004_205445_906": {
+      "request": {
+        "url": "/api/beyond/desert/heroic",
+        "method": "POST",
+        "body": {
+          "action": "3"
+        }
+      }
+    },
+    "20261004_205446_151": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7589957/28843379",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7595053"
+        }
+      }
+    },
+    "20261004_205446_385": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7589957/28862939",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7595053"
+        }
+      }
     }
   },
   "day1": {
@@ -599,7 +641,8 @@
         {
           "x": 5,
           "y": 1,
-          "dried": false
+          "dried": false,
+          "purged": true
         },
         {
           "x": 5,
@@ -664,13 +707,14 @@
       ],
       "tNotDried": 17,
       "currentPoss": 6
-    }
+    },
+    "usedHeroicAction": true
   },
   "hasUsedDrugs": false,
   "heroicAction": {
     "hallazgo": true,
     "retorno": true,
-    "golpe": true,
+    "golpe": false,
     "pa": true
   },
   "test": {
