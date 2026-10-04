@@ -542,6 +542,7 @@ async function playInDeserted(){
 				let playInv = await getPlayerInventory(inv);
 				let deseInv = await getDesertInventory(inv);
 				console.error(`list: ${[...weaponListData.weaponList, ...weaponListData.weaponHeavyList]}`);
+				console.error(`objets: ${{...playInv, ...deseInv}}`)
 				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...weaponListData.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
 				console.error(`combination: ${combination}`);
 				if(combination != null){
@@ -695,7 +696,7 @@ async function playInDeserted(){
 				if(await digButton.count() > 0  && currentPoss.digged == undefined){ // escavar
 					try{
 						currentPoss.digged = true;
-						await digButton.click({ timeout: 20000 });
+						await digButton.click({ timeout: 30000 });
 					}catch(e){
 						currentPoss.dried = true;
 					}finally{
