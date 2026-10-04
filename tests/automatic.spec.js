@@ -276,7 +276,7 @@ async function startPlayTown(currentDay){
 	if(dataSaved[`day${currentDay}`] === undefined){
 		dataSaved[`day${currentDay}`] = {};
 		dataSaved[`day${currentDay}`].currentStep = 0;
-		dataSaved[`day${currentDay}`].purge = false;
+		dataSaved[`day${currentDay}`].purge = true;
 		dataSaved.hasUsedDrugs = false;
 		
 		dataSaved.heroicAction = {};
@@ -366,7 +366,6 @@ async function betweenSafeDays(currentDay){
 		dataSaved[`day${currentDay}`].currentStep = 0;
 		dataSaved[`day${currentDay}`].purge = false;
 	}
-	
 	
 	const steps = [
 		async () => { // vaciar inventario
@@ -538,6 +537,12 @@ async function playInDeserted(){
 				await dropPlayerInventory(inv);
 				let playInv = await getPlayerInventory(inv);
 				let deseInv = await getDesertInventory(inv);
+				if(currentSaved.startItems.idInvFood != undefined){
+					await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvFood);
+				}
+				if(currentSaved.startItems.idInvWater != undefined){
+					await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvWater);
+				}
 				console.error(`list: ${[...weaponListData.weaponList, ...weaponListData.weaponHeavyList]}`);
 				console.error(`objets: ${{...playInv, ...deseInv}}`)
 				const combination = findClosestWeaponsCombination([...weaponListData.weaponList, ...weaponListData.weaponHeavyList].filter(o => o.id !== 12), contZ - contObjetive, {...playInv, ...deseInv});
@@ -569,83 +574,75 @@ async function playInDeserted(){
 						}
 					}
 					if(!canUseWeaponBattery && (!purge || /^~[0123]:/.test(attackTime))){
-						if(currentSaved.usedHeroicAction == undefined){
-							if(dataSaved.heroicAction.golpe){
-								if((await doAction("/api/beyond/desert/heroic", "POST", {action: "3"})).error){}else{
-									dataSaved.heroicAction.golpe = false;
+						if(currentSaved.usedHeroicAction == undefined && dataSaved.heroicAction.golpe){
+							if((await doAction("/api/beyond/desert/heroic", "POST", {action: "3"})).error){}else{
+								dataSaved.heroicAction.golpe = false;
+								currentSaved.usedHeroicAction = true;
+								canUseHeroicAction = true;
+							}
+						}else{
+							if(currentSaved.usedHeroicAction == undefined && dataSaved.heroicAction.hallazgo){
+								if((await doAction("/api/beyond/desert/heroic", "POST", {action: "2"})).error){}else{// , [PENDIENTE]
+									dataSaved.heroicAction.hallazgo = false;
 									currentSaved.usedHeroicAction = true;
 									canUseHeroicAction = true;
+									
+									//TODO: usar globo
 								}
 							}else{
-								if(dataSaved.heroicAction.hallazgo){
-									if((await doAction("/api/beyond/desert/heroic", "POST", {action: "2"})).error){}else{// , [PENDIENTE]
-										dataSaved.heroicAction.hallazgo = false;
+								if(currentSaved.usedHeroicAction == undefined && dataSaved.heroicAction.retorno && /^~[0]:/.test(attackTime) /* solo usar cuando queda 1 hora */){ 
+									if((await doAction("/api/beyond/desert/heroic", "POST", {action: "1"})).error){}else{
+										dataSaved.heroicAction.retorno = false;
 										currentSaved.usedHeroicAction = true;
 										canUseHeroicAction = true;
-										
-										//TODO: usar globo
 									}
 								}else{
-									if(dataSaved.heroicAction.retorno && /^~[0]:/.test(attackTime) /* solo usar cuando queda 1 hora */){ 
-										if((await doAction("/api/beyond/desert/heroic", "POST", {action: "1"})).error){}else{
-											dataSaved.heroicAction.retorno = false;
-											currentSaved.usedHeroicAction = true;
-											canUseHeroicAction = true;
-										}
-									}else{
-										if (/^~[0]:/.test(attackTime)) { // si queda 1 hora o menos acampar
-											if(dataSaved.heroicAction.pa){
-												dataSaved.heroicAction.pa = false;
-												if((await doAction("/api/beyond/desert/heroic", "POST", {action: "4"})).error){
-												}else{
-													currentSaved.usedHeroicAction = true;
-													canUseHeroicAction = true;
-													// TODO: evaluar si es mejor acampar que gastar esos PAs
-													//await doAction("/api/beyond/desert/attack", "POST", {});
-													//await doAction("/api/beyond/desert/attack", "POST", {});
-													//await doAction("/api/beyond/desert/attack", "POST", {});
+									if (/^~[0]:/.test(attackTime)) { // si queda 1 hora o menos acampar
+										if(dataSaved.heroicAction.pa){
+											dataSaved.heroicAction.pa = false;
+											if((await doAction("/api/beyond/desert/heroic", "POST", {action: "4"})).error){
+											}else{
+												currentSaved.usedHeroicAction = true;
+												canUseHeroicAction = true;
+												// TODO: evaluar si es mejor acampar que gastar esos PAs
+												//await doAction("/api/beyond/desert/attack", "POST", {});
+												//await doAction("/api/beyond/desert/attack", "POST", {});
+												//await doAction("/api/beyond/desert/attack", "POST", {});
+											}
+										}else{
+											const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
+											if(currentSaved.startItems.idInvFood != undefined){
+												await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvFood);
+											}
+											if(currentSaved.startItems.idInvWater != undefined){
+												await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvWater);
+											}
+											if(currentPAs > 0){
+												let restPAs = currentPAs;
+												for(;restPAs > 0;restPAs--){
+													if(restPAs == 1){
+														// cavar tumba
+														await doAction("/api/beyond/desert/camping ", "POST", {action: "8"});
+													}else{
+														// mejorar campamento
+														await doAction("/api/beyond/desert/camping ", "POST", {action: "7"});
+														//await doAction("/api/beyond/desert/camping ", "POST", {action: "6"}); desacampar
+													}
 												}
 											}else{
-												const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
-												if(currentSaved.startItems.idInvFood != undefined){
-													await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvFood);
-												}
-												if(currentSaved.startItems.idInvWater != undefined){
-													await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvWater);
-												}
-												if(currentPAs > 0){
-													let restPAs = currentPAs;
-													for(;restPAs > 0;restPAs--){
-														if(restPAs == 1){
-															// cavar tumba
-															await doAction("/api/beyond/desert/camping ", "POST", {action: "8"});
-														}else{
-															// mejorar campamento
-															await doAction("/api/beyond/desert/camping ", "POST", {action: "7"});
-															//await doAction("/api/beyond/desert/camping ", "POST", {action: "6"}); desacampar
-														}
-													}
-												}else{
-													// esconderse
-													await doAction("/api/beyond/desert/camping ", "POST", {action: "6"});
-												}
-												dataSaved[`day${currentDay}`].camping = true;
-												dataSaved[`day${currentDay + 1}`] = dataSaved[`day${currentDay}`];
-												await goto('/jx/beyond/desert/cached');
-												return;
+												// esconderse
+												await doAction("/api/beyond/desert/camping ", "POST", {action: "6"});
 											}
+											dataSaved[`day${currentDay}`].camping = true;
+											dataSaved[`day${currentDay + 1}`] = dataSaved[`day${currentDay}`];
+											await goto('/jx/beyond/desert/cached');
+											return;
 										}
 									}
 								}
 							}
 						}
 					}
-				}
-				if(currentSaved.startItems.idInvFood != undefined){
-					await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvFood);
-				}
-				if(currentSaved.startItems.idInvWater != undefined){
-					await moveItem(inv.IdInvDes, inv.IdInvPer, currentSaved.startItems.idInvWater);
 				}
 				currentPoss.purged = true;
 				if(!canUseWeapon && !canUseHeroicAction && !canUseWeaponBattery && (!purge || /^~[0123]:/.test(attackTime))){ // TODO: help en foro
