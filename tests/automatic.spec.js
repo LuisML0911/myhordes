@@ -276,7 +276,7 @@ async function startPlayTown(currentDay){
 	if(dataSaved[`day${currentDay}`] === undefined){
 		dataSaved[`day${currentDay}`] = {};
 		dataSaved[`day${currentDay}`].currentStep = 0;
-		dataSaved[`day${currentDay}`].purge = true;
+		dataSaved[`day${currentDay}`].purge = false;
 		dataSaved.hasUsedDrugs = false;
 		
 		dataSaved.heroicAction = {};
