@@ -598,7 +598,7 @@ async function playInDeserted(){
 									}
 								}else{
 									if (/^~[0]:/.test(attackTime)) { // si queda 1 hora o menos acampar
-										if(dataSaved.heroicAction.pa){
+										if(currentSaved.usedHeroicAction == undefined && dataSaved.heroicAction.pa){
 											dataSaved.heroicAction.pa = false;
 											if((await doAction("/api/beyond/desert/heroic", "POST", {action: "4"})).error){
 											}else{
@@ -608,6 +608,8 @@ async function playInDeserted(){
 												//await doAction("/api/beyond/desert/attack", "POST", {});
 												//await doAction("/api/beyond/desert/attack", "POST", {});
 												//await doAction("/api/beyond/desert/attack", "POST", {});
+												await goto('/jx/beyond/desert/cached');
+												return await main();
 											}
 										}else{
 											const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
