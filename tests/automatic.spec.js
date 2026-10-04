@@ -367,9 +367,9 @@ async function betweenSafeDays(currentDay){
 		dataSaved[`day${currentDay}`].purge = false;
 	}
 	
+	
 	const steps = [
 		async () => { // vaciar inventario
-		
 			for (let item in await getBaulInventory(inv)) {
 				await moveItem(inv.IdInvBau, inv.IdInvPer, item);
 			}
@@ -395,9 +395,7 @@ async function betweenSafeDays(currentDay){
 			const foodToExplore = items.foods.find(food => food.id === dataSaved[`day${currentDay}`].startItems.idFood);
 			const waterToExplore = items.waters.find(water => water.id === dataSaved[`day${currentDay}`].startItems.idWater);
 			const currentPAs = await pag.locator('b[data-incidental-target="ap"]').getAttribute('data-value');
-			if(foodToExplore != undefined && waterToExplore != undefined){
-				dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 2 : 3);
-			}
+			dataSaved[`day${currentDay}`].route = await getRoute(foodToExplore.pa + waterToExplore.pa + parseInt(currentPAs, 10), dataSaved.hasUsedDrugs ? 2 : 3);
 			return true;
 		},
 		async () => { // salir al desierto -> avance en el desierto (función playInDeserted)
@@ -410,7 +408,6 @@ async function betweenSafeDays(currentDay){
 				await main();
 			}else{
 				// TODO: si no logró crear una ruta, entonces ejecutar jugar en ciudad
-				// validar si no en otro paso como complemento al retorno a la ciudad
 			}
 			return true;
 		}
