@@ -1,0 +1,25 @@
+{
+  "log": {
+    "20261006_223154_527": {
+      "request": {
+        "url": "/rest/v1/game/welcome/8194",
+        "method": "PATCH",
+        "body": {
+          "identity": null,
+          "profession": {
+            "id": 3
+          },
+          "skills": {
+            "ids": [
+              25,
+              29,
+              33,
+              37,
+              41
+            ]
+          }
+        }
+      }
+    }
+  }
+}
