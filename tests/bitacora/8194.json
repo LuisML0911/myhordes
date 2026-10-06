@@ -112,6 +112,59 @@
           "y": 0
         }
       }
+    },
+    "20261006_223248_296": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7614932",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7601392"
+        }
+      }
+    },
+    "20261006_223248_521": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7601392/28881486",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7614932"
+        }
+      }
+    },
+    "20261006_223248_739": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7601392/28930616",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7614932"
+        }
+      }
+    },
+    "20261006_223250_167": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28930592",
+          "action": "427"
+        }
+      }
+    },
+    "20261006_223307_287": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 2,
+          "y": 0
+        }
+      }
     }
   },
   "day1": {
@@ -213,7 +266,7 @@
         }
       ],
       "tNotDried": 15,
-      "currentPoss": 1
+      "currentPoss": 2
     }
   },
   "hasUsedDrugs": false,
@@ -1319,5 +1372,6 @@
         }
       }
     }
-  }
+  },
+  "invSize": 7
 }
