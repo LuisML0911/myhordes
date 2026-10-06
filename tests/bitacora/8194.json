@@ -218,6 +218,70 @@
           "y": 0
         }
       }
+    },
+    "20261006_223348_595": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7614932",
+        "method": "PATCH",
+        "body": {
+          "d": "down-all",
+          "mod": null,
+          "to": "7601446"
+        }
+      }
+    },
+    "20261006_223348_792": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7601446/28881486",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7614932"
+        }
+      }
+    },
+    "20261006_223348_990": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7601446/28930616",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7614932"
+        }
+      }
+    },
+    "20261006_223349_900": {
+      "request": {
+        "url": "/rest/v1/game/inventory/7601446/28904756",
+        "method": "PATCH",
+        "body": {
+          "d": "up",
+          "mod": null,
+          "to": "7614932"
+        }
+      }
+    },
+    "20261006_223350_462": {
+      "request": {
+        "url": "/api/beyond/desert/action",
+        "method": "POST",
+        "body": {
+          "item": "28930592",
+          "action": null
+        }
+      }
+    },
+    "20261006_223403_243": {
+      "request": {
+        "url": "/api/beyond/desert/move",
+        "method": "POST",
+        "body": {
+          "x": 3,
+          "y": -1
+        }
+      }
     }
   },
   "day1": {
@@ -321,7 +385,7 @@
         }
       ],
       "tNotDried": 15,
-      "currentPoss": 3
+      "currentPoss": 4
     }
   },
   "hasUsedDrugs": false,
