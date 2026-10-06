@@ -67,7 +67,7 @@
     }
   },
   "day1": {
-    "currentStep": 1,
+    "currentStep": 2,
     "purge": true
   },
   "hasUsedDrugs": false,
