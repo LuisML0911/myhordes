@@ -112,6 +112,13 @@
           "action": "open"
         }
       }
+    },
+    "20261008_224206_773": {
+      "request": {
+        "url": "/rest/v1/game/town/core/door/exit",
+        "method": "POST",
+        "body": {}
+      }
     }
   },
   "day1": {
